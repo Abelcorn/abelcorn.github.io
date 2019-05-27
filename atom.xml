@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Abelcorn.github.io</id>
     <title>小石石石</title>
-    <updated>2019-05-27T09:16:51.037Z</updated>
+    <updated>2019-05-27T09:28:36.200Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Abelcorn.github.io"/>
     <link rel="self" href="https://Abelcorn.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://Abelcorn.github.io/images/avatar.png</logo>
     <icon>https://Abelcorn.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[类UNIX内核的Shell编程（前言）]]></title>
+        <id>https://Abelcorn.github.io/post/lei-unix-nei-he-de-shell-bian-cheng-qian-yan</id>
+        <link href="https://Abelcorn.github.io/post/lei-unix-nei-he-de-shell-bian-cheng-qian-yan">
+        </link>
+        <updated>2019-05-27T09:24:23.000Z</updated>
+        <content type="html"><![CDATA[<p>😄，现在我还不会Markdown语法，这是一个测试内容。等爸爸我学会了后我会逐渐写和Shell，Python，生活记录还有其他什么的～～～相信我！嗯，I can do it!
+😘😘😘</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Visitor]]></title>
         <id>https://Abelcorn.github.io/post/hello-gridea</id>
