@@ -7,7 +7,7 @@
 <meta name="description" content="Always do your best.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://Abelcorn.github.io/favicon.ico?v=1558949539685">
+<link rel="shortcut icon" href="https://Abelcorn.github.io/favicon.ico?v=1558959782008">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -91,7 +91,7 @@
             <p class="article-meta">
               2019-05-27
               
-                <a href="https://Abelcorn.github.io/tag/Wq8ZRRiBS" class="badge ">
+                <a href="https://Abelcorn.github.io/tag/Wq8ZRRiBS" class="badge secondary">
                   Shell
                 </a>
               
@@ -100,9 +100,178 @@
               <img src="https://Abelcorn.github.io/post-images/lei-unix-nei-he-de-shell-bian-cheng-qian-yan.jpg" alt="类UNIX内核的Shell编程（前言）">
             
             <div class="post-content">
-              <p>😄，现在我还不会Markdown语法，这是一个测试内容。等爸爸我学会了后MK语法后，我会逐渐写和Shell，Python，生活记录还有其他什么有关的东西～～～相信我！嗯，I can do it!
-😘😘😘</p>
-<p>听说李雯在看？</p>
+              <h1 id="前言">前言</h1>
+<p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
+<ul>
+<li>UNIX为程序开发提供了即优雅而又高效的环境，所以我们要学习这个标签——shell</li>
+<li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
+<li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
+<li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
+</ul>
+<h2 id="提示">提示</h2>
+<ul>
+<li>如果各位用的是苹果电脑，直接打开<em>Terminal</em>就可以用了，但是如果你是<em>Windows</em>的话，你需要<em>Win+R</em>,然后输入<em>Powershell</em>，进入一个新窗口后就可以用了</li>
+<li>本标签的文章的组织模式是这样的：</li>
+<li>
+<blockquote>
+<blockquote>
+<ol>
+<li>基础命令</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="2">
+<li>shell入门</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="3">
+<li><s>常备优卡丹</s>  常备工具</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="4">
+<li>脚本与变量</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="5">
+<li>引用</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="6">
+<li>参数传递</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="7">
+<li>条件语句</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="8">
+<li>循环</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="9">
+<li>数据的读取和打印</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="10">
+<li>环境  &lt;<u> 悄悄的说，这些名字也太抽象了</u>&gt;</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="11">
+<li>参数的高级传递</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="12">
+<li>扩展命令</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="13">
+<li>rolo进阶</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="14">
+<li>交互式与非标准shell的特性</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="15">
+<li>shell总结</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="16">
+<li>附录 <del>我觉得可能写不到这里，假装叹个气～～</del></li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>那么，下一篇就会开始进入第一节的内容了～</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>对了，以后出现的命令不要乱用，电脑文件没了是小事，但是乱用这些代码，🉑️能搞坏你的硬件</li>
+</ul>
 
             </div>
           </article>
@@ -113,7 +282,7 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://Abelcorn.github.io/post/hello-gridea">
+              <a href="https://Abelcorn.github.io/post/hello-visitor">
                 <h3 class="post-title">
                   Hello Visitor
                 </h3>
@@ -134,7 +303,7 @@
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://Abelcorn.github.io/images/avatar.png?v=1558949539685" class="no-responsive avatar">
+    <img src="https://Abelcorn.github.io/images/avatar.png?v=1558959782008" class="no-responsive avatar">
     <div class="text-muted">Always do your best.</div>
     <div class="social-container">
       
@@ -167,13 +336,19 @@
         
           
             <li>
+              <a href="https://Abelcorn.github.io/post/lei-unix-nei-he-de-shell-bian-cheng-yi">类UNIX内核的Shell编程（一）</a>
+            </li>
+          
+        
+          
+            <li>
               <a href="https://Abelcorn.github.io/post/lei-unix-nei-he-de-shell-bian-cheng-qian-yan">类UNIX内核的Shell编程（前言）</a>
             </li>
           
         
           
             <li>
-              <a href="https://Abelcorn.github.io/post/hello-gridea">Hello Visitor</a>
+              <a href="https://Abelcorn.github.io/post/hello-visitor">Hello Visitor</a>
             </li>
           
         
@@ -186,11 +361,11 @@
     </div>
     <div class="row">
       
-        <a href="https://Abelcorn.github.io/tag/Wq8ZRRiBS" class="badge warning">
+        <a href="https://Abelcorn.github.io/tag/Wq8ZRRiBS" class="badge success">
           Shell
         </a>
       
-        <a href="https://Abelcorn.github.io/tag/gridea" class="badge secondary">
+        <a href="https://Abelcorn.github.io/tag/gridea" class="badge ">
           Gridea
         </a>
       

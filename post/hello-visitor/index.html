@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Gridea | 小石石石</title>
+<title>Hello Visitor | 小石石石</title>
 <meta name="description" content="Always do your best.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="https://Abelcorn.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -23,6 +29,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://Abelcorn.github.io">小石石石</a></h3>
@@ -79,22 +86,21 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="current-tag">标签: Gridea</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://Abelcorn.github.io/post/hello-visitor">Hello Visitor</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-27
-      
-        <a href="https://Abelcorn.github.io/tag/gridea" class="badge warning">
-          Gridea
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>👏  欢迎访问 <strong>Corn's Homepage</strong> ！<br>
+          <article class="article">
+            <h1>Hello Visitor</h1>
+            <p class="article-meta">
+              2019-05-27
+              
+                <a href="https://Abelcorn.github.io/tag/gridea" class="badge success">
+                  Gridea
+                </a>
+              
+            </p>
+            
+              <img src="https://Abelcorn.github.io/post-images/hello-visitor.jpg" alt="Hello Visitor">
+            
+            <div class="post-content">
+              <p>👏  欢迎访问 <strong>Corn's Homepage</strong> ！<br>
 ✍️  <strong>What's this?</strong> 一个静态博客,记录个人的生活、心情、知识、笔记、创意、❤️... ...</p>
 <h2 id="访问技巧">访问技巧：</h2>
 <ul>
@@ -115,25 +121,47 @@
 </blockquote>
 </li>
 </ul>
+<!-- more -->
+<h3 id="请允许我btw一下">请允许我BTW一下</h3>
+<ul>
+<li>我还在学Markdown语法，并且只会很浅显的静态网站搭建方法</li>
+<li>本网页内容皆尽用的Md语法，所以请原谅直男的代码式排版风格吧</li>
+<li>我会努力提升自己，并逐渐美化网页的，希望各位大佬多多指教</li>
+<li>分享的内容都是我自己记录的东西</li>
+<li>因为目前能力有限，如果想评论的话，可以发邮件，或者在本网页中登陆github账号给我回复哦</li>
+<li>
+<blockquote>
+<p>再次感谢各位的光临，小生不胜荣幸！</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>还有，Me gustas.</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<p>个人邮箱： abeliterate@outlook.com</p>
+<p>Enjoy~</p>
 
-    </p>
-    <div class="row">
-      <a href="https://Abelcorn.github.io/post/hello-visitor" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
+        <div class="paper" data-aos="fade-in">
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://Abelcorn.github.io/images/avatar.png?v=1558959782008" class="no-responsive avatar">
@@ -209,6 +237,7 @@
   </div>
 </div>
 
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -220,6 +249,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '36f0665e9b58519e6cf9',
+        clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+        repo: 'Abelcorn.github.io',
+        owner: 'Abelcorn',
+        admin: ['Abelcorn'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
