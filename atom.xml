@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-05-27T23:32:28.571Z</updated>
+    <updated>2019-05-27T23:47:35.765Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[说明]]></title>
+        <id>https://abelcorn.cn/post/tips</id>
+        <link href="https://abelcorn.cn/post/tips">
+        </link>
+        <updated>2019-05-27T23:42:25.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="抱歉">抱歉！</h1>
+<ul>
+<li>由于网站昨天傍晚才刚刚建立，内容还不多，没有满足某些人的要求。&lt;假装微笑&gt;</li>
+<li>为给大家带来更好的体验，网站将在今天下午关闭，丰富内容，直到6月1日上线。</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[类UNIX内核的Shell编程（一）]]></title>
         <id>https://abelcorn.cn/post/shell-1</id>
@@ -46,16 +59,13 @@
 </li>
 <li>
 <blockquote>
-<p>php的和这个一样诶😲 所以你尝试输入 <em><code>echo this is a test</code></em> ,回车试一下？</p>
+<p>php的和这个一样诶😲 所以你尝试输入 <em><code>echo this is a test</code></em> ,回车试一下？
+-----------待续</p>
 </blockquote>
 </li>
 </ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
 </li>
 </ul>
-<p>-----------待续</p>
 ]]></content>
     </entry>
     <entry>
