@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" >
 
-<title>类UNIX内核的Shell编程（一） | 小石石石</title>
+<title>类UNIX内核的Shell编程（前言） | 小石石石</title>
 <meta name="description" content="Always do your best.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1558999755699">
+<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1558999913775">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -87,57 +87,191 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>类UNIX内核的Shell编程（一）</h1>
+            <h1>类UNIX内核的Shell编程（前言）</h1>
             <p class="article-meta">
               2019-05-27
               
-                <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge warning">
+                <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge secondary">
                   Shell
                 </a>
               
             </p>
             
+              <img src="https://abelcorn.cn/post-images/shell-0.jpg" alt="类UNIX内核的Shell编程（前言）">
+            
             <div class="post-content">
-              <h1 id="基础知识">基础知识</h1>
-<h2 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h2>
-<h3 id="基础命令">基础命令</h3>
+              <h1 id="前言">前言</h1>
+<p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
 <ul>
-<li><strong>date</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>date</em>命令可以用来显示日期和时间，现在你在终端直接敲击<em>date</em>,是不是有时间出来了？<s>很神奇是不是？</s></p>
-</blockquote>
-</li>
-<li><strong>who</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>who</em>命令可以用来获取当前你电脑登陆的所有用户信息，自己输入试一试，以后我就不提醒了</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>你可能会疑惑，明明只有你一个人用，为何有多个用户名登陆呢？哼哼～🤓 不告诉你，现在，输入<em>who am i</em>，你就可以知道你的用户名是谁了</p>
-</blockquote>
-</li>
-<li><strong>echo</strong>命令：
+<li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
+<li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
+<li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
+<li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
+</ul>
+<h2 id="提示">提示</h2>
 <ul>
+<li>如果各位用的是苹果电脑，直接打开<em>Terminal</em>就可以用了，但是如果你是<em>Windows</em>的话，你需要<em>Win+R</em>,然后输入<em>Powershell</em>，进入一个新窗口后就可以用了</li>
+<li>本标签的文章的组织模式是这样的：</li>
 <li>
 <blockquote>
-<p><em>echo</em>是回显字符，类似于<code>printf()</code> or <code>cout&lt;&lt;</code> or <code>println()</code> or <code>print()</code> 聪明的你已经猜到上面是哪几种编程语言的输出语句了吧。哦，还有<del>世界上最好的语言</del> <em>php</em> 的<code>echo</code></p>
+<blockquote>
+<ol>
+<li>基础命令</li>
+</ol>
+</blockquote>
 </blockquote>
 </li>
 <li>
 <blockquote>
-<p>php的和这个一样诶😲 所以你尝试输入 <em><code>echo this is a test</code></em> ,回车试一下？</p>
+<blockquote>
+<ol start="2">
+<li>shell入门</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="3">
+<li><s>常备优卡丹</s>  常备工具</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="4">
+<li>脚本与变量</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="5">
+<li>引用</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="6">
+<li>参数传递</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="7">
+<li>条件语句</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="8">
+<li>循环</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="9">
+<li>数据的读取和打印</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="10">
+<li>环境  &lt;<u> 悄悄的说，这些名字也太抽象了</u>&gt;</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="11">
+<li>参数的高级传递</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="12">
+<li>扩展命令</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="13">
+<li>rolo进阶</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="14">
+<li>交互式与非标准shell的特性</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="15">
+<li>shell总结</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<ol start="16">
+<li>附录 <del>我觉得可能写不到这里，假装叹个气～～</del></li>
+</ol>
+</blockquote>
 </blockquote>
 </li>
 </ul>
-<blockquote>
-<blockquote></blockquote>
-</blockquote>
-</li>
+<ul>
+<li></li>
 </ul>
-<p>-----------待续</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>那么，下一篇就会开始进入第一节的内容了～</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>对了，以后出现的命令不要乱用，电脑文件没了是小事，但是乱用这些代码，🉑️能搞坏你的硬件</li>
+</ul>
 
             </div>
           </article>
@@ -148,9 +282,9 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://abelcorn.cn/post/lei-unix-nei-he-de-shell-bian-cheng-qian-yan">
+              <a href="https://abelcorn.cn/post/hello-visitor">
                 <h3 class="post-title">
-                  类UNIX内核的Shell编程（前言）
+                  Hello Visitor
                 </h3>
               </a>
             </div>
@@ -169,7 +303,7 @@
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://abelcorn.cn/images/avatar.png?v=1558999755699" class="no-responsive avatar">
+    <img src="https://abelcorn.cn/images/avatar.png?v=1558999913775" class="no-responsive avatar">
     <div class="text-muted">Always do your best.</div>
     <div class="social-container">
       
@@ -202,13 +336,13 @@
         
           
             <li>
-              <a href="https://abelcorn.cn/post/lei-unix-nei-he-de-shell-bian-cheng-yi">类UNIX内核的Shell编程（一）</a>
+              <a href="https://abelcorn.cn/post/shell-1">类UNIX内核的Shell编程（一）</a>
             </li>
           
         
           
             <li>
-              <a href="https://abelcorn.cn/post/lei-unix-nei-he-de-shell-bian-cheng-qian-yan">类UNIX内核的Shell编程（前言）</a>
+              <a href="https://abelcorn.cn/post/shell-0">类UNIX内核的Shell编程（前言）</a>
             </li>
           
         
@@ -227,11 +361,11 @@
     </div>
     <div class="row">
       
-        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge success">
+        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge secondary">
           Shell
         </a>
       
-        <a href="https://abelcorn.cn/tag/gridea" class="badge secondary">
+        <a href="https://abelcorn.cn/tag/gridea" class="badge ">
           Gridea
         </a>
       
