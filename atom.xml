@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-05-27T12:46:38.499Z</updated>
+    <updated>2019-05-27T23:29:17.603Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -20,17 +20,13 @@
 <h2 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h2>
 <h3 id="基础命令">基础命令</h3>
 <ul>
-<li>
-<p><strong>date</strong>命令：</p>
-</li>
+<li><strong>date</strong>命令：</li>
 <li>
 <blockquote>
-<p><em>data</em>命令可以用来显示日期和时间，现在你在终端直接敲击<em>date</em>,是不是有时间出来了？<s>很神奇是不是？</s></p>
+<p><em>date</em>命令可以用来显示日期和时间，现在你在终端直接敲击<em>date</em>,是不是有时间出来了？<s>很神奇是不是？</s></p>
 </blockquote>
 </li>
-<li>
-<p><strong>who</strong>命令：</p>
-</li>
+<li><strong>who</strong>命令：</li>
 <li>
 <blockquote>
 <p><em>who</em>命令可以用来获取当前你电脑登陆的所有用户信息，自己输入试一试，以后我就不提醒了</p>
@@ -41,8 +37,7 @@
 <p>你可能会疑惑，明明只有你一个人用，为何有多个用户名登陆呢？哼哼～🤓 不告诉你，现在，输入<em>who am i</em>，你就可以知道你的用户名是谁了</p>
 </blockquote>
 </li>
-<li>
-<p><strong>echo</strong>命令：</p>
+<li><strong>echo</strong>命令：
 <ul>
 <li>
 <blockquote>
@@ -51,18 +46,16 @@
 </li>
 <li>
 <blockquote>
-<blockquote>
 <p>php的和这个一样诶😲 所以你尝试输入 <em><code>echo this is a test</code></em> ,回车试一下？</p>
-</blockquote>
 </blockquote>
 </li>
 </ul>
 <blockquote>
 <blockquote></blockquote>
 </blockquote>
-<p><strong>对不住了，我明天再写，刚刚来了个女生，娇羞的向我走来，<em>oh yo?我要转运了？</em> 然后她说话了：<em>你好同学，请问你对演讲与口才有提升的需要吗？</em> 🥴 小黑表示不高兴。   图书馆太热了，我要出去放风了</strong></p>
 </li>
 </ul>
+<p>-----------待续</p>
 ]]></content>
     </entry>
     <entry>
@@ -74,7 +67,7 @@
         <content type="html"><![CDATA[<h1 id="前言">前言</h1>
 <p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
 <ul>
-<li>UNIX为程序开发提供了即优雅而又高效的环境，所以我们要学习这个标签——shell</li>
+<li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
 <li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
 <li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
 <li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
@@ -310,7 +303,14 @@
 <li>
 <blockquote>
 <blockquote>
-<p>还有，Me gustas.</p>
+<p>还有</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>Me gustas.</p>
 </blockquote>
 </blockquote>
 </li>
