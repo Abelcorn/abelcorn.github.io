@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Abelcorn.github.io</id>
     <title>小石石石</title>
-    <updated>2019-05-27T09:28:36.200Z</updated>
+    <updated>2019-05-27T09:32:22.432Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Abelcorn.github.io"/>
     <link rel="self" href="https://Abelcorn.github.io/atom.xml"/>
@@ -16,8 +16,9 @@
         <link href="https://Abelcorn.github.io/post/lei-unix-nei-he-de-shell-bian-cheng-qian-yan">
         </link>
         <updated>2019-05-27T09:24:23.000Z</updated>
-        <content type="html"><![CDATA[<p>😄，现在我还不会Markdown语法，这是一个测试内容。等爸爸我学会了后我会逐渐写和Shell，Python，生活记录还有其他什么的～～～相信我！嗯，I can do it!
+        <content type="html"><![CDATA[<p>😄，现在我还不会Markdown语法，这是一个测试内容。等爸爸我学会了后MK语法后，我会逐渐写和Shell，Python，生活记录还有其他什么有关的东西～～～相信我！嗯，I can do it!
 😘😘😘</p>
+<p>听说李雯在看？</p>
 ]]></content>
     </entry>
     <entry>
@@ -32,8 +33,7 @@
         <content type="html"><![CDATA[<p>👏  欢迎访问 <strong>Corn's Homepage</strong> ！<br>
 ✍️  <strong>What's this?</strong> 一个静态博客,记录个人的生活、心情、知识、笔记、创意... ...</p>
 <!-- more -->
-<pre><code>这里不只是单纯的分享我的生活，还有记录我深爱的每个人。
-	我相信我会等到相守一生的人到来。
+<pre><code>这里不只是单纯的分享我的生活，还有记录我深爱的每个人.	我相信我会等到相守一生的人到来的。
 </code></pre>
 <p>个人邮箱： abeliterate@outlook.com</p>
 <p>😘 Enjoy~</p>
