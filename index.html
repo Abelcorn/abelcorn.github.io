@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>小石石石</title>
-<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1559015804089">
+<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1559016147775">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://abelcorn.cn">
-  <img class="avatar" src="https://abelcorn.cn/images/avatar.png?v=1559015804089" alt="">
+  <img class="avatar" src="https://abelcorn.cn/images/avatar.png?v=1559016147775" alt="">
   </a>
   <h1 class="site-title">
     小石石石
@@ -115,112 +115,6 @@
         <h1 id="基础知识">基础知识</h1>
 <h2 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h2>
 <h3 id="基础命令">基础命令</h3>
-<ul>
-<li><strong>date</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>date</em>命令可以用来显示日期和时间，现在你在终端直接敲击<em>date</em>,是不是有时间出来了？<s>很神奇是不是？</s></p>
-</blockquote>
-</li>
-<li><strong>who</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>who</em>命令可以用来获取当前你电脑登陆的所有用户信息，自己输入试一试，以后我就不提醒了</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>你可能会疑惑，明明只有你一个人用，为何有多个用户名登陆呢？哼哼～🤓 不告诉你，现在，输入<em>who am i</em>，你就可以知道你的用户名是谁了</p>
-</blockquote>
-</li>
-<li><strong>echo</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>echo</em>是回显字符，类似于<code>printf()</code> or <code>cout&lt;&lt;</code> or <code>println()</code> or <code>print()</code> 聪明的你已经猜到上面是哪几种编程语言的输出语句了吧。哦，还有<del>世界上最好的语言</del> <em>php</em> 的<code>echo</code></p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>php的和这个一样诶😲 所以你尝试输入 <em><code>echo this is a test</code></em> ,回车试一下？</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="文件命令单一目录下">文件命令（单一目录下）</h3>
-<h4 id="注意以下命令中的文件名是示例文件你可以在自己桌面创建测试文件从而使用下面的命令">注意，以下命令中的文件名是示例文件，你可以在自己桌面创建测试文件从而使用下面的命令</h4>
-<h4 id="但我强烈建议你在学完多级目录操作命令后使用本节的命令">但我强烈建议你在学完多级目录操作命令后使用本节的命令</h4>
-<ul>
-<li><strong>ls</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>ls</em>可以查看你当前所在目录下的所有子目录（文件）</p>
-</blockquote>
-</li>
-<li>在终端中，该命令会分多列输出，你可以通过 <em>ls -l</em>来强制单列输出</li>
-<li><strong>cat</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>cat</em>在这里可不是🐱，它是<em>concatenate</em>的简写，是检查文件的</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>比如你有一个C++文件，这个时候你<code>cat myfile.cpp</code>就可以直接显示文件里面的内容了</p>
-</blockquote>
-</li>
-<li><strong>wc</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>wc</em>可以获取文件中的行数、单词数和字符数</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p><code>wc filename.txt</code>即可</p>
-</blockquote>
-</li>
-<li><strong>命令选项</strong>:</li>
-<li>
-<blockquote>
-<p>就像前面的<code>ls -l</code>一样，它的 <strong>-l</strong>就是命令选项，减号加字母就是你要进行的操作</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>例如对于<em>wc</em>命令，有这样的选项：</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>键入：<code>wc -l filename.txt</code>,<code>wc -c f.txt</code>,<code>wc -w f.txt</code>分别表示输出行数、字符数和单词数</p>
-</blockquote>
-</li>
-<li><strong>cp</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>cp</em>是用来复制文件的，键入：<code>cp old_file.txt new_file.txt</code>就可得到名字为new_file的复制文件了</p>
-</blockquote>
-</li>
-<li><strong>mv</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>mv</em>是用来重新给文件命名的，键入<code>mv old_file.txt new_file.txt</code>就会将<em>old_file.txt</em>重命名了</p>
-</blockquote>
-</li>
-<li>注意，如果你以前就有一个文件叫做<em>new_file</em>，那么当你用<strong>cp</strong> 或者 <strong>没mv</strong>时重，该文件会被覆盖，而且UNIX不会给你提示</li>
-<li><strong>rm</strong>命令：</li>
-<li>
-<blockquote>
-<p><em>rm</em>想必大家都知道删库跑路这个说法，<em>rm</em>就是实现这个功能的最佳选择，但是为了不让各位因为操作失误跑来打死我，我这里不介绍全局删除命令。</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>键入<code>rm filename.txt</code> 则会将<em>filename</em>这个文件删除，<code>rm a.txt b.txt c.cpp</code>，则会将这三个文件一起删除，多个文件删除同理</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="多级目录操作">多级目录操作</h3>
-<h5 id="目录就像树一样从根目录到子目录想必大家都比较熟悉而目录的写法学过编程的应该都知道例如userscorndesktopcoderunnercpp">目录就像树一样，从根目录到子目录，想必大家都比较熟悉,而目录的写法，学过编程的应该都知道，例如<code>/users/corn/Desktop/Coderunner/Cpp</code></h5>
 
       </di>
     </article>
@@ -244,7 +138,15 @@
         </a>
       
       <div class="post-abstract">
-        
+        <h1 id="前言">前言</h1>
+<p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
+<ul>
+<li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
+<li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
+<li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
+<li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
+</ul>
+
       </di>
     </article>
   
