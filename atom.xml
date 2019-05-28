@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-05-28T05:21:17.781Z</updated>
+    <updated>2019-05-28T11:29:40.836Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -19,13 +19,13 @@
         <summary type="html"><![CDATA[<h1 id="抱歉">抱歉！</h1>
 <ul>
 <li>由于网站昨天傍晚才刚刚建立，内容还不多，没有满足某些人的要求。&lt;假装微笑&gt;</li>
-<li>为给大家带来更好的体验，网站将在今天下午关闭，丰富内容，直到6月1日上线。</li>
+<li>为给大家带来更好的体验，网站将在今天下午停止更新，丰富内容，直到6月1日一次性上线。</li>
 </ul>
 ]]></summary>
         <content type="html"><![CDATA[<h1 id="抱歉">抱歉！</h1>
 <ul>
 <li>由于网站昨天傍晚才刚刚建立，内容还不多，没有满足某些人的要求。&lt;假装微笑&gt;</li>
-<li>为给大家带来更好的体验，网站将在今天下午关闭，丰富内容，直到6月1日上线。</li>
+<li>为给大家带来更好的体验，网站将在今天下午停止更新，丰富内容，直到6月1日一次性上线。</li>
 </ul>
 <!--more-->
 <p>😁</p>
@@ -98,7 +98,7 @@
 </li>
 <li>
 <blockquote>
-<p>在终端中，该命令会分多列输出，你可以通过 <em>ls -l</em>来强制单列输出</p>
+<p>在终端中，该命令会分多列输出，你可以通过 <em>ls -1</em>来强制单列输出</p>
 </blockquote>
 </li>
 <li><strong>cat</strong>命令：</li>
@@ -126,7 +126,7 @@
 <li><strong>命令选项</strong>:</li>
 <li>
 <blockquote>
-<p>就像前面的<code>ls -l</code>一样，它的 <strong>-l</strong>就是命令选项，减号加字母就是你要进行的操作</p>
+<p>就像前面的<code>ls -1</code>一样，它的 <strong>-l</strong>就是命令选项，减号加字母就是你要进行的操作</p>
 </blockquote>
 </li>
 <li>
@@ -186,11 +186,66 @@
 </li>
 <li>
 <blockquote>
-<p>这里介绍一个小技巧，比如你有一个目录或者文件叫做<em>justin_bieber_songs</em>，是不是很长？这个时候当你输入某个操作命令后，你可以只输入<em>jus</em>然后按Tab键，它会自动补全。</p>
+<p><em>cd ../..</em> 表示返回上两级目录</p>
 </blockquote>
 </li>
+<li>
+<blockquote>
+<p>这里介绍一个小技巧，比如你有一个目录或者文件叫做<em>justin_bieber_songs</em>，是不是很长？这个时候当你输入某个操作命令后，你可以只输入<em>jus</em>然后按Tab键，它会自动补全。<s>常用自动补全命令，有助于提高幸福度</s></p>
+</blockquote>
+</li>
+<li><strong>ls</strong>命令扩展：</li>
+<li>
+<blockquote>
+<p>键入<em>ls 目录名</em>，就可以查看该目录下的子目录（文件），多级也可以</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>如：<code>ls Desktop/IDE/Coderunner/</code>，就可以查看<em>Coderunner</em>下的所以文件</p>
+</blockquote>
+</li>
+<li><em>ls -l</em>可以确定某个文件是否为目录，可以得到更详细的信息</li>
+<li>
+<blockquote>
+<blockquote>
+<p>对于上面的，会出现一些字母，其中的<em>d</em>表示目录，*-*表示文件，其他表示是特殊文件，接下来的9个字符定义了访问权限，前三个表示文件所有者，接下来的3个字符表示与所有者同组的其他用户，最后三个字符表示其他其他访问者。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>此外会显示链接数(后边的<em>ln</em>命令会解释)，文件所有者，文件所属组，文件大小(字符数)，文件最后修改时间</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>当然你可以键入如：<code>ls -l Desktop</code>，来获取指定文件夹的信息</p>
+</blockquote>
+</blockquote>
+</li>
+<li><strong>mkdir</strong>:</li>
+<li>
+<blockquote>
+<p><em>mkdir</em>是创建目录的命令，如你在Desktop目录下，输入<code>mkdir new_file</code>，那么就会有同名的目录出现</p>
+</blockquote>
+</li>
+<li><strong>rmdir</strong>:</li>
+<li>
+<blockquote>
+<p><em>rmdir</em>是删除目录的命令，请不要乱用谢谢。此外，你可以输入绝对目录来操作<code>rmdir Desktop/IDE/Coderunner</code>，但是如果目录里面还有其他文件，你是无法进行删除的。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>接下来的命令很危险，请不要轻易尝试:<code>rm -r filename</code>,则会强制删除filename这个目录，而<code>rm -rf</code>，额，别试，谢谢</p>
+</blockquote>
+</li>
+<li></li>
 </ul>
-<h2 id="未完待续">未完待续</h2>
 ]]></content>
     </entry>
     <entry>
