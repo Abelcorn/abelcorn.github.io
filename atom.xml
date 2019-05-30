@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-05-28T11:36:34.728Z</updated>
+    <updated>2019-05-30T09:15:08.861Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -11,24 +11,41 @@
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
     <entry>
-        <title type="html"><![CDATA[说明]]></title>
-        <id>https://abelcorn.cn/post/tips</id>
-        <link href="https://abelcorn.cn/post/tips">
+        <title type="html"><![CDATA[召集！]]></title>
+        <id>https://abelcorn.cn/post/post</id>
+        <link href="https://abelcorn.cn/post/post">
         </link>
-        <updated>2019-05-27T23:42:25.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="抱歉">抱歉！</h1>
+        <updated>2019-05-30T09:11:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="欢迎广大同学把自己收集的干货分享过来让这个博客成为知识分享的社区">欢迎广大同学把自己收集的干货分享过来，让这个博客成为知识分享的社区！</h2>
+<h3 id="此外大家可以学习markdown语法5分钟就能会推荐软件typora这样分享更加容易">此外，大家可以学习Markdown语法，5分钟就能会，推荐软件Typora，这样分享更加容易</h3>
+<h4 id="接受心理感悟计算机-数学-英语等相关知识">接受心理感悟，计算机、数学、英语等相关知识</h4>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[类UNIX内核的Shell编程（二）]]></title>
+        <id>https://abelcorn.cn/post/shell-2</id>
+        <link href="https://abelcorn.cn/post/shell-2">
+        </link>
+        <updated>2019-05-29T09:15:22.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="什么是shell">什么是Shell</h1>
+<p><em>接下来，你将学习到什么是UNIX的Shell以及它能做的事情</em></p>
+<p><strong>内核和实用工具</strong></p>
 <ul>
-<li>由于网站昨天傍晚才刚刚建立，内容还不多，没有满足某些人的要求。&lt;假装微笑&gt;</li>
-<li>为给大家带来更好的体验，网站将在今天下午停止更新，丰富内容，直到6月1日一次性上线。</li>
+<li>UNIX在逻辑上分为内核和实用工具，启动计算机后内核将会一直存在内存中直到关机。组成完整的实用工具位于硬盘中，在需要的时候才被加载进内存中。那么，这和shell有什么关系呢？</li>
+<li>因为<em>Shell</em>也是一个实用工具，它作为登陆过程中的一部分被载入到内存中执行。</li>
 </ul>
 ]]></summary>
-        <content type="html"><![CDATA[<h1 id="抱歉">抱歉！</h1>
+        <content type="html"><![CDATA[<h1 id="什么是shell">什么是Shell</h1>
+<p><em>接下来，你将学习到什么是UNIX的Shell以及它能做的事情</em></p>
+<p><strong>内核和实用工具</strong></p>
 <ul>
-<li>由于网站昨天傍晚才刚刚建立，内容还不多，没有满足某些人的要求。&lt;假装微笑&gt;</li>
-<li>为给大家带来更好的体验，网站将在今天下午停止更新，丰富内容，直到6月1日一次性上线。</li>
+<li>UNIX在逻辑上分为内核和实用工具，启动计算机后内核将会一直存在内存中直到关机。组成完整的实用工具位于硬盘中，在需要的时候才被加载进内存中。那么，这和shell有什么关系呢？</li>
+<li>因为<em>Shell</em>也是一个实用工具，它作为登陆过程中的一部分被载入到内存中执行。</li>
 </ul>
 <!--more-->
-<p>😁</p>
+<p><strong>登陆Shell</strong>
+<strong>Shell中的命令输入</strong>
+<strong>Shell的职责</strong></p>
 ]]></content>
     </entry>
     <entry>
@@ -38,7 +55,7 @@
         </link>
         <updated>2019-05-27T12:06:26.000Z</updated>
         <summary type="html"><![CDATA[<h1 id="基础知识">基础知识</h1>
-<h2 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h2>
+<h3 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h3>
 <h3 id="基础命令">基础命令</h3>
 <ul>
 <li><strong>date</strong>命令：</li>
@@ -51,7 +68,7 @@
 </ul>
 ]]></summary>
         <content type="html"><![CDATA[<h1 id="基础知识">基础知识</h1>
-<h2 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h2>
+<h3 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h3>
 <h3 id="基础命令">基础命令</h3>
 <ul>
 <li><strong>date</strong>命令：</li>
@@ -71,7 +88,7 @@
 </li>
 <li>
 <blockquote>
-<p>你可能会疑惑，明明只有你一个人用，为何有多个用户名登陆呢？哼哼～🤓 不告诉你，现在，输入<em>who am i</em>，你就可以知道你的用户名是谁了</p>
+<p>你可能会疑惑，明明只有你一个人用，为何有多个用户名登陆呢？哼哼～🤓 <s>不告诉你</s>(第二章会讲），现在，输入<em>who am i</em>，你就可以知道你的用户名是谁了</p>
 </blockquote>
 </li>
 <li><strong>echo</strong>命令：</li>
@@ -244,8 +261,210 @@
 <p>接下来的命令很危险，请不要轻易尝试:<code>rm -r filename</code>,则会强制删除filename这个目录，而<code>rm -rf</code>，额，别试，谢谢</p>
 </blockquote>
 </li>
-<li></li>
+<li><strong>目录间的文件复制与移动</strong></li>
+<li>
+<blockquote>
+<p><strong>复制</strong></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>比如你把Desktop目录下的wb文件复制到misc目录下，命名为wbx,那么你这样操作：<code>cp Desktop/wb misc/wbx</code>就OK，而且由于两个文件不在同一个目录，故你可以将<em>wbx</em>直接写成<em>wb</em>也可以</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>当然，实现不同目录下复制成同名文件，也就是紧接着上面的操作，你可以用<code>cp Desktop/wb misc</code>也可以，这样的话misc目录就有同名的文件了</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>复制多个文件，操作方法一样，<code>cp file1 file2 file3 .... /misc</code>即可</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>但是如果你现在在某一个目录下，但是你要将其他目录中的文件复制过来，而不想通过cd返回，怎么办呢？假设你现在<em>users/corn/Desktop/misc</em>目录下，则<code>cp ../Documents/wb</code>，则可以将wb文件从Documents目录下直接复制过来。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><strong>移动</strong></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><code>mv memos/plan proposals</code>，即将plan文件从memos目录中移动到proposals中,多个文件的移动方式类似，可以自己尝试</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><code>mv programs bin</code>，这个表示目录重命名，将programs目录更名为bin</p>
+</blockquote>
+</li>
+<li><strong>ln</strong>:</li>
+<li>
+<blockquote>
+<p><em>ln</em>是文件链接的命令，可以给相同的一组数据赋予多个文件名字</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>在前面的cp命令中，<code>cp wb wbx</code>表明将wb复制一份成为wbx，但是会占用两倍的磁盘空间。而且如果你修改了wb，那么你很有可能会忘记去对wbx作出同样修改。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>为解决以上问题，可以<code>ln wb wbx</code>，则表明通过链接，给同一个文件取了两个不同的名字，当你对某一个文件进行修改等操作时，另一个名字的也会改变。当然，如果你<code>rm wbx</code>，wb不会被删除。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>这个命令很有用，只是对初学者好像没什么作用。详细的操作请自行搜索。</p>
+</blockquote>
+</li>
 </ul>
+<h3 id="文件名替换">文件名替换</h3>
+<h5 id="文件名替换是优雅的操作方式必会哦">文件名替换是优雅的操作方式，必会哦</h5>
+<ul>
+<li><strong>基本替换</strong>:</li>
+<li>
+<blockquote>
+<p>假如你要同时显示当前目录下所以的文件内容，你可能需要<code>cat f1 f2 f3 ...</code>，但是很麻烦，但是你这样呢：<code>cat *</code>，对，单个*号就可以匹配所有文件名字，即替换。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><code>echo *</code> , <code>echo * : *</code>，自己试一试这两个命令。</p>
+</blockquote>
+</li>
+<li><strong>进阶替换</strong>:</li>
+<li>
+<blockquote>
+<p>你只想要显示chap开头的文件：<code>cat chap*</code></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>只想显示t1结尾的文件：<code>cat *t1</code></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>只想显示文件名中含有t的文件：<code>cat *t*</code></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>在上面我们知道*可以匹配符合要求的多个字符，也就是<code>x*</code>不仅得到x,也会得到x1,x2,xasjn等符合要求的文件。这里介绍单个字符匹配命令：“?”</p>
+</blockquote>
+<ul>
+<li>
+<blockquote>
+<p>当你输入<code>cat ?</code>，则会显示当前目录下的所有单个字符命名的文件，而<code>cat x</code>则会匹配两个字符命名，且以x开头的文件。<code>cat ??</code>，<code>cat ??*</code>都是什么意思呢？请自行尝试</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>除了上面的，其实还有感叹号、破折号等匹配方法，但是这里不进行扩展，在第三部分的正则表达式中会详细解释。正则表达式很重要哦，学爬虫就会用到。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="非规范文件名操作">非规范文件名操作</h3>
+<ul>
+<li><strong>文件名中的空格</strong></li>
+<li>
+<blockquote>
+<p>假如你有一个文件的名字叫做<em>cxk is a superstar</em>,那么当你输入<code>cat cxk is a superstar</code>时，你会得到🤔？当然是错误信息，它会去寻找<em>cxk</em>、<em>is</em>、<em>a</em>和<em>superstar</em>这四个文件，但是，你应该没有吧。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>为了解决上述问题，你有两种方法：</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><code>cat &quot;cxk is a superstar&quot;</code>,加上引号就行</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><code>cat cxk\ is\ a\ superstar</code>,对，就是类似于'\n'的转义符</p>
+</blockquote>
+</li>
+<li><strong>文件名中的其他符号</strong></li>
+<li>
+<blockquote>
+<p>一般来说，转义符或者引号可以解决绝大多数不规范命名</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>但是总有些人，<s>它</s>他不按套路出牌，他的文件命名同时有问号、转义符，甚至还有引号。这个时候呢，建议打死。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="标准输入输出的重定向">标准输入/输出的重定向</h3>
+<ul>
+<li><strong>标准输入和输出</strong></li>
+<li>
+<blockquote>
+<p>标准输入默认是键盘，标准输出通常是终端或终端程序。比如你输入who命令，会输出电脑上登陆的人员信息。而在UNIX中，你甚至可以利用文件或者上一条命令的输出作为输入，这就是命令行的威力。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>已知sort命令调用时没有指定参数，那么它就会从标准输入中获取命令。现在试一试：输入<code>sort</code>，然后回车，你会发现命令行并没有显示下一行的输入拦，它在等你进一步输入。这个时候你随便输入<em>abc</em>,<em>sns</em>,<em>kyyu</em>，然后<em>control+d</em>，你会发现输出了排序情况。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>同理，你试试wc命令，作用和上面类似，需要你进一步操作。</p>
+</blockquote>
+</li>
+<li><strong>输出重定向</strong></li>
+<li>
+<blockquote>
+<p>为确保便于寻找生成的文件，现在你请进入Desktop目录下，然后键入<code>who &gt; users</code>，你会发现在桌面出现了users这个文件，打开后发现它里面的内容和直接输入who命令后输出的内容一样。对，这就是重定向，它将输出重新定位到了一个叫做users的文件中，而不是你的屏幕。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>你也可以直接自由写入文件进去，<code>echo this is a test &gt; users</code>，这个时候，前面的文件内容被覆盖，而写入了<em>this is a test</em>.</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>什么，你不希望它覆盖原始内容？这样就可以进行追加操作而不会覆盖了<code>echo this is a test &gt;&gt; users</code></p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>将文件f1的内容追加到f2中：<code>cat f1 &gt;&gt; f2</code></p>
+</blockquote>
+</li>
+<li><strong>输入重定向</strong></li>
+<li>
+<blockquote>
+<p>通过<code>who &gt; users</code>，已经在users文件中存储了who本该显示在屏幕的内容，那么，这个时候输入<code>cat &lt; users</code>，你就会得里面的内容。然而，好像与<code>cat users</code>效果一样？对，但是他们有本质的差别。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>I/O重定向是很有用的，希望大家可以真正理解它们的含义。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>以下为待更内容，待续..........</li>
+</ul>
+<h3 id="管道">管道</h3>
+<h3 id="标准错误">标准错误</h3>
+<h3 id="命令行">命令行</h3>
+<h3 id="基础命令总结">基础命令总结</h3>
 ]]></content>
     </entry>
     <entry>
@@ -274,7 +493,7 @@
 <!--more-->
 <h2 id="提示">提示</h2>
 <ul>
-<li>如果各位用的是苹果电脑，直接打开<em>Terminal</em>就可以用了，但是如果你是<em>Windows</em>的话，你需要<em>Win+R</em>,然后输入<em>Powershell</em>，进入一个新窗口后就可以用了</li>
+<li>如果各位用的是苹果电脑，直接打开<em>Terminal</em>就可以用了，但是如果你是<em>Windows</em>的话，你需要<em>Win+R</em>,然后输入<em>Powershell</em>，进入一个新窗口后就可以用了，但是很多命令它都不支持，所以建议装一个Linux。</li>
 <li>本标签的文章的组织模式是这样的：</li>
 <li>
 <blockquote>
@@ -420,18 +639,10 @@
 </blockquote>
 </blockquote>
 </li>
+<li><em>以后会涉及到目录的操作，所以请自行分辨Mac和Win的目录分割符</em>,分别为user/Desktop/ 或者user\Desktop\</li>
 </ul>
-<ul>
-<li></li>
-</ul>
-<blockquote>
-<blockquote>
-<blockquote>
 <blockquote>
 <p>那么，下一篇就会开始进入第一节的内容了～</p>
-</blockquote>
-</blockquote>
-</blockquote>
 </blockquote>
 <ul>
 <li>对了，以后出现的命令不要乱用，电脑文件没了是小事，但是乱用这些代码，🉑️能搞坏你的硬件</li>

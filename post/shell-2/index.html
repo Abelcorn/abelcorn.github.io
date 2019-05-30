@@ -3,17 +3,23 @@
   <head>
     <meta charset="utf-8" >
 
-<title>心情随笔 | 小石石石</title>
+<title>类UNIX内核的Shell编程（二） | 小石石石</title>
 <meta name="description" content="Always do your best.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1559042977783">
+<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1559207692528">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -23,6 +29,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://abelcorn.cn">小石石石</a></h3>
@@ -79,48 +86,61 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="current-tag">标签: 心情随笔</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://abelcorn.cn/post/tips">说明</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-28
-      
-        <a href="https://abelcorn.cn/tag/KYs2J-qrY" class="badge warning">
-          心情随笔
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <h1 id="抱歉">抱歉！</h1>
+          <article class="article">
+            <h1>类UNIX内核的Shell编程（二）</h1>
+            <p class="article-meta">
+              2019-05-29
+              
+                <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge ">
+                  Shell
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="什么是shell">什么是Shell</h1>
+<p><em>接下来，你将学习到什么是UNIX的Shell以及它能做的事情</em></p>
+<p><strong>内核和实用工具</strong></p>
 <ul>
-<li>由于网站昨天傍晚才刚刚建立，内容还不多，没有满足某些人的要求。&lt;假装微笑&gt;</li>
-<li>为给大家带来更好的体验，网站将在今天下午停止更新，丰富内容，直到6月1日一次性上线。</li>
+<li>UNIX在逻辑上分为内核和实用工具，启动计算机后内核将会一直存在内存中直到关机。组成完整的实用工具位于硬盘中，在需要的时候才被加载进内存中。那么，这和shell有什么关系呢？</li>
+<li>因为<em>Shell</em>也是一个实用工具，它作为登陆过程中的一部分被载入到内存中执行。</li>
 </ul>
+<!--more-->
+<p><strong>登陆Shell</strong>
+<strong>Shell中的命令输入</strong>
+<strong>Shell的职责</strong></p>
 
-    </p>
-    <div class="row">
-      <a href="https://abelcorn.cn/post/tips" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://abelcorn.cn/post/shell-1">
+                <h3 class="post-title">
+                  类UNIX内核的Shell编程（一）
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://abelcorn.cn/images/avatar.png?v=1559042977783" class="no-responsive avatar">
+    <img src="https://abelcorn.cn/images/avatar.png?v=1559207692528" class="no-responsive avatar">
     <div class="text-muted">Always do your best.</div>
     <div class="social-container">
       
@@ -153,7 +173,13 @@
         
           
             <li>
-              <a href="https://abelcorn.cn/post/tips">说明</a>
+              <a href="https://abelcorn.cn/post/post">召集！</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://abelcorn.cn/post/shell-2">类UNIX内核的Shell编程（二）</a>
             </li>
           
         
@@ -184,11 +210,7 @@
     </div>
     <div class="row">
       
-        <a href="https://abelcorn.cn/tag/KYs2J-qrY" class="badge success">
-          心情随笔
-        </a>
-      
-        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge warning">
+        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge ">
           Shell
         </a>
       
@@ -203,6 +225,7 @@
   </div>
 </div>
 
+
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -214,6 +237,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '36f0665e9b58519e6cf9',
+        clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+        repo: 'Abelcorn.github.io',
+        owner: 'Abelcorn',
+        admin: ['Abelcorn'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
