@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-05-30T09:15:08.861Z</updated>
+    <updated>2019-05-31T23:34:24.831Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -11,14 +11,12 @@
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
     <entry>
-        <title type="html"><![CDATA[召集！]]></title>
+        <title type="html"><![CDATA[祝大家六一儿童节快乐！]]></title>
         <id>https://abelcorn.cn/post/post</id>
         <link href="https://abelcorn.cn/post/post">
         </link>
         <updated>2019-05-30T09:11:13.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="欢迎广大同学把自己收集的干货分享过来让这个博客成为知识分享的社区">欢迎广大同学把自己收集的干货分享过来，让这个博客成为知识分享的社区！</h2>
-<h3 id="此外大家可以学习markdown语法5分钟就能会推荐软件typora这样分享更加容易">此外，大家可以学习Markdown语法，5分钟就能会，推荐软件Typora，这样分享更加容易</h3>
-<h4 id="接受心理感悟计算机-数学-英语等相关知识">接受心理感悟，计算机、数学、英语等相关知识</h4>
+        <content type="html"><![CDATA[<p>👏</p>
 ]]></content>
     </entry>
     <entry>
@@ -459,12 +457,138 @@
 </blockquote>
 </blockquote>
 </li>
-<li>以下为待更内容，待续..........</li>
 </ul>
 <h3 id="管道">管道</h3>
+<ul>
+<li>当你需要实现<code>who &gt; users</code> ；<code>wc -l &lt; users</code>这样的效果，你需要操作两次，如何节约操作数呢？</li>
+<li>UNIX可以将两个命令“连接”到一起，<s>没有中间商赚差价</s>，这种东西就是管道</li>
+<li>
+<blockquote>
+<p>管道通过操作符“|”来链接，就是C语言或的单个符号</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>要实现上面的相同效果的操作，利用管道只需要：<code>who | wc -l</code>就行了，同理的<code>ls | wc -l</code>你也知道是什么效果了。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>此外，我们简单介绍一下过滤器的概念：过滤器就是可以从标准输入中读取输入，然后对数据进行处理，最后将数据写入到标准输出中，例如在<code>ls | wc -l</code>中，<em>wc</em>命令就起到了过滤器的作用，而<em>ls</em>不是，因为它并没有从从标准输入中读取输入。类似的，像<em>sort</em>、<em>cat</em>这些也是过滤器，而<em>who</em>等就不是过滤器，请自行理会。</p>
+</blockquote>
+</li>
+</ul>
 <h3 id="标准错误">标准错误</h3>
+<ul>
+<li>标准错误是和标准I/O同级的三类标准。比如你当前目录中并没有<em>hah</em>这个文件，那么当你输入<code>ls hah</code>的时候，系统会给你报错，它会告诉你没有这样的一个文件。这就是标准错误。</li>
+<li>
+<blockquote>
+<p>你会想，我能不能将标准错误的输出信息重定向呢？<code>ls hah &gt; error</code>，然后你会发现，没任何效果，该报错仍然报错。但是有时候为了保护我们的错误信息（很多黑客就是根据错误信息来进行攻击的）</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>这个时候，键入：<code>ls hah 2&gt; error</code>，你就成功实现了上一步你想实现的功能，注意，2和&gt;之间没有空格。然后<code>cat error</code>，你就可以获取重定向后的内容了。</p>
+</blockquote>
+</li>
+</ul>
 <h3 id="命令行">命令行</h3>
+<ul>
+<li>命令行为什么一次只能输入一个命令？并不是，你可以用分号进行隔开，比如<code>date ; ls</code>，就会在执行完时间命令后接着执行目录命令</li>
+<li>我们现在的命令都是回车之后直接执行了，但是我们必须明白的一件事是，以后会涉及的部分命令，会运行很久，但是命令行运行的时候，你是不能执行其他操作的but等待。怎么办呢？</li>
+<li>
+<blockquote>
+<p>在命令后加上 <em>&amp;</em> 符号，就可以让命令行在后台进行操作，你可以接着做下一步了。如：<code>sort bigdata &gt; out &amp;</code>,那么你会得到类似于* [1] 12321* 这样的输出，它们分别代表作业号和PID进程ID。作业号可以供某些Shell命令作为一种引用特定后台作业的快捷方式，PID唯一的标志了后台进程，可用于获取起状态信息。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p><em>ps命令</em>，它可以打印出运行进程的信息，<em>ps -f</em>会得到更详细的信息</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>由于很多涉及交互式的内容，所以命令行内容不详细讲述</p>
+</blockquote>
+</li>
+</ul>
 <h3 id="基础命令总结">基础命令总结</h3>
+<ul>
+<li>本章学了很多命令，下面以file代表单个文件，files代表一个或多个文件，dir代表单个目录，dirs代表一个或多个目录，请自行对照前面的内容来回忆下面命令的含义：</li>
+<li>
+<blockquote>
+<p>cat files</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>cd dir</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>cp file1 file2</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>cp files dir</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>date</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>echo args</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>ln file1 file2</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>ln files dir</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>ls files</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>ls dirs</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>mkdir dirs</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>mv file1 file2</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>mv files dir</p>
+</blockquote>
+</li>
+<li>ps</li>
+<li>pwd</li>
+<li>rm files</li>
+<li>rmdir dirs</li>
+<li>sort files</li>
+<li>wc files</li>
+<li>who</li>
+</ul>
+<h3 id="本章内容结束请大家熟记相关内容谢谢">本章内容结束，请大家熟记相关内容，谢谢。</h3>
 ]]></content>
     </entry>
     <entry>
