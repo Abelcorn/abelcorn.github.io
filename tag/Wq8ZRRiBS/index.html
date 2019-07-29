@@ -1,100 +1,165 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>Shell | 小石石石</title>
-<meta name="description" content="Always do your best.">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1559957671993">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    Shell | 小石石石
+</title>
+<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1564383565374">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css">
-
-
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://abelcorn.cn/media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
 
-
-  </head>
-  <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://abelcorn.cn">小石石石</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
-        
-      </ul>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://abelcorn.cn">
+                <img class="avatar" src="https://abelcorn.cn/images/avatar.png?v=1564383565374" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    小石石石
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-  </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: Shell</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://abelcorn.cn/post/shell-2">类UNIX内核的Shell编程（二）</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-29
-      
-        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge secondary">
-          Shell
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+    <div class="i-card">
+        <b>标签：#
+        Shell</b>
+    </div>
+    
+        
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://abelcorn.cn/post/shell-3">
+                        正则表达式(Shell编程)
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-07-29</time>
+                    
+                        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="post-tag i-tag
+                            i-tag-warning">
+            #Shell
         </a>
-      
-    </p>
-    <p class="text-lead">
-      <h1 id="什么是shell">什么是Shell</h1>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://abelcorn.cn/post/shell-3" class="post-feature-image" style="background-image:url(https://abelcorn.cn/post-images/shell-3.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            本章主要介绍正则表达式，正则表达式是学习更加高效的脚本的基础
+正则表达式
+
+任意匹配字符.：
+点号可以匹配任意单个字符，无论这些字符具体是什么，如r.表示匹配r以及任意单个字符，.x.表示匹配由任意连个字符包围的x
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://abelcorn.cn/post/shell-3">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://abelcorn.cn/post/shell-2">
+                        类UNIX内核的Shell编程（二）
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-05-29</time>
+                    
+                        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="post-tag i-tag
+                            i-tag-info">
+            #Shell
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h1 id="什么是shell">什么是Shell</h1>
 <p><em>接下来，你将学习到什么是UNIX的Shell以及它能做的事情</em></p>
 <p><strong>内核和实用工具</strong></p>
 <ul>
@@ -102,30 +167,37 @@
 <li>因为<em>Shell</em>也是一个实用工具，它作为登陆过程中的一部分被载入到内存中执行。</li>
 </ul>
 
-    </p>
-    <div class="row">
-      <a href="https://abelcorn.cn/post/shell-2" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://abelcorn.cn/post/shell-1">类UNIX内核的Shell编程（一）</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-27
-      
-        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge secondary">
-          Shell
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://abelcorn.cn/post/shell-2">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://abelcorn.cn/post/shell-1">
+                        类UNIX内核的Shell编程（一）
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-05-27</time>
+                    
+                        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="post-tag i-tag
+                            i-tag-banana">
+            #Shell
         </a>
-      
-    </p>
-    <p class="text-lead">
-      <h1 id="基础知识">基础知识</h1>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://abelcorn.cn/post/shell-1" class="post-feature-image" style="background-image:url(https://abelcorn.cn/post-images/shell-1.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h1 id="基础知识">基础知识</h1>
 <h3 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h3>
 <h3 id="基础命令">基础命令</h3>
 <ul>
@@ -138,30 +210,37 @@
 <li><strong>who</strong>命令：</li>
 </ul>
 
-    </p>
-    <div class="row">
-      <a href="https://abelcorn.cn/post/shell-1" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://abelcorn.cn/post/shell-0">类UNIX内核的Shell编程（前言）</a>
-    </h2>
-    <p class="article-meta">
-      2019-05-27
-      
-        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge ">
-          Shell
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://abelcorn.cn/post/shell-1">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://abelcorn.cn/post/shell-0">
+                        类UNIX内核的Shell编程（前言）
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2019-05-27</time>
+                    
+                        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="post-tag i-tag
+                            i-tag-other_4">
+            #Shell
         </a>
-      
-    </p>
-    <p class="text-lead">
-      <h1 id="前言">前言</h1>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://abelcorn.cn/post/shell-0" class="post-feature-image" style="background-image:url(https://abelcorn.cn/post-images/shell-0.jpg) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <h1 id="前言">前言</h1>
 <p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
 <ul>
 <li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
@@ -170,125 +249,71 @@
 <li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
 </ul>
 
-    </p>
-    <div class="row">
-      <a href="https://abelcorn.cn/post/shell-0" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://abelcorn.cn/post/shell-0">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://abelcorn.cn/images/avatar.png?v=1564383565374)">
+        </div>
+        <h1 class="id_card-title">
+            小石石石
+        </h1>
+        <h2 class="id_card-description">
+            Always do your best.
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
         </div>
-        <div class="row flex-edges">
-  
-  
+    </div>
+    
+
+                        <!-- 公告栏 -->
+                        
+
+                </div>
+            </div>
+
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/Abelcorn">Corn</a> | 
+  <a class="rss" href="https://abelcorn.cn/atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://abelcorn.cn/images/avatar.png?v=1559957671993" class="no-responsive avatar">
-    <div class="text-muted">Always do your best.</div>
-    <div class="social-container">
-      
-        
-          <a href="https://github.com/Abelcorn" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-      
-        
-          <a href="https://weibo.com/p/1005053579734445/home?from=page_100505&amp;mod=TAB&amp;is_all=1#place" target="_blank">
-            <i class="fab fa-weibo"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://abelcorn.cn/post/post">类UNIX内核的Shell编程（三）</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://abelcorn.cn/post/shell-2">类UNIX内核的Shell编程（二）</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://abelcorn.cn/post/shell-1">类UNIX内核的Shell编程（一）</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://abelcorn.cn/post/shell-0">类UNIX内核的Shell编程（前言）</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://abelcorn.cn/post/hello-visitor">Hello Visitor</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="badge secondary">
-          Shell
-        </a>
-      
-        <a href="https://abelcorn.cn/tag/gridea" class="badge warning">
-          Gridea
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/Abelcorn">Corn</a> | <a class="rss" href="https://abelcorn.cn/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+</body>
 
-
-
-  </body>
 </html>
