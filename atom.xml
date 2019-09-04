@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-08-09T11:11:39.507Z</updated>
+    <updated>2019-09-04T05:00:43.599Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,48 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[本学期安排]]></title>
+        <id>https://abelcorn.cn/post/plan_zero</id>
+        <link href="https://abelcorn.cn/post/plan_zero">
+        </link>
+        <updated>2019-09-04T04:50:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>本学期将学习内容将严格按照以下事项进行安排，日后的日程等安排也必须以下列课程优先。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本学期将学习内容将严格按照以下事项进行安排，日后的日程等安排也必须以下列课程优先。</p>
+<!--more-->
+<h3 id="培养计划内必学课程">培养计划内必学课程</h3>
+<ul>
+<li>离散数学2</li>
+<li>计算理论</li>
+<li>剑桥学术英语</li>
+<li>数据结构</li>
+<li>概率论与数理统计</li>
+<li>人体奥秘之旅</li>
+<li>马克思主义基本概论</li>
+<li>工程经济学</li>
+<li>轮滑</li>
+</ul>
+<h3 id="mooc自学选修课程">Mooc自学选修课程</h3>
+<ul>
+<li>软件工程</li>
+<li>数据结构与算法</li>
+<li>概率论与数理统计</li>
+<li>MatLab</li>
+<li>天文学-宇宙新概念</li>
+</ul>
+<h3 id="复习内容">复习内容</h3>
+<ul>
+<li>线性代数</li>
+<li>微积分</li>
+</ul>
+<h3 id="额外安排">额外安排</h3>
+<ul>
+<li>练字</li>
+<li>英语听力与词汇</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Giving Life Meaning]]></title>
         <id>https://abelcorn.cn/post/text-1</id>
@@ -1191,87 +1233,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <ul>
 <li>对了，以后出现的命令不要乱用，电脑文件没了是小事，但是乱用这些代码，🉑️能搞坏你的硬件</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Visitor]]></title>
-        <id>https://abelcorn.cn/post/hello-visitor</id>
-        <link href="https://abelcorn.cn/post/hello-visitor">
-        </link>
-        <updated>2019-05-26T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎访问 <strong>Corn's Homepage</strong> ！<br>
-✍️  <strong>What's this?</strong> 一个静态博客,记录个人的生活、心情、知识、笔记、创意、❤️... ...</p>
-<h2 id="访问技巧">访问技巧：</h2>
-<ul>
-<li>文章按照时间线排序，越新的文章越靠前</li>
-<li>可以通过标签来查看分类文章，从而获得更好体验</li>
-<li>目前考虑写的内容已经在标签里面啦，我会慢慢更新的</li>
-<li>有兴趣我也愿意分享如何搭建个人博客～在我真正学会之后</li>
-<li>祝大家学习进步</li>
-<li>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Corn 留</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎访问 <strong>Corn's Homepage</strong> ！<br>
-✍️  <strong>What's this?</strong> 一个静态博客,记录个人的生活、心情、知识、笔记、创意、❤️... ...</p>
-<h2 id="访问技巧">访问技巧：</h2>
-<ul>
-<li>文章按照时间线排序，越新的文章越靠前</li>
-<li>可以通过标签来查看分类文章，从而获得更好体验</li>
-<li>目前考虑写的内容已经在标签里面啦，我会慢慢更新的</li>
-<li>有兴趣我也愿意分享如何搭建个人博客～在我真正学会之后</li>
-<li>祝大家学习进步</li>
-<li>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Corn 留</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<!-- more -->
-<h3 id="请允许我btw一下">请允许我BTW一下</h3>
-<ul>
-<li>我还在学Markdown语法，并且只会很浅显的静态网站搭建方法</li>
-<li>本网页内容皆尽用的Md语法，所以请原谅直男的代码式排版风格吧</li>
-<li>我会努力提升自己，并逐渐美化网页的，希望各位大佬多多指教</li>
-<li>分享的内容都是我自己记录的东西</li>
-<li>因为目前能力有限，如果想评论的话，可以发邮件，或者在本网页中登陆github账号给我回复哦</li>
-<li>
-<blockquote>
-<p>再次感谢各位的光临，小生不胜荣幸！</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<p>还有</p>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<p>Me gustas.</p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p>个人邮箱： abelcode@outlook.com</p>
-<p>Enjoy~</p>
 ]]></content>
     </entry>
 </feed>
