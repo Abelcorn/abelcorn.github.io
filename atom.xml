@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-09-05T08:18:29.523Z</updated>
+    <updated>2019-09-08T10:28:15.193Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -52,6 +52,112 @@
 <li>英语听力与词汇</li>
 <li>STL</li>
 <li>QT进阶开发</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LaTex表示方法]]></title>
+        <id>https://abelcorn.cn/post/latex</id>
+        <link href="https://abelcorn.cn/post/latex">
+        </link>
+        <updated>2019-09-02T10:20:28.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="注意">注意</h3>
+<ul>
+<li>由于语法较多，这里将官方图搬移至此，感兴趣请配合前面MarkDown语法入门教程使用。</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="注意">注意</h3>
+<ul>
+<li>由于语法较多，这里将官方图搬移至此，感兴趣请配合前面MarkDown语法入门教程使用。</li>
+</ul>
+<!--more-->
+<h3 id="基本语法">基本语法</h3>
+<p><img src="https://abelcorn.cn/post-images/1567938210213.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938221943.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938230247.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938235219.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938313920.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938319571.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938324053.gif" alt=""></p>
+<h3 id="常用数学符合">常用数学符合</h3>
+<p><img src="https://abelcorn.cn/post-images/1567938431251.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938438640.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938443215.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938447006.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938450994.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938458954.gif" alt=""><br>
+<img src="https://abelcorn.cn/post-images/1567938465008.gif" alt=""></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown语法学习]]></title>
+        <id>https://abelcorn.cn/post/markdown-1</id>
+        <link href="https://abelcorn.cn/post/markdown-1">
+        </link>
+        <updated>2019-09-01T04:01:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>markdown语法作为一种高效的标记写作语法，已经在各种网站博客中体现出来，正如我的这些博客，也都是使用markdown语法写成。这种语法通过在你的文字前后添加规定的符号，使得文字显示出你所想要的形式，就如Word中的文字处理一般，但是更为简洁和高效。为了使大家都能轻松使用，现将其基本使用方式写下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>markdown语法作为一种高效的标记写作语法，已经在各种网站博客中体现出来，正如我的这些博客，也都是使用markdown语法写成。这种语法通过在你的文字前后添加规定的符号，使得文字显示出你所想要的形式，就如Word中的文字处理一般，但是更为简洁和高效。为了使大家都能轻松使用，现将其基本使用方式写下。</p>
+<!-- more-->
+<h2 id="分级标题">分级标题 :</h2>
+<ul>
+<li><code>#一级标题</code></li>
+<li><code>##二级标题</code></li>
+<li>依次类推，总共支持六级标题</li>
+</ul>
+<h2 id="斜体-粗体">斜体、粗体：</h2>
+<ul>
+<li><code>*斜体*，或者 _斜体_</code>,如<em>这是斜体</em></li>
+<li><code>**粗体**</code>，如：<strong>这是粗体</strong></li>
+<li><code>***加粗斜体***</code> ,如：<em><strong>这是加粗斜体</strong></em></li>
+<li><code>~~ 删除线~~</code>,如：<s>这是删除线</s></li>
+</ul>
+<h2 id="超链接">超链接：</h2>
+<ul>
+<li>通过<code>[]()</code>的使用，可以达到仅显示文字，但文字下面包含超链接的功能</li>
+<li><code>[东北大学](http://neu.edu.cn)</code>:<a href="http://neu.edu.cn">东北大学</a></li>
+<li>接着你点击东北大学文字，就可以转到所隐藏的网页中了</li>
+<li>以上所诉皆为行内方式，下面介绍其他方式：</li>
+<li>参考式：如果某一个链接在文章中多处使用，那么建议使用参考式：</li>
+<li><code>[链接标题][链接标记]</code>，一般链接标记用顺序的数字来代替，接着在文本的任意位置再写：<code>[链接标记]:链接地址&quot;链接标题&quot;</code>.</li>
+<li>自动链接，即让网址既当标题也当超链接：<code>&lt;http://neu.edu.cn&gt;</code>: <a href="http://neu.edu.cn">http://neu.edu.cn</a></li>
+</ul>
+<h2 id="列表">列表：</h2>
+<ul>
+<li>使用<code>* + -</code>表示的是无序的列表，正如我目前写的所有标题下的文字都是无序标题</li>
+<li>有序标题和我们平时写一样，<code>1.xxx</code>在数字后写英文的句号，如：</li>
+</ul>
+<ol>
+<li>一号列表</li>
+<li>二号</li>
+<li>三号</li>
+</ol>
+<ul>
+<li>定义型列表：由名词和解释组成，一行写上定义，接着一行冒号加上Tab缩进和解释，如：<br>
+定义型列表<br>
+：由名词定义和解释组成的列表</li>
+<li>如果要在列表中放入引用，则用<code>&gt;</code>缩进。如：</li>
+<li>包含引用的列表</li>
+<li>
+<blockquote>
+<p>引用1</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>引用2</p>
+</blockquote>
+</li>
+<li>多层引用则根据你的<code>&gt;</code>的数量了，一般来说不超过3个</li>
+<li>插入代码，则用Tab键上面的类似与单引号的符号前后包围就行</li>
+<li>插入图像：<code>![图片](url &quot;图片题目&quot;)</code></li>
+<li>注脚：<code>[^注脚名]:注脚内容</code></li>
+</ul>
+<h2 id="其他">其他：</h2>
+<ul>
+<li>以上都是最基本的markdown语法，要想自己练习，推荐下载Typora编辑器，可以实时体验语法的魅力</li>
+<li>希望各位自行练习和查找相关基本语法知识，活学活用</li>
+<li>以后我将介绍<strong>表格</strong>、<strong>流程图</strong>和<strong>LaTex公式</strong>，这样的markdown才是真正优秀的语法。</li>
 </ul>
 ]]></content>
     </entry>
@@ -395,78 +501,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <p>引理13:如果a、b、c都是正整数，则由(a,b)=1,a|bc可得a|c，即：当a与b互素，但a可除尽bc时，a也可以除尽c</p>
 </blockquote>
 </li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Markdown语法学习]]></title>
-        <id>https://abelcorn.cn/post/markdown-1</id>
-        <link href="https://abelcorn.cn/post/markdown-1">
-        </link>
-        <updated>2019-07-30T04:01:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>markdown语法作为一种高效的标记写作语法，已经在各种网站博客中体现出来，正如我的这些博客，也都是使用markdown语法写成。这种语法通过在你的文字前后添加规定的符号，使得文字显示出你所想要的形式，就如Word中的文字处理一般，但是更为简洁和高效。为了使大家都能轻松使用，现将其基本使用方式写下。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>markdown语法作为一种高效的标记写作语法，已经在各种网站博客中体现出来，正如我的这些博客，也都是使用markdown语法写成。这种语法通过在你的文字前后添加规定的符号，使得文字显示出你所想要的形式，就如Word中的文字处理一般，但是更为简洁和高效。为了使大家都能轻松使用，现将其基本使用方式写下。</p>
-<!-- more-->
-<h2 id="分级标题">分级标题 :</h2>
-<ul>
-<li><code>#一级标题</code></li>
-<li><code>##二级标题</code></li>
-<li>依次类推，总共支持六级标题</li>
-</ul>
-<h2 id="斜体-粗体">斜体、粗体：</h2>
-<ul>
-<li><code>*斜体*，或者 _斜体_</code>,如<em>这是斜体</em></li>
-<li><code>**粗体**</code>，如：<strong>这是粗体</strong></li>
-<li><code>***加粗斜体***</code> ,如：<em><strong>这是加粗斜体</strong></em></li>
-<li><code>~~ 删除线~~</code>,如：<s>这是删除线</s></li>
-</ul>
-<h2 id="超链接">超链接：</h2>
-<ul>
-<li>通过<code>[]()</code>的使用，可以达到仅显示文字，但文字下面包含超链接的功能</li>
-<li><code>[东北大学](http://neu.edu.cn)</code>:<a href="http://neu.edu.cn">东北大学</a></li>
-<li>接着你点击东北大学文字，就可以转到所隐藏的网页中了</li>
-<li>以上所诉皆为行内方式，下面介绍其他方式：</li>
-<li>参考式：如果某一个链接在文章中多处使用，那么建议使用参考式：</li>
-<li><code>[链接标题][链接标记]</code>，一般链接标记用顺序的数字来代替，接着在文本的任意位置再写：<code>[链接标记]:链接地址&quot;链接标题&quot;</code>.</li>
-<li>自动链接，即让网址既当标题也当超链接：<code>&lt;http://neu.edu.cn&gt;</code>: <a href="http://neu.edu.cn">http://neu.edu.cn</a></li>
-</ul>
-<h2 id="列表">列表：</h2>
-<ul>
-<li>使用<code>* + -</code>表示的是无序的列表，正如我目前写的所有标题下的文字都是无序标题</li>
-<li>有序标题和我们平时写一样，<code>1.xxx</code>在数字后写英文的句号，如：</li>
-</ul>
-<ol>
-<li>一号列表</li>
-<li>二号</li>
-<li>三号</li>
-</ol>
-<ul>
-<li>定义型列表：由名词和解释组成，一行写上定义，接着一行冒号加上Tab缩进和解释，如：<br>
-定义型列表<br>
-：由名词定义和解释组成的列表</li>
-<li>如果要在列表中放入引用，则用<code>&gt;</code>缩进。如：</li>
-<li>包含引用的列表</li>
-<li>
-<blockquote>
-<p>引用1</p>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<p>引用2</p>
-</blockquote>
-</li>
-<li>多层引用则根据你的<code>&gt;</code>的数量了，一般来说不超过3个</li>
-<li>插入代码，则用Tab键上面的类似与单引号的符号前后包围就行</li>
-<li>插入图像：<code>![图片](url &quot;图片题目&quot;)</code></li>
-<li>注脚：<code>[^注脚名]:注脚内容</code></li>
-</ul>
-<h2 id="其他">其他：</h2>
-<ul>
-<li>以上都是最基本的markdown语法，要想自己练习，推荐下载Typora编辑器，可以实时体验语法的魅力</li>
-<li>希望各位自行练习和查找相关基本语法知识，活学活用</li>
-<li>以后我将介绍<strong>表格</strong>、<strong>流程图</strong>和<strong>LaTex公式</strong>，这样的markdown才是真正优秀的语法。</li>
 </ul>
 ]]></content>
     </entry>
@@ -1054,188 +1088,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <li>who</li>
 </ul>
 <h3 id="本章内容结束请大家熟记相关内容谢谢">本章内容结束，请大家熟记相关内容，谢谢。</h3>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[类UNIX内核的Shell编程（前言）]]></title>
-        <id>https://abelcorn.cn/post/shell-0</id>
-        <link href="https://abelcorn.cn/post/shell-0">
-        </link>
-        <updated>2019-05-27T09:24:23.000Z</updated>
-        <summary type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
-<ul>
-<li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
-<li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
-<li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
-<li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
-<ul>
-<li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
-<li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
-<li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
-<li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
-</ul>
-<!--more-->
-<h2 id="提示">提示</h2>
-<ul>
-<li>如果各位用的是苹果电脑，直接打开<em>Terminal</em>就可以用了，但是如果你是<em>Windows</em>的话，你需要<em>Win+R</em>,然后输入<em>Powershell</em>，进入一个新窗口后就可以用了，但是很多命令它都不支持，所以建议装一个Linux。</li>
-<li>本标签的文章的组织模式是这样的：</li>
-<li>
-<blockquote>
-<blockquote>
-<ol>
-<li>基础命令</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="2">
-<li>shell入门</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="3">
-<li><s>常备优卡丹</s>  常备工具</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="4">
-<li>脚本与变量</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="5">
-<li>引用</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="6">
-<li>参数传递</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="7">
-<li>条件语句</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="8">
-<li>循环</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="9">
-<li>数据的读取和打印</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="10">
-<li>环境  &lt;<u> 悄悄的说，这些名字也太抽象了</u>&gt;</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="11">
-<li>参数的高级传递</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="12">
-<li>扩展命令</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="13">
-<li>rolo进阶</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="14">
-<li>交互式与非标准shell的特性</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="15">
-<li>shell总结</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="16">
-<li>附录 <del>我觉得可能写不到这里，假装叹个气～～</del></li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li><em>以后会涉及到目录的操作，所以请自行分辨Mac和Win的目录分割符</em>,分别为user/Desktop/ 或者user\Desktop\</li>
-</ul>
-<blockquote>
-<p>那么，下一篇就会开始进入第一节的内容了～</p>
-</blockquote>
-<ul>
-<li>对了，以后出现的命令不要乱用，电脑文件没了是小事，但是乱用这些代码，🉑️能搞坏你的硬件</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
