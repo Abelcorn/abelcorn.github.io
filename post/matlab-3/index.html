@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    Hello Visitor | 小石石石
+    Matlab学习笔记（三） | 小石石石
 </title>
 <link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1569151756135">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -106,77 +106,121 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            Hello Visitor
+                            Matlab学习笔记（三）
                         </h2>
                         <div class="post-info">
-                            <time class="post-time">2019-05-27</time>
+                            <time class="post-time">2019-09-22</time>
                             
-                                <a href="https://abelcorn.cn/tag/gridea" class="post-tag i-tag
-                            i-tag-other_3">
-                            #Gridea
+                                <a href="https://abelcorn.cn/tag/DtLqsYkkD" class="post-tag i-tag
+                            i-tag-other_4">
+                            #Matlab
                         </a>
                                 
                         </div>
                         
-                            <div class="post-feature-image" style="background-image: url('https://abelcorn.cn/post-images/hello-visitor.jpg')"></div>
-                            
                                 <div class="post-content">
-                                    <p>👏  欢迎访问 <strong>abel's Homepage</strong> ！<br>
-✍️  <strong>What's this?</strong> 一个静态博客,记录个人的生活、心情、知识、笔记、创意、❤️... ...</p>
-<h2 id="访问技巧">访问技巧：</h2>
+                                    <p><em><strong>矩阵</strong></em></p>
+<!--more-->
+<h3 id="矩阵">矩阵</h3>
+<p><strong>矩阵定义</strong>：</p>
 <ul>
-<li>文章按照时间线排序，越新的文章越靠前</li>
-<li>可以通过标签来查看分类文章，从而获得更好体验</li>
-<li>目前考虑写的内容已经在标签里面啦，我会慢慢更新的</li>
-<li>有兴趣我也愿意分享如何搭建个人博客～在我真正学会之后</li>
-<li>祝大家学习进步</li>
+<li>如3x3的矩阵<code>A=[1 2 3;4 5 6; 7 8 9]</code></li>
+<li>3维矩阵：<code>[[1 2 3];[2 4 6];[7 8 9]]</code></li>
+<li>复数矩阵：<code>[[1 1+i 2];[2 3+2i 1]]</code></li>
+<li>矩阵生成：</li>
 <li>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>abel 留</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<ul>
+<li>利用M文件写入</li>
+<li>利用文本创建：</li>
+<li>建立<code>goods.txt</code>，里面写入相关矩阵信息，接着<code>load goods.txt</code></li>
+</ul>
+</li>
+<li>创建特殊矩阵：</li>
+<li>
+<ul>
+<li><code>eye(n)</code>：创建nxn的单位矩阵</li>
+<li><code>eye(m,n)</code>：创建mxn的单位矩阵</li>
+<li><code>eye(size(A))</code>：创建与A同维的单位矩阵</li>
+<li><code>ones(n)</code>：创建nxn的全1矩阵</li>
+<li><code>ones(m,n)</code>、 <code>ones(size(A))</code></li>
+<li><code>zeros(n)</code>、 <code>zeros(m,n)</code>、 <code>zeros(size(A))</code></li>
+<li><code>rand(n)</code>：在<code>[0,1]</code>区间内创建一个nxn的均匀随机矩阵</li>
+<li><code>rand(m,n)</code>、<code>rand(size(A))</code></li>
+<li><code>compan(P)</code>：创建系数向量是P的多项式伴随矩阵</li>
+<li><code>diag(v)</code>：创建一向量v中的元素为对角的对角矩阵</li>
+<li><code>hilb(n)</code>：创建nxn的Hilbert矩阵</li>
+<li><code>magic(n)</code>：生成n阶魔方矩阵</li>
+<li><code>sparse(A)</code>：将A转化为稀疏矩阵，即由A的非0元素和下标构成的稀疏矩阵S。若A本身为稀疏矩阵，则返回A本身(即仍然为稀疏矩阵A)</li>
+</ul>
 </li>
 </ul>
-<!-- more -->
-<h3 id="请允许我btw一下">请允许我BTW一下</h3>
+<p><strong>矩阵元素的运算</strong>：</p>
+<ol>
+<li>元素修改：
 <ul>
-<li>我还在学Markdown语法，并且只会很浅显的静态网站搭建方法</li>
-<li>本网页内容皆尽用的Md语法，所以请原谅直男的代码式排版风格吧</li>
-<li>我会努力提升自己，并逐渐美化网页的，希望各位大佬多多指教</li>
-<li>分享的内容都是我自己记录的东西</li>
-<li>因为目前能力有限，如果想评论的话，可以发邮件，或者在本网页中登陆github账号给我回复哦</li>
-<li>
-<blockquote>
-<p>再次感谢各位的光临，小生不胜荣幸！</p>
-</blockquote>
+<li><code>D=[A;B C]</code>：A为原矩阵，B、C中包含要扩充的元素，D为扩充后的矩阵</li>
+<li><code>A(m,:)=[]</code>：删除A的第m行</li>
+<li><code>A(:,n)=[]</code>：删除A的第n列</li>
+<li><code>A(m,n) =a</code>：对A的第m行n列元素赋值</li>
+<li><code>A(m,:)=[a,b,c....]</code>：对A的第m行赋值</li>
+<li><code>A(:,n)=[a,b,c,...]</code></li>
+</ul>
 </li>
-<li>
-<blockquote>
-<blockquote>
-<p>还有</p>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<p>Me gustas.</p>
-</blockquote>
-</blockquote>
+<li>维度修改:</li>
+</ol>
+<ul>
+<li>矩阵的变维可以用符号“：”和reshape函数变换
+<ul>
+<li><code>A=1:12</code> <code>B=reshape(A,2,6)</code></li>
+<li>用冒号法时，要注意需先设定修改后的矩阵形状</li>
+<li><code>C=zeros(3,4);</code> <code>C(:)=A(:)</code></li>
+</ul>
 </li>
 </ul>
-<p>个人邮箱： abelcode@outlook.com</p>
-<p>Enjoy~</p>
+<ol start="3">
+<li>矩阵的变向：
+<ul>
+<li><code>Rot(90)</code>：将A逆时针旋转90度</li>
+<li><code>Rot(90,k)</code>：将A旋转<code>k*90</code>度，其中k为正负整数</li>
+<li><code>Fliplr(X)</code>:将X左右翻转</li>
+<li><code>flipud(X)</code>：将X上下翻转</li>
+<li><code>flipdim(X,dim)</code>：dim=1时对行翻转，dim=2时对列翻转</li>
+</ul>
+</li>
+<li>矩阵的抽取:</li>
+</ol>
+<ul>
+<li>主要指对角线元素和上下三角矩阵的抽取
+<ul>
+<li><code>diag(X,k)</code>：抽取矩阵的第k条对角线上的元素向量。k=0表示主对角线，k为正整数时抽取上方第k条。。。。。。。</li>
+<li><code>diag(X)</code>：抽取主对角线</li>
+<li><code>diag(v,k)</code>：使得v为所得矩阵第k条对角线上的元素向量</li>
+<li><code>diag(v)</code>：使得v为所得矩阵主对角线上的元素向量</li>
+<li><code>tril(X)</code>：提取矩阵X的主下三角部分</li>
+<li><code>tril(X,k)</code>：提取第k条对角线下面的部分（包括第k条）</li>
+<li><code>triu(X)</code>：提取上三角</li>
+<li><code>triu(X,k)</code>：........上三角（包括第k条）</li>
+</ul>
+</li>
+</ul>
+<h3 id="矩阵的数学运算">矩阵的数学运算</h3>
+<ul>
+<li>待续</li>
+</ul>
 
                                 </div>
                     </article>
                     <!--  -->
                     
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://abelcorn.cn/post/matlab-2">
+                                <h3 class="post-title">
+                                    Matlab学习笔记（二）
+                                </h3>
+                            </a>
+                        </div>
+                        
                             <div id="disqus_thread"></div>
                             <div id="gitalk-container"></div>
                 </div>
@@ -193,9 +237,10 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E8%AE%BF%E9%97%AE%E6%8A%80%E5%B7%A7">访问技巧：</a>
+<li>
 <ul>
-<li><a href="#%E8%AF%B7%E5%85%81%E8%AE%B8%E6%88%91btw%E4%B8%80%E4%B8%8B">请允许我BTW一下</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5">矩阵</a></li>
+<li><a href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97">矩阵的数学运算</a></li>
 </ul>
 </li>
 </ul>
