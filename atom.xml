@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-10-06T13:25:11.375Z</updated>
+    <updated>2019-10-06T13:57:54.968Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -11,11 +11,11 @@
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
     <entry>
-        <title type="html"><![CDATA[Say something]]></title>
-        <id>https://abelcorn.cn/post/say-something</id>
-        <link href="https://abelcorn.cn/post/say-something">
+        <title type="html"><![CDATA[Decir algo]]></title>
+        <id>https://abelcorn.cn/post/unexpectedtrip</id>
+        <link href="https://abelcorn.cn/post/unexpectedtrip">
         </link>
-        <updated>2019-10-06T12:43:39.000Z</updated>
+        <updated>2019-10-06T13:00:00.000Z</updated>
         <summary type="html"><![CDATA[<ul>
 <li>任由海风吹拂，心里却未曾感激过这无聊的咸涩。想来孤独的历程已逾8月，却丝毫没有忘却昔日的愉悦和懊恼。</li>
 </ul>
@@ -33,13 +33,7 @@
 <li></li>
 <li>也别轻易的回答，毕竟海风还没停歇，那些海鸥们也在吵闹。</li>
 <li>奇怪啊，为何阴沉的天空与迷离的大海如此的沉重，却在那轮红日的映衬下显得如此完美。为何我总想着那天的和风与暖日，却不愿品味每一个季节。他们都是亲切的，只是不知道用哪种方式接近我，不至于只贪恋往日，每个让我感到心安的日子，都是那么美好。</li>
-<li>我想，心里也应该感激，纵使这海风并不温柔。<br>
-<img src="https://abelcorn.cn/post-images/1570368222990.JPG" alt=""></li>
-<li>
-<ul>
-<li><em><strong>记：意料之外的出游</strong></em></li>
-</ul>
-</li>
+<li>我想，心里也应该感激，纵使这海风并不温柔。</li>
 </ul>
 ]]></content>
     </entry>
