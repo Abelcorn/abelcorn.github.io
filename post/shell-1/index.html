@@ -1,127 +1,86 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>类UNIX内核的Shell编程（一） | 小石石石</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://abelcorn.cn/images/avatar.png?v=1570808186327" style="width:127px;" />
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    类UNIX内核的Shell编程（一） | 小石石石
-</title>
-<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1570804816475">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://abelcorn.cn/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://abelcorn.cn/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-        
-            
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-                
-
-                    
-                            
-</head>
-
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://abelcorn.cn">
-                <img class="avatar" src="https://abelcorn.cn/images/avatar.png?v=1570804816475" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    小石石石
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+     <div class="description">
+      <p>Always do your best.</p>
+     </div>
     </div>
-</div>
+   </div>
+   <ul class="social-links">
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
 
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
+    
 
-        });
-    });
-</script>
+    
 
-            <div id="main-content" class="post-detail main-container">
-                <!-- left -->
-                <div id="content" class="main-container-left">
-                    <article class="post i-card">
-                        <h2 class="post-title">
-                            类UNIX内核的Shell编程（一）
-                        </h2>
-                        <div class="post-info">
-                            <time class="post-time">2019-05-27</time>
-                            
-                                <a href="https://abelcorn.cn/tag/Wq8ZRRiBS" class="post-tag i-tag
-                            i-tag-warning">
-                            #Shell
-                        </a>
-                                
-                        </div>
-                        
-                            <div class="post-feature-image" style="background-image: url('https://abelcorn.cn/post-images/shell-1.jpg')"></div>
-                            
-                                <div class="post-content">
-                                    <h1 id="基础知识">基础知识</h1>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   Powered by <a href="https://github.com/Abelcorn">abel</a>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>类UNIX内核的Shell编程（一）</a></h3>
+       </div>
+       <div class="post-content">
+        <h1 id="基础知识">基础知识</h1>
 <h3 id="本节内容很简单但请谨慎操作">本节内容很简单，但请谨慎操作</h3>
 <h3 id="基础命令">基础命令</h3>
 <ul>
@@ -646,141 +605,75 @@
 </ul>
 <h3 id="本章内容结束请大家熟记相关内容谢谢">本章内容结束，请大家熟记相关内容，谢谢。</h3>
 
-                                </div>
-                    </article>
-                    <!--  -->
-                    
-                        <div class="next-post">
-                            <div class="next">下一篇</div>
-                            <a href="https://abelcorn.cn/post/shell-0">
-                                <h3 class="post-title">
-                                    类UNIX内核的Shell编程（前言）
-                                </h3>
-                            </a>
-                        </div>
-                        
-                            <div id="disqus_thread"></div>
-                            <div id="gitalk-container"></div>
-                </div>
-                <!-- middle -->
-                <div class="main-container-middle"></div>
-                <!-- right -->
-                <div id="sidebar" class="main-container-right">
-                    
-                        <!-- toc -->
-                        
-    <div class="toc-card i-card ">
-        <div class="toc-title i-card-title">目录</div>
-        <div class="toc-content">
-            <ul class="markdownIt-TOC">
-<li><a href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">基础知识</a><br>
-*
-<ul>
-<li><a href="#%E6%9C%AC%E8%8A%82%E5%86%85%E5%AE%B9%E5%BE%88%E7%AE%80%E5%8D%95%E4%BD%86%E8%AF%B7%E8%B0%A8%E6%85%8E%E6%93%8D%E4%BD%9C">本节内容很简单，但请谨慎操作</a></li>
-<li><a href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4">基础命令</a></li>
-<li><a href="#%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4%E5%8D%95%E4%B8%80%E7%9B%AE%E5%BD%95%E4%B8%8B">文件命令（单一目录下）</a>
-<ul>
-<li><a href="#%E6%B3%A8%E6%84%8F%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E4%BB%B6%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%9C%A8%E8%87%AA%E5%B7%B1%E6%A1%8C%E9%9D%A2%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6%E4%BB%8E%E8%80%8C%E4%BD%BF%E7%94%A8%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4">注意，以下命令中的文件名是示例文件，你可以在自己桌面创建测试文件从而使用下面的命令</a></li>
-<li><a href="#%E4%BD%86%E6%88%91%E5%BC%BA%E7%83%88%E5%BB%BA%E8%AE%AE%E4%BD%A0%E5%9C%A8%E5%AD%A6%E5%AE%8C%E5%A4%9A%E7%BA%A7%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E5%90%8E%E4%BD%BF%E7%94%A8%E6%9C%AC%E8%8A%82%E7%9A%84%E5%91%BD%E4%BB%A4">但我强烈建议你在学完多级目录操作命令后使用本节的命令</a></li>
-</ul>
-</li>
-<li><a href="#%E5%A4%9A%E7%BA%A7%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C">多级目录操作</a><br>
-*
-<ul>
-<li><a href="#%E7%9B%AE%E5%BD%95%E5%B0%B1%E5%83%8F%E6%A0%91%E4%B8%80%E6%A0%B7%E4%BB%8E%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%88%B0%E5%AD%90%E7%9B%AE%E5%BD%95%E6%83%B3%E5%BF%85%E5%A4%A7%E5%AE%B6%E9%83%BD%E6%AF%94%E8%BE%83%E7%86%9F%E6%82%89%E8%80%8C%E7%9B%AE%E5%BD%95%E7%9A%84%E5%86%99%E6%B3%95%E5%AD%A6%E8%BF%87%E7%BC%96%E7%A8%8B%E7%9A%84%E5%BA%94%E8%AF%A5%E9%83%BD%E7%9F%A5%E9%81%93%E4%BE%8B%E5%A6%82userscorndesktopcoderunnercpp">目录就像树一样，从根目录到子目录，想必大家都比较熟悉,而目录的写法，学过编程的应该都知道，例如<code>/users/corn/Desktop/Coderunner/Cpp</code></a></li>
-</ul>
-</li>
-<li><a href="#%E6%96%87%E4%BB%B6%E5%90%8D%E6%9B%BF%E6%8D%A2">文件名替换</a><br>
-*
-<ul>
-<li><a href="#%E6%96%87%E4%BB%B6%E5%90%8D%E6%9B%BF%E6%8D%A2%E6%98%AF%E4%BC%98%E9%9B%85%E7%9A%84%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E5%BF%85%E4%BC%9A%E5%93%A6">文件名替换是优雅的操作方式，必会哦</a></li>
-</ul>
-</li>
-<li><a href="#%E9%9D%9E%E8%A7%84%E8%8C%83%E6%96%87%E4%BB%B6%E5%90%8D%E6%93%8D%E4%BD%9C">非规范文件名操作</a></li>
-<li><a href="#%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%9A%84%E9%87%8D%E5%AE%9A%E5%90%91">标准输入/输出的重定向</a></li>
-<li><a href="#%E7%AE%A1%E9%81%93">管道</a></li>
-<li><a href="#%E6%A0%87%E5%87%86%E9%94%99%E8%AF%AF">标准错误</a></li>
-<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C">命令行</a></li>
-<li><a href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93">基础命令总结</a></li>
-<li><a href="#%E6%9C%AC%E7%AB%A0%E5%86%85%E5%AE%B9%E7%BB%93%E6%9D%9F%E8%AF%B7%E5%A4%A7%E5%AE%B6%E7%86%9F%E8%AE%B0%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%E8%B0%A2%E8%B0%A2">本章内容结束，请大家熟记相关内容，谢谢。</a></li>
-</ul>
-</li>
-</ul>
-
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2019-05-27</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://abelcorn.cn/tag/Wq8ZRRiBS" title="Shell">Shell </a>
+          
+         </div>
         </div>
-        <script>
-            function locateCatelogList() {
-                /*获取文章目录集合,可通过:header过滤器*/
-                var alis = $('.post-content :header');
-                /*获取侧边栏目录列表集合**/
-                var sidebar_alis = $('.markdownIt-TOC a');
-                /*获取滚动条到顶部的距离*/
-                var scroll_height = $(window).scrollTop();
-                for (var i = 0; i < alis.length; i++) {
-                    /*获取锚点集合中的元素分别到顶点的距离*/
-                    var a_height = $(alis[i]).offset().top;
-                    if (a_height < scroll_height) {
-                        /*高亮显示*/
-                        sidebar_alis.removeClass('on');
-                        $(sidebar_alis[i]).addClass('on');
-                    }
-                }
-            }
-            $(function() {
-                /*绑定滚动事件 */
-                $(window).bind('scroll', locateCatelogList);
-            });
-        </script>
-    </div>
-    
-                            
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/shell-1,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
 
-                </div>
+        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/shell-2" title="类UNIX内核的Shell编程（二）">上一篇</a></li>
+         
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/shell-0" title=" 类UNIX内核的Shell编程（前言）">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-
-
-
-            </div>
-
-
-            <div class="site-footer">
-  Powered by <a href="https://github.com/Abelcorn">Corn</a> | 
-  <a class="rss" href="https://abelcorn.cn/atom.xml" target="_blank">RSS</a>
-</div>
+<div id="gitalk-container"></div>
 
 <script>
-  hljs.initHighlightingOnLoad()
+
+  var gitalk = new Gitalk({
+    clientID: '36f0665e9b58519e6cf9',
+    clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+    repo: 'Abelcorn.github.io',
+    owner: 'Abelcorn',
+    admin: ['Abelcorn'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
 </script>
 
-
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-    
+          
+          
         
-            <script>
-    window.onload = function() {
-        var gitalk = new Gitalk({
-            clientID: '36f0665e9b58519e6cf9',
-            clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
-            repo: 'Abelcorn.github.io',
-            owner: 'Abelcorn',
-            admin: ['Abelcorn'],
-            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
-            distractionFreeMode: false // Facebook-like distraction free mode
-        })
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://abelcorn.cn/media/scripts/jquery.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery.appear.js"></script>
 
-        gitalk.render('gitalk-container')
-    }
-</script>
-                
 
-                    
-                                
-</body>
-
+ </body>
 </html>

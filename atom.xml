@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-10-11T14:40:20.207Z</updated>
+    <updated>2019-10-11T15:36:29.175Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -16,15 +16,17 @@
         <link href="https://abelcorn.cn/post/table">
         </link>
         <updated>2019-10-11T13:59:34.000Z</updated>
-        <summary type="html"><![CDATA[<ul>
+        <summary type="html"><![CDATA[<p><s> 祝鸽子变瘦</s></p>
+<ul>
 <li>由于我太穷了，买不起matlab，所以它试用期到了，我暂时不写matlab的专题了。</li>
-<li>毕竟这学期在学数据结构，虽然只学C语言版的，但我想总是大同小异嘛，所以从现在开始我会同步自己的代码上来。PS：实际上是担心写的代码没了，所以这样保险一点。</li>
+<li>毕竟这学期在学数据结构，虽然只学C语言版的，但我想总是大同小异嘛，所以从现在开始我会同步自己的代码上来。PS：<s>实际上是担心写的代码没了，所以这样保险一点。</s></li>
 <li>我会以C、C++和Java三种语言写，当然了，因为Java是自学的，且截止今天我才学了两天，有问题的地方还望各位大佬指正。</li>
 </ul>
 ]]></summary>
-        <content type="html"><![CDATA[<ul>
+        <content type="html"><![CDATA[<p><s> 祝鸽子变瘦</s></p>
+<ul>
 <li>由于我太穷了，买不起matlab，所以它试用期到了，我暂时不写matlab的专题了。</li>
-<li>毕竟这学期在学数据结构，虽然只学C语言版的，但我想总是大同小异嘛，所以从现在开始我会同步自己的代码上来。PS：实际上是担心写的代码没了，所以这样保险一点。</li>
+<li>毕竟这学期在学数据结构，虽然只学C语言版的，但我想总是大同小异嘛，所以从现在开始我会同步自己的代码上来。PS：<s>实际上是担心写的代码没了，所以这样保险一点。</s></li>
 <li>我会以C、C++和Java三种语言写，当然了，因为Java是自学的，且截止今天我才学了两天，有问题的地方还望各位大佬指正。</li>
 </ul>
 <!--more-->
