@@ -1,0 +1,834 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    数据结构-顺序表 | 小石石石
+</title>
+<link rel="shortcut icon" href="https://abelcorn.cn/favicon.ico?v=1570804816475">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://abelcorn.cn/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://abelcorn.cn/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+        
+            
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+                
+
+                    
+                            
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://abelcorn.cn">
+                <img class="avatar" src="https://abelcorn.cn/images/avatar.png?v=1570804816475" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    小石石石
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            数据结构-顺序表
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-10-11</time>
+                            
+                                <a href="https://abelcorn.cn/tag/datastruct" class="post-tag i-tag
+                            i-tag-">
+                            #数据结构
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <ul>
+<li>由于我太穷了，买不起matlab，所以它试用期到了，我暂时不写matlab的专题了。</li>
+<li>毕竟这学期在学数据结构，虽然只学C语言版的，但我想总是大同小异嘛，所以从现在开始我会同步自己的代码上来。PS：实际上是担心写的代码没了，所以这样保险一点。</li>
+<li>我会以C、C++和Java三种语言写，当然了，因为Java是自学的，且截止今天我才学了两天，有问题的地方还望各位大佬指正。</li>
+</ul>
+<!--more-->
+<p>###顺序表-C语言版：</p>
+<pre><code class="language-C">//@顺序表 C版本
+// Created by abel on 2019/10/11.
+//
+
+#ifndef C_TABLE_H
+#define C_TABLE_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define CAPACITY 10
+//为表的容量做准备
+
+//顺序表的结构体
+typedef struct Table
+{
+    int *data;//表的存储数组，为简便表示设置为int
+    int capacity;//表的最大容量
+    int length;//表的当前长度
+}table;
+
+//创建表
+table *createTable()
+{
+    table *table1 = (table*)malloc(sizeof(table));//生成表
+    //判断开辟的表空间分配是否正常
+    if(!table1)
+    {
+        printf(&quot;Table Memory Error!\n&quot;);
+        return NULL;
+    }
+    table1-&gt;capacity = CAPACITY;//初始化表的容量
+    table1-&gt;data = (int*)malloc(sizeof(int)*table1-&gt;capacity);//为数组开辟空间
+    //判断空间开辟是否成功
+    if(!table1-&gt;data)
+    {
+        printf(&quot;Data Memory Error!\n&quot;);
+        return NULL;
+    }
+    table1-&gt;length=0;//初始化当前长度为0
+
+    for(int i=0;i&lt;3;i++)//给初始化数据便于测试
+    {
+        table1-&gt;data[i]=i+1;
+    }
+    table1-&gt;length=3;
+    return table1;//返回该表
+}
+
+//检查表是否为空
+bool isEmpty(table *table1)
+{
+    if(table1-&gt;length==0)
+    {
+        return true;
+    }
+    return false;
+}
+
+//检查表是否为满
+bool isFull(table *table1)
+{
+    if(table1-&gt;length == table1-&gt;capacity)
+    {
+        return true;
+    }
+    return false;
+}
+
+//扩容
+bool enlargeTable(table *table1)
+{
+    table1-&gt;capacity *= 2;//先将最大容量乘2
+    table1-&gt;data = realloc(table1-&gt;data, sizeof(int)*table1-&gt;capacity*2);//将data数组里面的内容重新扩展
+    //检查扩容是否成功
+    if(!table1-&gt;data)
+    {
+        return false;
+    }
+    return true;
+}
+
+//新增数据
+void pushTable(table *table1,int position,int elem)//分别是表、位置和新增的元素
+{
+    if(!isFull(table1))//先判断表是否满了
+    {
+        if(position&lt;1||position&gt;table1-&gt;length)//判断插入位置是否有问题
+        {
+            printf(&quot;插入位置有误!\n&quot;);
+            exit(-1);//退出
+        }
+        for(int i=table1-&gt;length;i&gt;=position-1;i--)//遍历将插入位置及之后的元素后移
+        {
+            table1-&gt;data[i]=table1-&gt;data[i-1];
+        }
+        table1-&gt;data[position-1]=elem;//插入元素
+        table1-&gt;length++;//增加长度
+        printf(&quot;元素 %d 新增成功!\n&quot;,elem);//打印成功消息
+    }
+    else
+    {
+        printf(&quot;空间不足，正在扩容......!\n&quot;);
+        enlargeTable(table1);//扩大容量
+        //以下功能同上
+        if(position&lt;1||position&gt;table1-&gt;length)
+        {
+            printf(&quot;插入位置有误!\n&quot;);
+            exit(-1);
+        }
+        for(int i=table1-&gt;length;i&gt;=position-1;i--)
+        {
+            table1-&gt;data[i]=table1-&gt;data[i-1];
+        }
+        table1-&gt;data[position-1]=elem;
+        table1-&gt;length++;
+        printf(&quot;元素 %d 新增成功!\n&quot;,elem);
+    }
+}
+
+//删除数据
+int popTable(table *table1,int position)//表、所要删除的位置
+{
+    if(!isEmpty(table1))//判断是否是空表
+    {
+        if(position&lt;1||position&gt;table1-&gt;length)//检查删除位置是否正确
+        {
+            printf(&quot;删除的位置有误!\n&quot;);
+            exit(-2);
+        }
+        int delete_data = table1-&gt;data[position-1];//记录被删除的元素
+        for(int i=position-1;i&lt;table1-&gt;length;i++)//循环前移元素
+        {
+            table1-&gt;data[i]=table1-&gt;data[i+1];
+        }
+        table1-&gt;length--;//减少一个长度记录
+        printf(&quot;表中第 %d 号元素 %d 删除成功!\n&quot;,position,delete_data);//将所删除的元素显示出来
+        return delete_data;//返回它
+    }
+    else
+    {
+        printf(&quot;表已经空了，你还删啥？\n&quot;);
+        return -2;
+    }
+}
+
+//修改数据
+void changeTable(table *table1,int position,int new_elem)//表、修改元素的位置、新元素
+{
+    if(!isEmpty(table1))//先判断是否为空
+    {
+        if(position&lt;1||position&gt;table1-&gt;length)//判断位置是否有误
+        {
+            printf(&quot;位置有误！\n&quot;);
+        }
+        else
+        {
+            table1-&gt;data[position-1] = new_elem;//修改元素
+        }
+    }
+    else//如果是空表
+    {
+        printf(&quot;空表，你改什么？\n&quot;);
+    }
+}
+
+//查找元素第一次出现的位置
+int find_position(table* table1,int elem)
+{
+    if(!isEmpty(table1))//检查是否为空
+    {
+        int  position= -1;//位置信息，默认为-1
+        bool flag = false; //是否查到的标志
+        for(int i=0;i&lt;table1-&gt;length;i++)
+        {
+            if(elem==table1-&gt;data[i])
+            {
+                position = i+1;//记录位置
+                flag = true;//开关打开
+            }
+        }
+        if(flag)//如果找到了
+        {
+            return position;//返回位置
+        }
+        else
+        {
+            return -1;//否则返回-1；
+        }
+    }
+    else
+    {
+        return -1;//空表也返回-1
+    }
+}
+
+//查找某个位置的元素
+int find_value(table* table1,int position)
+{
+    if(!isEmpty(table1))//检查是否为空
+    {
+        if(position&lt;1||position&gt;table1-&gt;length)//检查位置,若有问题
+        {
+            printf(&quot;位置有误\n&quot;);
+            abort();//终止程序
+        }
+        else//若位置正确
+        {
+            return table1-&gt;data[position-1];//返回该位置的元素
+        }
+    }
+    else
+    {
+        printf(&quot;空表\n&quot;);
+        abort();//终止程序
+    }
+}
+
+//遍历打印出表中的所有数据
+void displayTable(table *table1)
+{
+    if(!isEmpty(table1))//首先判断表是否为空
+    {
+        printf(&quot;该表的全部数据为：\n&quot;);
+        for(int i=0;i&lt;table1-&gt;length;i++)//不为空则循环遍历
+        {
+            printf(&quot;%d &quot;,table1-&gt;data[i]);//打印数值
+        }
+        printf(&quot;\n&quot;);
+    }
+    else//若表为空
+    {
+        printf(&quot;表中无数据！\n&quot;);
+    }
+}
+
+//删除表
+void deleteTable(table *table1)
+{
+    table1-&gt;length=0;
+    table1-&gt;capacity=0;
+    free(table1-&gt;data);
+    free(table1);
+    //释放空间
+}
+#endif //C_TABLE_H
+</code></pre>
+<p>###顺序表-C++版本</p>
+<pre><code class="language-C++">//@顺序表 CPP版本
+// Created by abel on 2019/10/11.
+//
+
+#ifndef C___TABLE_H
+#define C___TABLE_H
+
+#include &lt;iostream&gt;
+using namespace std;
+
+const int CAPACITY = 10;//定义初始化最大容量
+
+class Table//定义顺序表类
+{
+private:
+    int *data;//简单int数据类型数组
+    int capacity;//最大容量
+    int length;//当前长度
+public:
+    Table()//构造函数
+    {
+        capacity = CAPACITY;//最大容量
+        data = new int[capacity];//动态开辟空间
+        length=0;//默认长度
+        for (int i = 0; i &lt;3 ; i++)//初始化3个数据做测试
+        {
+            data[i]=i+1;
+        }
+        length=3;//当前长度为3
+    }
+    bool isEmpty();//判断是否为空
+    bool isFull();//判断是否为满
+    void enlarge();//扩容
+    void push_back(int position,int elem);//插入数据
+    int pop_back(int position);//弹出数据
+    void change(int position,int new_elem);//修改元素
+    int find_position(int elem);//查找元素第一次出现的位置
+    int find_value(int position);//得到某个位置的元素
+    void display();//打印所有数据
+    void deleteTable();//删除表
+};
+
+//判断是否为空
+bool Table::isEmpty() {
+    return length==0;
+}
+
+//判断是否为满
+bool Table::isFull() {
+    return length==capacity;
+}
+
+//扩容
+void Table::enlarge() {
+    capacity *= 2;//将最大容量翻倍
+    int *new_data = new int[length];//开辟一个临时中转的数组
+    for(int i=0;i&lt;length;i++)//将原来的数组拷贝到中转数组中
+    {
+        new_data[i]=data[i];
+    }
+    data = new int[capacity*2];//给data扩容
+    for(int i=0;i&lt;length;i++)//再将中转数组的数据还给data
+    {
+        data[i]=new_data[i];
+    }
+    delete [] new_data;//删除中转数组
+    //以上实际实现了的无非是C语言的realloc()功能
+}
+
+//插入数据
+void Table::push_back(int position, int elem) {
+    if(!isFull())//检查是否满表
+    {
+        if(position&lt;1||position&gt;length)//检查位置是否有误
+        {
+            cout&lt;&lt;&quot;插入位置有误&quot;&lt;&lt;endl;
+        }
+        else
+        {
+            for(int i=length;i&gt;=position-1;i--)//遍历将插入位置的元素后移
+            {
+                data[i] = data[i-1];
+            }
+            data[position-1]=elem;//新增元素
+            length++;//加大空间
+            cout&lt;&lt;&quot;元素&quot;&lt;&lt;elem&lt;&lt;&quot;插入成功&quot;&lt;&lt;endl;
+        }
+    }
+    else//表满了
+    {
+        cout&lt;&lt;&quot;扩容中...&quot;&lt;&lt;endl;
+        enlarge();//扩容
+
+        if(position&lt;1||position&gt;length)//检查位置是否有误
+        {
+            cout&lt;&lt;&quot;插入位置有误&quot;&lt;&lt;endl;
+        }
+        else
+        {
+            for(int i=length;i&gt;=position-1;i--)//遍历将插入位置的元素后移
+            {
+                data[i] = data[i-1];
+            }
+            data[position-1]=elem;//新增元素
+            length++;//加大空间
+            cout&lt;&lt;&quot;元素&quot;&lt;&lt;elem&lt;&lt;&quot;插入成功&quot;&lt;&lt;endl;
+        }
+    }
+}
+
+//弹出数据
+int Table::pop_back(int position) {
+    if(!isEmpty())//检查是否为空
+    {
+        if(position&lt;1||position&gt;length)//检查位置
+        {
+            cout&lt;&lt;&quot;删除位置有误\n&quot;;
+        }
+        else
+        {
+            int temp = data[position-1];//记录将要删除的元素
+            for(int i=position-1;i&lt;length;i++)//将该元素后面的全部前移
+            {
+                data[i]=data[i+1];
+            }
+            length--;//减少一个当前长度
+            return temp;//将删除的元素返回
+        }
+    }
+    else{
+        cout&lt;&lt;&quot;空表，无值&quot;;
+        return -1;
+    }
+}
+
+//修改元素
+void Table::change(int position, int new_elem) {
+    if(!isEmpty())//判断非空
+    {
+        if(position&lt;1||position&gt;length)//检查位置
+        {
+            cout&lt;&lt;&quot;输入的位置有误&quot;&lt;&lt;endl;
+        }
+        else
+        {
+            data[position-1]=new_elem;
+            cout&lt;&lt;&quot;修改成功\n&quot;;
+        }
+    }
+    else
+    {
+        cout&lt;&lt;&quot;空表，你改什么？\n&quot;;
+    }
+}
+
+//查找元素第一次出现的位置
+int Table::find_position(int elem) {
+    if(!isEmpty())//判断非空
+    {
+        int position = -1;//默认位置为-1
+        bool flag = false;//标志
+        for(int i=0;i&lt;length;i++)//遍历查找
+        {
+            if(data[i]==elem)//如果找到了
+            {
+                flag = true;//标志设为真
+                position = i+1;//记录当前位置
+                break;//跳出循环
+            }
+        }
+        if(flag)//如果标志为真，即找到了
+        {
+            return position;//则返回第一次出现的位置
+        }
+        else
+        {
+            return -1;//否则返回-1（因为位置没有-1，故表示没找到）
+        }
+    }
+    else
+    {
+        cout&lt;&lt;&quot;空表，你找什么？&quot;&lt;&lt;endl;
+        return -1;
+    }
+}
+
+//得到某个位置的元素
+int Table::find_value(int position) {
+    if(!isEmpty())//判断非空
+    {
+        if(position&lt;1||position&gt;length)//检查位置
+        {
+            cout&lt;&lt;&quot;位置错误&quot;;
+            abort();//终止程序
+        }
+        else//如果位置正确
+        {
+            return data[position-1];//返回该数值
+        }
+    }
+    else
+    {
+        cout&lt;&lt;&quot;空表！&quot;&lt;&lt;endl;
+        abort();//终止程序
+    }
+}
+
+//删除表
+void Table::deleteTable() {
+    capacity=0;
+    length=0;
+    delete[] data;
+}
+
+//打印所有数据
+void Table::display() {
+    if(!isEmpty())//检查是否为空
+    {
+        for(int i=0;i&lt;length;i++)//循环遍历打印数据
+        {
+            cout&lt;&lt;data[i]&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;endl;
+    }
+    else
+    {
+        cout&lt;&lt;&quot;啥都没得，不要display了&quot;&lt;&lt;endl;
+    }
+}
+
+#endif //C___TABLE_H
+</code></pre>
+<p>###顺序表-Java版本</p>
+<ul>
+<li>我刚学两天不要怼我，且注释没有上面的详细。由于很多方法都一样，所以java的版本没有写那么详细</li>
+</ul>
+<pre><code class="language-Java">
+public class Table {
+	final int CAPACITY = 10;//最大容量
+	
+	private int []data;//定义数组
+	private int capacity;//最大容量
+	private int length;//当前长度
+	
+	public Table()//构造函数
+	{
+		this.capacity = CAPACITY;
+		this.data = new int[capacity];
+		this.length = 0;
+		for(int i=0;i&lt;3;i++)
+		{
+			data[i] = (int)(Math.random()*100);//初始进入3个随机数
+		}
+		length =3;
+	}
+	//判断是否为空
+	boolean isEmpty()
+	{
+		return (length==0);
+	}
+	//判断是否为满
+	boolean isFull()
+	{
+		return (length == capacity);
+	}
+	//插入元素
+	void push_back(int position,int elem)
+	{
+		if(!isFull())
+		{
+			if(position&lt;1||position&gt;length)
+			{
+				System.out.println(&quot;位置错误&quot;);
+			}
+			else {
+				for(int i=length;i&gt;position-1;i--)
+				{
+					data[i]=data[i-1];
+				}
+				data[position-1]=elem;
+				length++;
+				System.out.println(&quot;插入成功&quot;);
+			}
+		}
+		else {
+			System.out.println(&quot;表满了！&quot;);
+		}
+	}
+	//弹出元素
+	int pop_back(int position)
+	{
+		if(!isEmpty())
+		{
+			if(position&lt;1||position&gt;length)
+			{
+				System.out.println(&quot;位置有误&quot;);
+				return -1;
+			}
+			else {
+				int temp = data[position-1];
+				for(int i=position-1;i&lt;length;i++)
+				{
+					data[i]=data[i+1];
+				}
+				length--;
+				return temp;
+			}
+		}
+		else {
+			System.out.println(&quot;空表&quot;);
+			return -1;
+		}
+	}
+    //查找元素第一次出现的位置
+	int find_position(int elem)
+	{
+		if(!isEmpty())
+		{
+			for(int i=0;i&lt;length;i++)
+			{
+				if(elem==data[i])
+				{
+					return (i+1);
+				}
+			}
+			System.out.println(&quot;无该️元素&quot;);
+			return -1;
+		}
+		else {
+			System.out.println(&quot;空表&quot;);
+			return -1;
+		}
+	}
+	//显示所有元素
+	void display()
+	{
+		if(!isEmpty())//检查是否为空
+		{
+			for(int i=0;i&lt;length;i++)
+			{
+				System.out.print(data[i]+&quot; &quot;);
+			}
+			System.out.println();
+		}
+		else {
+			System.out.println(&quot;空表&quot;);
+		}
+	}
+	//置空表
+	void replace()
+	{
+		for(int i=0;i&lt;length;i++)
+		{
+			data[i]=0;
+		}
+		length=0;
+	}
+}
+</code></pre>
+
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://abelcorn.cn/post/unexpectedtrip">
+                                <h3 class="post-title">
+                                    Decir algo
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://abelcorn.cn/images/avatar.png?v=1570804816475)">
+        </div>
+        <h1 class="id_card-title">
+            小石石石
+        </h1>
+        <h2 class="id_card-description">
+            Always do your best.
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
+
+        </div>
+    </div>
+    
+                                    
+
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/Abelcorn">Corn</a> | 
+  <a class="rss" href="https://abelcorn.cn/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+        
+            <script>
+    window.onload = function() {
+        var gitalk = new Gitalk({
+            clientID: '36f0665e9b58519e6cf9',
+            clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+            repo: 'Abelcorn.github.io',
+            owner: 'Abelcorn',
+            admin: ['Abelcorn'],
+            id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+            distractionFreeMode: false // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    }
+</script>
+                
+
+                    
+                                
+</body>
+
+</html>
