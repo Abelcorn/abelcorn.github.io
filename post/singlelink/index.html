@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>本学期安排 | 小石石石</title>
+  <title>数据结构--单链表 | 小石石石</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,53 +77,184 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>本学期安排</a></h3>
+        <h3><a>数据结构--单链表</a></h3>
        </div>
        <div class="post-content">
-        <p>本学期将学习内容将严格按照以下事项进行安排，日后的日程等安排也必须以下列课程优先。</p>
+        <p>没人看没人看，伤心😣<br>
+本版为链表结构中的单链表，链表之后还会更新双链表、循环链表和静态链表</p>
 <!--more-->
-<h3 id="培养计划内必学课程">培养计划内必学课程</h3>
 <ul>
-<li>离散数学2</li>
-<li>计算理论</li>
-<li>剑桥学术英语</li>
-<li>数据结构</li>
-<li>概率论与数理统计</li>
-<li>马克思主义基本原理概论</li>
-<li>工程经济学</li>
-<li>轮滑</li>
+<li>以下为C++版本的单链表</li>
 </ul>
-<h3 id="mooc自学选修课程">Mooc自学选修课程</h3>
-<ul>
-<li>软件工程</li>
-<li>数据结构与算法</li>
-<li>概率论与数理统计</li>
-<li>Java</li>
-<li>C#</li>
-</ul>
-<h3 id="复习内容">复习内容</h3>
-<ul>
-<li>线性代数</li>
-<li>微积分</li>
-<li>C/C++</li>
-</ul>
-<h3 id="额外安排">额外安排</h3>
-<ul>
-<li>练字</li>
-<li>英语听力与词汇</li>
-<li>STL</li>
-<li>QT进阶开发</li>
-</ul>
+<pre><code class="language-c++">//@单链表CPP版
+// Created by abel on 2019/10/14.
+//
+
+#ifndef C___SINGLELINK_H
+#define C___SINGLELINK_H
+
+#include &lt;iostream&gt;
+using namespace std;
+
+typedef struct Node
+{
+    int data;
+    Node *next;
+}link;
+
+class Link
+{
+private:
+    link *link1;
+public:
+    //构造函数
+    Link();
+    //插入元素
+    void insertElem(int position,int elem);
+    //查看是否为空
+    bool isEmpty();
+    //得到固定位置的元素
+    int getElem(int position);
+    //删除元素
+    int deleteElem(int position);
+    //遍历显示全部元素
+    void display();
+};
+
+Link::Link() {
+    link1 = new link;
+    link1-&gt;data = 0;
+    link1-&gt;next = nullptr;
+}
+
+void Link::insertElem(int position, int elem) {
+    if(position&lt;1)
+    {
+        cout&lt;&lt;&quot;Error Position&quot;&lt;&lt;endl;
+    }
+    else
+    {
+        link *p = link1;
+        for(int i=0;i&lt;position-1;i++)
+        {
+            if(p-&gt;next== nullptr)
+            {
+                cout&lt;&lt;&quot;Error Position!&quot;&lt;&lt;endl;
+            }
+            p = p-&gt;next;
+        }
+        link *temp = new link;
+        temp-&gt;data=elem;
+        temp-&gt;next = p-&gt;next;
+        p-&gt;next=temp;
+    }
+}
+
+bool Link::isEmpty() {
+    return (link1-&gt;next== nullptr);
+}
+
+int Link::getElem(int position) {
+    if(!isEmpty())
+    {
+        if(position&lt;1)
+        {
+            cout&lt;&lt;&quot;Error Position!&quot;&lt;&lt;endl;
+            return -1;
+        }
+        else
+        {
+            link *p = link1;
+            for(int i=0;i&lt;position-1;i++)
+            {
+                if(p-&gt;next== nullptr)
+                {
+                    cout&lt;&lt;&quot;Error Position&quot;&lt;&lt;endl;
+                    break;
+                }
+                else
+                {
+                    p=p-&gt;next;
+                }
+            }
+            p=p-&gt;next;
+            return p-&gt;data;
+        }
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Empty!&quot;&lt;&lt;endl;
+        return -1;
+    }
+}
+
+int Link::deleteElem(int position){
+    if(!isEmpty())
+    {
+        if(position&lt;1)
+        {
+            cout&lt;&lt;&quot;Error Position&quot;&lt;&lt;endl;
+            exit(-1);
+        }
+        else
+        {
+            link *p = link1;
+            for(int i=0;i&lt;position-1;i++)
+            {
+                if(p-&gt;next == nullptr)
+                {
+                    cout&lt;&lt;&quot;Error Position&quot;;
+                    break;
+                }
+                else
+                {
+                    p=p-&gt;next;
+                }
+            }
+            link *temp = new link;
+            temp-&gt;next = p-&gt;next;
+            temp-&gt;data = p-&gt;next-&gt;data;
+            p-&gt;next = p-&gt;next-&gt;next;
+            int t = temp-&gt;data;
+            delete temp;
+            return t;
+        }
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Empty!&quot;&lt;&lt;endl;
+        exit(-1);
+    }
+}
+
+void Link::display() {
+    if(!isEmpty())//判断是否为空
+    {
+        link * p = link1;
+        while (p-&gt;next)
+        {
+            p=p-&gt;next;
+            cout&lt;&lt;p-&gt;data&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;endl;
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Error! Empty!&quot;&lt;&lt;endl;
+    }
+}
+#endif //C___SINGLELINK_H
+</code></pre>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2019-09-04</span>
+          <span class="date">2019-10-14</span>
           <i class="fa fa-tag"></i>
           
-          <a class="tag" href="https://abelcorn.cn/tag/HbWenjv65" title="日程与计划">日程与计划 </a>
+          <a class="tag" href="https://abelcorn.cn/tag/datastruct" title="数据结构">数据结构 </a>
           
          </div>
         </div>
@@ -137,16 +268,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/plan_zero,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/singlelink,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/matlab-1" title="Matlab学习笔记（一）">上一篇</a></li>
-         
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/latex" title=" LaTex表示方法">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/table" title=" 数据结构--顺序表">下一篇</a></li>
         
        </ul>
       </div>
