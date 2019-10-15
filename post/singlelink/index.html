@@ -13,7 +13,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://abelcorn.cn/images/avatar.png?v=1571060939885" style="width:127px;" />
+     <img src="https://abelcorn.cn/images/avatar.png?v=1571099560596" style="width:127px;" />
 
      <div class="description">
       <p>Always do your best.</p>
@@ -83,6 +83,171 @@
         <p>没人看没人看，伤心😣<br>
 本版为链表结构中的单链表，链表之后还会更新双链表、循环链表和静态链表</p>
 <!--more-->
+<ul>
+<li>以下为C语言的单链表</li>
+</ul>
+<pre><code class="language-c">//@单链表 C语言版
+// Created by abel on 2019/10/14.
+//
+
+#ifndef C_SINGLELINK_H
+#define C_SINGLELINK_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+//单链表的基本结构
+typedef struct Link
+{
+    int data;//数据域
+    struct Link *next;//结点
+}link;//新名字
+
+//初始化创建链表
+link *createLink()
+{
+    link *link1 = (link*)malloc(sizeof(link));//分配内存
+    if(!link1)//检查内存分配成功情况
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    link1-&gt;data=0;//初始化
+    link1-&gt;next=NULL;
+
+    link *p = link1;
+    for(int i=0;i&lt;3;i++)//为测试，给链表赋初始值
+    {
+        link *a = (link*)malloc(sizeof(link));
+        a-&gt;data = i+1;
+        a-&gt;next = NULL;
+
+        p-&gt;next = a;
+        p=p-&gt;next;
+    }
+    return link1;
+}
+
+//判断是否为空
+bool isEmpty(link *link1)
+{
+    return (link1==NULL);
+}
+
+//插入元素
+void insertElem(link *link1,int position,int elem)
+{
+    if(position&lt;1)//判断位置
+    {
+        printf(&quot;Error Position\n&quot;);
+    }
+    else
+    {
+        link *p = link1;
+        for(int i=0;i&lt;position-1;i++)//遍历到要插入的位置处
+        {
+            if(p==NULL)
+            {
+                printf(&quot;Wrong Position\n&quot;);
+                exit(-1);
+            }
+            p=p-&gt;next;
+        }
+        link *link2 = (link*)malloc(sizeof(link));
+        if(!link2)
+        {
+            printf(&quot;Temp Link Memory Error!\n&quot;);
+        }
+        //插入结点
+        else{
+            link2-&gt;data = elem;
+            link2-&gt;next = p-&gt;next;
+            p-&gt;next = link2;
+        }
+    }
+}
+
+//删除元素
+int deleteElem(link *link1,int position)
+{
+    if(!isEmpty(link1))//判断是否为空
+    {
+        if(position&lt;1)//判断位置
+        {
+            printf(&quot;Error Position\n&quot;);
+            return -1;
+        }
+        else
+        {
+            link *p = link1;
+            for(int i=0;i&lt;position-1;i++)//遍历到要删除的地方
+            {
+                if(p==NULL)
+                {
+                    printf(&quot;Error Position\n&quot;);
+                    return -1;
+                }
+                p=p-&gt;next;
+            }
+            int data = p-&gt;next-&gt;data;//保存被删除的值
+            link *temp = (link*)malloc(sizeof(link));
+            temp-&gt;next = p-&gt;next;
+            p-&gt;next=p-&gt;next-&gt;next;//重新链接链表
+            free(temp);//释放被删除的结点
+            return data;//返回数据
+        }
+    } else
+    {
+        printf(&quot;Empty Link\n&quot;);
+        return -1;
+    }
+}
+
+//查找元素第一次出现的位置
+int find_position(link *link1,int elem)
+{
+    if(!isEmpty(link1))//判断非空
+    {
+        link *p = link1;
+        for(int i=0;p!=NULL;i++)
+        {
+            p=p-&gt;next;
+            if(elem == p-&gt;data)
+            {
+                return i+1;
+            }
+
+        }
+    }
+    else
+    {
+        return -2;
+    }
+    return 0;
+}
+
+//遍历显示全部信息
+void display(link *link1)
+{
+    if(!isEmpty(link1))//判断空链
+    {
+        link *p = link1;
+        while (p-&gt;next)
+        {
+            p=p-&gt;next;
+            printf(&quot;%d &quot;,p-&gt;data);
+        }
+        printf(&quot;\n&quot;);
+    } else
+    {
+        printf(&quot;Empty!\n&quot;);
+    }
+}
+
+
+#endif //C_SINGLELINK_H
+</code></pre>
 <ul>
 <li>以下为C++版本的单链表</li>
 </ul>
