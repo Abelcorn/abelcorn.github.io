@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-10-15T00:32:43.248Z</updated>
+    <updated>2019-10-15T01:21:10.611Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,164 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[数据结构--顺序栈]]></title>
+        <id>https://abelcorn.cn/post/stack</id>
+        <link href="https://abelcorn.cn/post/stack">
+        </link>
+        <updated>2019-10-15T01:03:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>顺序栈将以四种语言呈现，但不会有太多注释，<s>毕竟比较简单</s></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>顺序栈将以四种语言呈现，但不会有太多注释，<s>毕竟比较简单</s></p>
+<!--more-->
+<ul>
+<li>Java版本</li>
+</ul>
+<pre><code class="language-java">//@顺序栈 Java版
+//Created by abel on 2019/10/15.
+//
+public class Stack
+{
+	final int SIZE = 10;
+	private int top;
+	private int capacity;
+	private int[] data;
+	
+	Stack()
+	{
+		this.capacity = SIZE;
+		this.data = new int[capacity];
+		this.top = -1;
+	}
+	
+	public boolean isEmpty()
+	{
+		return (top==-1);
+	}
+	public boolean isFull()
+	{
+		return (top==capacity-1);
+	}
+	public void enlarge()
+	{
+		this.capacity *= 2;
+		int []temp = new int[top+1];
+		for(int i=0;i&lt;top;i++)
+		{
+			temp[i]=this.data[i];
+		}
+		this.data = new int[this.capacity];
+		for(int i=0;i&lt;top;i++)
+		{
+			this.data[i] = temp[i];
+		}
+	}
+	public void push(int elem)
+	{
+		if(!isFull())
+		{
+			data[top+1]=elem;
+			top++;
+		}
+		else
+		{
+			System.out.println(&quot;Enlarge...&quot;);
+			enlarge();
+			data[top+1]=elem;
+			top++;
+		}
+	}
+	public int getElem()
+	{
+		if(!isEmpty())
+		{
+			return data[top];
+		}
+		else
+		{
+			System.out.println(&quot;Empty!&quot;);
+			return -1;
+		}
+	}
+	public int pop()
+	{
+		if(!isEmpty())
+		{
+			return data[top--];
+		}
+		else
+		{
+			System.out.println(&quot;Empty!&quot;);
+			return -1;
+		}
+	}
+}
+</code></pre>
+<ul>
+<li>以下为C#版本</li>
+</ul>
+<pre><code class="language-c#">//@顺序栈 C#版
+//Created by abel on 2019/10/15.
+//
+
+using System;
+
+public class Stack
+{
+    const int SIZE = 10;
+    private int capacity;
+    private int top;
+    private int[] data;
+
+    public Stack()
+    {
+        this.capacity = SIZE;
+        this.data = new int[capacity];
+        this.top = -1;
+    }
+
+    public bool isEmpty()
+    {
+        return (top == -1);
+    }
+    public bool isFull()
+    {
+        return (top == capacity - 1);
+    }
+    public void push(int elem)
+    {
+        if(!isFull())
+        {
+            top++;
+            data[top] = elem;
+        }
+        else
+        {
+            Console.WriteLine(&quot;Full!&quot;);
+        }
+    }
+    public int getELem()
+    {
+        if(!isEmpty())
+        {
+            return data[top];
+        }
+        return -1;
+    }
+    public int pop()
+    {
+        if(isEmpty())
+        {
+            return data[top--];
+        }
+        return -1;
+    }
+
+    
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数据结构--单链表]]></title>
         <id>https://abelcorn.cn/post/singlelink</id>
@@ -1721,26 +1879,6 @@ C++考试终于结束了，可以开始matlab的学习了，本部分内容仅�
 <li>希望各位自行练习和查找相关基本语法知识，活学活用</li>
 <li>以后我将介绍<strong>表格</strong>、<strong>流程图</strong>和<strong>LaTex公式</strong>，这样的markdown才是真正优秀的语法。</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Giving Life Meaning]]></title>
-        <id>https://abelcorn.cn/post/text-1</id>
-        <link href="https://abelcorn.cn/post/text-1">
-        </link>
-        <updated>2019-08-09T11:05:44.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>Have you thought about what you want people to say about you after you’re gone?</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>Have you thought about what you want people to say about you after you’re gone?</em></p>
-<!--more-->
-<p><em>Can you hear the voice saying, “He was a great man.” Or “She really will be missed.” What else do they say?</em></p>
-<p><em>One of the strangest phenomena of life is to engage in a work that will last long after death. Isn’t that a lot like investing all your money so that future generations can bare interest on it? Perhaps, yet if you look deep in your own heart, you’ll find something drives you to make this kind of contribution---something drives every human being to find a purpose that lives on after death.</em></p>
-<p><em>Do you hope to memorialize your name? Have a name that is whispered with reverent awe? Do you hope to have your face carved upon 50 ft of granite rock? Is the answer really that simple? Is the purpose of lifetime contribution an ego-driven desire for a mortal being to have an immortal name or is it something more?</em></p>
-<p><em>A child alive today will die tomorrow. A baby that had the potential to be the next Einstein will die from complication is at birth. The circumstances of life are not set in stone. We are not all meant to live life through to old age. We’ve grown to perceive life3 as a full cycle with a certain number of years in between. If all of those years aren’t lived out, it’s a tragedy. A tragedy because a human’s potential was never realized. A tragedy because a spark was snuffed out before it ever became a flame.</em></p>
-<p><em>By virtue of inhabiting a body we accept these risks. We expose our mortal flesh to the laws of the physical environment around us. The trade off isn’t so bad when you think about it. The problem comes when we construct mortal fantasies of what life should be like. When life doesn’t conform to our fantasy we grow upset, frustrated, or depressed.</em></p>
-<p><em>We are alive; let us live. We have the ability to experience; let us experience. We have the ability to learn; let us learn. The meaning of life can be grasped in a moment. A moment so brief it often evades our perception.</em></p>
-<p><em>What meaning stands behind the dramatic unfolding of life? What single truth can we grasp and hang onto for dear life when all other truths around us seem to fade with time?</em></p>
-<p><em>These moments are strung together in a series we call events. These events are strung together in a series we call life. When we seize the moment and bend it according to our will, a will driven by the spirit deep inside us, then we have discovered the meaning of life, a meaning for us that shall go on long after we depart this Earth.</em></p>
 ]]></content>
     </entry>
 </feed>
