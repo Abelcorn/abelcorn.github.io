@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-10-15T01:22:20.921Z</updated>
+    <updated>2019-10-17T04:16:50.896Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -20,6 +20,220 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>顺序栈将以四种语言呈现，但不会有太多注释，<s>毕竟比较简单</s></p>
 <!--more-->
+<ul>
+<li>C语言版本</li>
+</ul>
+<pre><code class="language-c">//@顺序栈 C语言版
+// Created by abel on 2019/10/15.
+//
+
+#ifndef C_STACK_H
+#define C_STACK_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+//默认的最大长度
+#define SIZE 10
+//结点
+typedef struct Stack
+{
+    int *data;
+    int top;
+    int capacity;
+}stack;
+
+//创建链表
+stack *createStack()
+{
+    stack *stack1 = (stack*)malloc(sizeof(stack));
+    if(!stack1)//检查空间开辟情况
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    stack1-&gt;capacity = SIZE;//最大长度
+    stack1-&gt;data = (int*)malloc(sizeof(int)*stack1-&gt;capacity);//开辟数组
+    stack1-&gt;top=-1;//栈位置标志
+    if(!stack1-&gt;data)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    for(int i=0;i&lt;3;i++)//初始化赋值进去
+    {
+        stack1-&gt;data[i]=i+1;
+    }
+    stack1-&gt;top=2;//加两个
+    return stack1;
+}
+
+//判断为空
+bool isEmpty(stack *stack1)
+{
+    return (stack1-&gt;top==-1);
+}
+
+//判断为满
+bool isFull(stack *stack1)
+{
+    return stack1-&gt;top==stack1-&gt;capacity-1;
+}
+
+//入栈
+void push(stack * stack1,int elem)
+{
+    if(!isFull(stack1))
+    {
+        stack1-&gt;data[stack1-&gt;top+1]=elem;
+        stack1-&gt;top++;
+    } else
+    {
+        printf(&quot;Full\n&quot;);
+    }
+}
+//出栈
+int pop(stack* stack1)
+{
+    if(!isEmpty(stack1))
+    {
+        return stack1-&gt;data[stack1-&gt;top--];
+    }
+    printf(&quot;Error\n&quot;);
+    return -1;
+}
+
+//得到栈顶元素
+int getElem(stack *stack1)
+{
+    if(!isEmpty(stack1))
+    {
+        return stack1-&gt;data[stack1-&gt;top];
+    }
+    printf(&quot;Error\n&quot;);
+    return -1;
+}
+
+//显示所有数据
+void display(stack *stack1)
+{
+    if(!isEmpty(stack1))
+    {
+        for(int i=0;i&lt;=stack1-&gt;top;i++)
+        {
+            printf(&quot;%d &quot;,stack1-&gt;data[i]);
+        }
+        printf(&quot;\n&quot;);
+    }
+    else
+    {
+        printf(&quot;Empty\n&quot;);
+        return;
+    }
+}
+#endif //C_STACK_H
+</code></pre>
+<ul>
+<li>C++版本</li>
+</ul>
+<pre><code class="language-c++">//@顺序栈 CPP版
+// Created by abel on 2019/10/15.
+//
+
+#ifndef C___STACK_H
+#define C___STACK_H
+
+#include &lt;iostream&gt;
+using namespace std;
+
+const int SIZE = 10;
+class Stack
+{
+private:
+    int *data;
+    int capacity;
+    int top;
+public:
+    Stack()//创建栈
+    {
+        capacity = SIZE;
+        data = new int[capacity];
+        top=-1;
+    }
+
+    bool isEmpty();//栈空
+
+    bool isFull();//栈满
+
+    void push(int elem);//入栈
+
+    int getElem();//得到最上面元素
+
+    int pop();//出栈
+
+    void display();//显示所以元素，做检查
+};
+
+bool Stack::isEmpty() {
+    return top==-1;
+}
+
+bool Stack::isFull() {
+    return top+1==capacity;
+}
+
+void Stack::push(int elem) {
+    if(!isFull())
+    {
+        data[top+1]=elem;
+        top++;
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Full!&quot;&lt;&lt;endl;
+    }
+}
+
+int Stack::getElem() {
+    if(!isEmpty())
+    {
+        return data[top];
+    } else
+    {
+        cout&lt;&lt;&quot;empty&quot;&lt;&lt;endl;
+        return -1;
+    }
+}
+
+int Stack::pop() {
+    if(!isEmpty())
+    {
+        return data[top--];
+    }
+    else
+    {
+        cout&lt;&lt;&quot;empty&quot;&lt;&lt;endl;
+        return -1;
+    }
+}
+
+void Stack::display() {
+    if(!isEmpty())
+    {
+        for(int i=0;i&lt;=top;i++)
+        {
+            cout&lt;&lt;data[i]&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;endl;
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Empty!\n&quot;;
+        return;
+    }
+}
+#endif //C___STACK_H
+</code></pre>
 <ul>
 <li>Java版本</li>
 </ul>
