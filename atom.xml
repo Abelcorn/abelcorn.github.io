@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-10-19T01:44:11.089Z</updated>
+    <updated>2019-10-19T03:22:30.822Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,330 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[数据结构--循环队列]]></title>
+        <id>https://abelcorn.cn/post/queue</id>
+        <link href="https://abelcorn.cn/post/queue">
+        </link>
+        <updated>2019-10-19T02:38:26.000Z</updated>
+        <summary type="html"><![CDATA[<p>一般循环数组队列</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一般循环数组队列</p>
+<!--more-->
+<p><strong>C语言版</strong>:</p>
+<pre><code class="language-c">//@循环数组队列 C语言版
+// Created by abel on 2019/10/19.
+//
+
+#ifndef C_DATASTRUCTURES_QUEUE_H
+#define C_DATASTRUCTURES_QUEUE_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define MAXSIZE 5//默认最大容量
+
+//队列的结点
+typedef struct Queue
+{
+    int *data;//数组
+    int capacity;//初始容量
+    int front;//头
+    int rear;//尾
+    int size;//计数
+}queue;
+
+//创建队列
+queue *createQueue()
+{
+    queue *queue1 = (queue*)malloc(sizeof(queue));//开辟队列空间
+    if(!queue1)//检查队列空间开辟是否成功
+    {
+        printf(&quot;Memory Error\n&quot;);
+        return NULL;
+    }
+    //初始化队列
+    queue1-&gt;capacity = MAXSIZE;
+    queue1-&gt;data = (int*)malloc(sizeof(int)*queue1-&gt;capacity);
+    if(!queue1-&gt;data)//为循环数组开辟空间
+    {
+        printf(&quot;Memory Error\n&quot;);
+        return NULL;
+    }
+    //初始化队列
+    queue1-&gt;front=queue1-&gt;rear=-1;
+    queue1-&gt;size=0;
+
+    for(int i=0;i&lt;3;i++)//初始化3个数据做测试
+    {
+        queue1-&gt;data[i]=i+1;
+    }
+    queue1-&gt;front=2;//头索引移动到2
+    queue1-&gt;size=3;//计数
+    return queue1;//将此队列返回
+}
+
+//判断是否为空队列
+bool isEmpty(queue *queue1)
+{
+    return queue1-&gt;size==0;
+}
+
+//判断是否为满队列
+bool isFull(queue *queue1)
+{
+    return queue1-&gt;size==queue1-&gt;capacity;
+}
+
+//入队
+void enQueue(queue *queue1,int elem)
+{
+    if(!isFull(queue1))//判断是否满队
+    {
+        queue1-&gt;front = (queue1-&gt;front+1)%queue1-&gt;capacity;//移动当前位置
+        queue1-&gt;data[queue1-&gt;front]=elem;//存入新数据
+        queue1-&gt;size++;//计数增加
+        if(queue1-&gt;rear==-1)
+        {
+            queue1-&gt;rear=0;
+        }
+    }
+    else
+    {
+        printf(&quot;Full!\n&quot;);
+    }
+}
+//出队
+void deQueue(queue *queue1)
+{
+    if(!isEmpty(queue1))//判断是否为空
+    {
+        printf(&quot;%d&quot;,queue1-&gt;data[queue1-&gt;rear]);//打印此时的数据
+        queue1-&gt;rear=(queue1-&gt;rear+1)%queue1-&gt;capacity;
+        queue1-&gt;size--;//减少计数
+    }
+    else
+    {
+        printf(&quot;Empty!\n&quot;);
+    }
+}
+
+#endif //C_DATASTRUCTURES_QUEUE_H
+</code></pre>
+<p><strong>C++版本</strong>:</p>
+<pre><code class="language-c++">//@循环数组队列 CPP版
+// Created by abel on 2019/10/19.
+//
+#ifndef CPP_DATASTRUCTURES_QUEUE_H
+#define CPP_DATASTRUCTURES_QUEUE_H
+
+#include &lt;iostream&gt;
+using namespace std;
+
+const int MaxSize = 10;//默认最大长度
+
+class Queue//队列类
+{
+private:
+    int *data;//循环数组
+    int capacity;//最大容量
+    int front;
+    int rear;
+    int size;//计数
+public:
+    Queue()//构造函数
+    {
+        //初始化类
+        capacity = MaxSize;
+        data = new int[capacity];
+        front=rear=-1;
+        size=0;
+    }
+//    ~Queue()//析构函数
+//    {
+//        delete []data;
+//    }
+    //判断为空队列
+    bool isEmpty()
+    {
+        return size==0;
+    }
+    //判断为满队列
+    bool isFull()
+    {
+        return size==capacity;
+    }
+    void enQueue(int elem);//入队
+    void deQueue();//出队
+};
+
+void Queue::enQueue(int elem) {
+    if(!isFull())
+    {
+        front=(front+1)%capacity;
+        data[front] = elem;
+        size++;
+        if(rear==-1)
+        {
+            rear=0;
+        }
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Full!&quot;&lt;&lt;endl;
+    }
+}
+
+void Queue::deQueue() {
+    if(!isEmpty())
+    {
+        cout&lt;&lt;data[rear]&lt;&lt;endl;
+        rear = (rear+1)%capacity;
+        size--;
+    }
+    else
+    {
+        cout&lt;&lt;&quot;Empty!&quot;&lt;&lt;endl;
+    }
+}
+
+#endif //CPP_DATASTRUCTURES_QUEUE_H
+
+</code></pre>
+<p><strong>Java版本</strong>:</p>
+<pre><code class="language-java">//@循环数组队列 Java版
+// Created by abel on 2019/10/19.
+//
+public class Queue//队列类
+{
+	final int MaxSize = 10;//默认初始长度
+	private int [] data;//循环数组
+	private int capacity;//最大容量
+	private int front;
+	private int rear;
+	private int size;//计数
+	//构造体
+	public Queue()
+	{
+		//初始化队列
+		this.capacity = MaxSize;
+		this.data = new int[this.capacity];
+		this.front=this.rear=-1;
+		this.size=0;
+	}
+	//判断为空队列
+	public boolean isEmpty()
+	{
+		return size==0;
+	}
+	//判断为满队列
+	public boolean isFull()
+	{
+		return size==this.capacity;
+	}
+	//入队
+	public void enQueue(int elem)
+	{
+		if(!isFull())
+		{
+			this.front = (this.front+1)%this.capacity;
+			data[this.front]=elem;
+			this.size++;
+			if(this.rear==-1)
+			{
+				this.rear=0;
+			}
+		}
+		else
+		{
+			System.out.println(&quot;Full!&quot;);
+		}
+	}
+	//出队
+	public void deQueue()
+	{
+		if(!isEmpty())
+		{
+			System.out.println(data[rear]);
+			this.rear = (this.rear+1)%this.capacity;
+			this.size--;
+		}
+		else
+		{
+			System.out.println(&quot;Empty!&quot;);
+		}
+	}
+}
+</code></pre>
+<p><strong>C#版本</strong>：</p>
+<pre><code class="language-c#">//@循环数组队列 C#版
+// Created by abel on 2019/10/19.
+//
+using System;
+
+public class Queue//队列的类
+{
+    const int MAXSIZE = 10;//默认最大容量
+    private int size;//计数
+    private int capacity;//最大容量
+    private int front;//
+    private int rear;
+    private int[] data;//循环数组
+    //构造体
+    public Queue()
+    {
+        this.capacity = MAXSIZE;
+        this.data = new int[capacity];
+        this.front = this.rear = -1;
+        this.size = 0;
+        //初始化所有信息
+    }
+    //判断为空队
+    public bool isEmpty()
+    {
+        return size == 0;
+    }
+    //判断为满队
+    public bool isFull()
+    {
+        return size == capacity;
+    }
+    //入队
+    public void enQueue(int elem)
+    {
+        if(!isFull())
+        {
+            front = (front + 1) % capacity;
+            data[front] = elem;
+            size++;
+            if(rear==-1)
+            {
+                rear = 0;
+            }
+        }
+        else
+        {
+            Console.WriteLine(&quot;Full!&quot;);
+        }
+    }
+    public void deQueue()
+    {
+        if(!isEmpty())
+        {
+            Console.WriteLine(data[rear]);
+            rear = (rear + 1) % capacity;
+            size--;
+        }
+        else
+        {
+            Console.WriteLine(&quot;Empty!&quot;);
+        }
+    }
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数据结构实验--约瑟夫环]]></title>
         <id>https://abelcorn.cn/post/datastructures_ex_josephus</id>
@@ -2190,40 +2514,6 @@ C++考试终于结束了，可以开始matlab的学习了，本部分内容仅�
 <li>STL</li>
 <li>QT进阶开发</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[LaTex表示方法]]></title>
-        <id>https://abelcorn.cn/post/latex</id>
-        <link href="https://abelcorn.cn/post/latex">
-        </link>
-        <updated>2019-09-02T10:20:28.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="注意">注意</h3>
-<ul>
-<li>由于语法较多，这里将官方图搬移至此，感兴趣请配合前面MarkDown语法入门教程使用。</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="注意">注意</h3>
-<ul>
-<li>由于语法较多，这里将官方图搬移至此，感兴趣请配合前面MarkDown语法入门教程使用。</li>
-</ul>
-<!--more-->
-<h3 id="基本语法">基本语法</h3>
-<p><img src="https://abelcorn.cn/post-images/1567938210213.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938221943.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938230247.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938235219.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938313920.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938319571.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938324053.gif" alt=""></p>
-<h3 id="常用数学符合">常用数学符合</h3>
-<p><img src="https://abelcorn.cn/post-images/1567938431251.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938438640.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938443215.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938447006.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938450994.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938458954.gif" alt=""><br>
-<img src="https://abelcorn.cn/post-images/1567938465008.gif" alt=""></p>
 ]]></content>
     </entry>
 </feed>
