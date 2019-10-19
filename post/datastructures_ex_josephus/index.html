@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>数据结构实验--约瑟夫环 | 小石石石</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://abelcorn.cn/images/avatar.png?v=1571449258550" style="width:127px;" />
+
+     <div class="description">
+      <p>Always do your best.</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   Powered by <a href="https://github.com/Abelcorn">abel</a>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>数据结构实验--约瑟夫环</a></h3>
+       </div>
+       <div class="post-content">
+        <p>Josephus排列问题定义如下：假设n个竞赛者排成一个环形。给定一个正整数m≤n，从第1人开始，沿环计数，第m人出列。这个过程一直进行到所有人都出列为止。最后出列者为优胜者。全部出列次序定义了1，2，…n的一个排列。称为（n，m）Josephus排列。例如，（7，3）Josephus排列为3,6,2,7,5,1,4。且若m为偶数则逆时针开始，为奇数为顺时针。</p>
+<!--more-->
+<p><strong>C语言</strong>：</p>
+<pre><code class="language-c">//@约瑟夫环 C语言版本
+// Created by abel on 2019/10/18.
+//
+
+#ifndef CLIONCODE_JOSEPHUS_H
+#define CLIONCODE_JOSEPHUS_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+//约瑟夫环结点
+typedef struct Josephus
+{
+    int data;//每个结点的数据
+    struct Josephus *front;//指向前驱
+    struct Josephus *next;//指向后继
+}list;
+
+
+//顺序打印一次
+void display(list *list1,int m)
+{
+    if(m%2==0)
+    {
+        list *p = list1;
+        printf(&quot;约瑟夫环当前数据为：\n&quot;);
+        while (p-&gt;front!=list1)
+        {
+            printf(&quot;%d &quot;,p-&gt;data);
+            p=p-&gt;front;
+        }
+        printf(&quot;%d\n&quot;,p-&gt;data);
+    } else
+    {
+        list *p = list1;
+        printf(&quot;约瑟夫环当前数据为：\n&quot;);
+        while (p-&gt;next!=list1)
+        {
+            printf(&quot;%d &quot;,p-&gt;data);
+            p=p-&gt;next;
+        }
+        printf(&quot;%d\n&quot;,p-&gt;data);
+    }
+}
+
+//具体的操作函数
+void startTheGame(list *list1,int n,int m)
+{
+    if(m==0)//如果m为0，则无法进行游戏
+    {
+        printf(&quot;Invalid Index of m!\n&quot;);
+    }
+    else if(m%2==0)//如果操作序列为偶数，则逆时针游戏
+    {
+        list *p = list1;
+        //当结点数不为0
+        printf(&quot;按%d为步长的序列为:\n&quot;,m);
+        for(int i=1;n!=0;i++)
+        {
+            if(i%m==0)
+            {
+                printf(&quot;%d &quot;,p-&gt;data);//打印结点数据
+                list *temp = p;//中间保存被删除结点的临时结点
+                p = p-&gt;front;//将操作指针移到上一位
+                //将已经打印过的结点与链表断开
+                p-&gt;next-&gt;next-&gt;front = p;
+                p-&gt;next = p-&gt;next-&gt;next;
+                //将临时结点值修改
+                temp-&gt;data=0;
+                temp-&gt;front=temp-&gt;next=NULL;
+                free(temp);//释放被打印过的结点
+                n--;
+            }
+            else//如果没有移到固定的步长m，则继续移动
+            {
+                p=p-&gt;front;
+            }
+        }
+    }
+    else//如果m为奇数，则顺时针开始
+    {
+        list *p = list1;//操作指针
+        printf(&quot;按%d为步长的序列为:\n&quot;,m);
+        for(int i=1;n!=0;i++)//循环
+        {
+            if(i%m==0)//如果移动次数为m
+            {
+                printf(&quot;%d &quot;,p-&gt;data);//打印此时的结点数据
+                list *temp = p;//中间结点保存被打印的结点
+                p=p-&gt;next;//操作指针移向下一个
+                //将被打印的结点从链表中移除
+                p-&gt;front-&gt;front-&gt;next=p;
+                p-&gt;front=p-&gt;front-&gt;front;
+                //修改被打印结点的数据
+                temp-&gt;data=0;
+                temp-&gt;front=temp-&gt;next=NULL;
+                free(temp);//释放此结点
+                n--;//减少结点总数
+            }
+            else//如果移动步数非m
+            {
+                p=p-&gt;next;//移动操作指针
+            }
+        }
+    }
+}
+
+//创建链表并操作
+list *createLink(int n,int m)//序列
+{
+    list *list1 = (list*)malloc(sizeof(list));//开辟空间
+    if(!list1)//判断空间开辟是否成功
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    //初始化第一个结点
+    list1-&gt;next=list1-&gt;front=NULL;
+    list1-&gt;data = 1;
+
+    list *p = list1;//操作指针
+    for(int i=2;i&lt;=n;i++)//遍历赋值
+    {
+        list * temp = (list*)malloc(sizeof(list));//中间结点
+        if(!temp)//判断结点空间开辟是否成功
+        {
+            printf(&quot;Memory Error!\n&quot;);
+            return NULL;
+        }
+        temp-&gt;data = i;//序号赋值
+        temp-&gt;next=NULL;//默认next为空
+        temp-&gt;front = p;//前向指针指向当前p
+        p-&gt;next=temp;//p的下一个接上中间结点
+        p=p-&gt;next;//p移到中间结点上
+    }
+    list1-&gt;front=p;
+    p-&gt;next=list1;//将尾结点next接到list1(头结点)上
+    return list1;
+}
+
+//程序启动的函数
+void Josephus()
+{
+    int n=0,m=0;
+    printf(&quot;请输入约瑟夫序列:\n&quot;);
+    printf(&quot;总人数n: &quot;);
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot;操作步长m: &quot;);
+    scanf(&quot;%d&quot;,&amp;m);
+    if(n&lt;1)
+    {
+        printf(&quot;Invalid People Number!\n&quot;);
+    }
+    else
+    {
+        if(m&lt;1)
+        {
+            printf(&quot;Invalid Index!\n&quot;);
+        }
+        else
+        {
+            list *list1 = createLink(n,m);
+            display(list1,m);
+            startTheGame(list1,n,m);
+        }
+    }
+}
+#endif //CLIONCODE_JOSEPHUS_H
+</code></pre>
+<ul>
+<li>在调用时，main中</li>
+</ul>
+<pre><code class="language-c">#include &quot;Josephus.h&quot;
+int main()
+{
+    Josephus();
+    return 0;
+}
+</code></pre>
+<ul>
+<li>运行示例如下：<br>
+<code>请输入约瑟夫序列:</code><br>
+<code>总人数n: 7</code><br>
+<code>操作步长m: 3</code><br>
+<code>约瑟夫环当前数据为：</code><br>
+<code>1 2 3 4 5 6 7</code><br>
+<code>按3为步长的序列为:</code><br>
+<code>3 6 2 7 5 1 4</code></li>
+</ul>
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2019-10-19</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://abelcorn.cn/tag/datastruct" title="数据结构">数据结构 </a>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/datastructures_ex_josephus,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/stack" title=" 数据结构--顺序栈">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '36f0665e9b58519e6cf9',
+    clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+    repo: 'Abelcorn.github.io',
+    owner: 'Abelcorn',
+    admin: ['Abelcorn'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+          
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://abelcorn.cn/media/scripts/jquery.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
