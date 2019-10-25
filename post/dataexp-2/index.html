@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>数据结构实验--在线测试提交 | 小石石石</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://abelcorn.cn/images/avatar.png?v=1571968457160" style="width:127px;" />
+
+     <div class="description">
+      <p>Always do your best.</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   Powered by <a href="https://github.com/Abelcorn">abel</a>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>数据结构实验--在线测试提交</a></h3>
+       </div>
+       <div class="post-content">
+        <p>本次是针对实验一、二的在线题目，包括三道题：合并升序链表、队列元素置逆和括号匹配问题。若有写的不好的地方还请指正。</p>
+<!--more-->
+<p><strong>1.合并链表</strong>:</p>
+<ul>
+<li>【问题描述】 两个非降序链表的并集，例如将链表1-&gt;2-&gt;3 和 2-&gt;3-&gt;5 并为 1-&gt;2-&gt;3-&gt;5，只能输出结果，不能修改两个链表的数据。</li>
+<li>【输入形式】 第一行为第一个链表的各结点值，以空格分隔。 第二行为第二个链表的各结点值，以空格分隔。</li>
+<li>【输出形式】 合并好的链表，以非降序排列，值与值之间以空格分隔。</li>
+<li>【样例输入】 4 7 10 34 1 4 6 29 34 34 52</li>
+<li>【样例输出】 1 4 6 7 10 29 34 52</li>
+<li>【评分标准】 要使用链表实现，否则不能得分。</li>
+</ul>
+<pre><code class="language-c">//@合并链表
+// Created by abel on 2019/10/23.
+//
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Node {
+    int data;
+    struct Node *next;
+}list;
+//输入并创建两个初始链表
+void create(list *list1,list* list2)
+{
+    list *p1 = list1;
+    list *p2 = list2;
+    char ch1,ch2;
+    int data;
+    do
+    {
+        scanf(&quot;%d&quot;,&amp;data);
+        list *temp;
+        temp=(list*)malloc(sizeof(list));
+        temp-&gt;next=0;
+        temp-&gt;data=data;
+        p1-&gt;next=temp;
+        p1=p1-&gt;next;
+
+
+    }while((ch1=getchar())!='\n');
+
+    do
+    {
+        scanf(&quot;%d&quot;,&amp;data);
+        list *temp;
+        temp=(list*)malloc(sizeof(list));
+        temp-&gt;next=0;
+        temp-&gt;data=data;
+        p2-&gt;next=temp;
+        p2=p2-&gt;next;
+
+    }while((ch2=getchar())!=EOF);
+}
+//按大小合并链表
+void merge(list *list1,list* list2)
+{
+    list* p1=list1-&gt;next;
+    list* p2=list2-&gt;next;
+    list* p=list1;
+
+    while(p1&amp;&amp;p2)
+    {
+        if(p1-&gt;data&lt;=p2-&gt;data)
+        {
+            p-&gt;next=p1;
+            p=p-&gt;next;
+            p1=p1-&gt;next;
+        }
+        else
+        {
+            p-&gt;next=p2;
+            p=p2;
+            p2=p2-&gt;next;
+        }
+    }
+    if(p1)
+    {
+        p-&gt;next=p1;
+    }
+    else
+    {
+        p-&gt;next=p2;
+    }
+    free(list2);
+}
+//打印链表元素（无重复值）
+void display(list *list1)
+{
+    list* p=list1-&gt;next;
+    while(p-&gt;next)
+    {
+        if(p-&gt;data==p-&gt;next-&gt;data)
+        {
+            p=p-&gt;next;
+        }
+        else
+        {
+            printf(&quot;%d &quot;,p-&gt;data);
+            p=p-&gt;next;
+        }
+    }printf(&quot;%d\n&quot;,p-&gt;data);
+}
+
+int main()
+{
+    list* list1;
+    list* list2;
+    list1=(list*)malloc(sizeof(list));
+    list2=(list*)malloc(sizeof(list));
+    list1-&gt;next=NULL;
+    list2-&gt;next=NULL;
+
+    create(list1,list2);
+    merge(list1,list2);
+    display(list1);
+    return 0;
+}
+</code></pre>
+<p>*<strong>2.队列置逆</strong>：</p>
+<ul>
+<li>【问题描述】 已知Q是一个非空队列，S是一个空栈。仅使用少量工作变量以及对队列和栈的基本操作，编写一个算法，将队列Q中的所有元素逆置。</li>
+<li>【输入形式】 输入的第一行为队列元素个数，第二行为队列从首至尾的元素</li>
+<li>【输出形式】 输出队列的逆置</li>
+<li>【样例输入】 3 1 2 3</li>
+<li>【样例输出】 3 2 1</li>
+<li>【评分标准】 需采用队列与栈的知识，否则不能得分</li>
+</ul>
+<pre><code class="language-c">//@队列元素置逆
+// Created by abel on 2019/10/23.
+//
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+//建立队列的基本结构
+typedef struct Queue
+{
+    int *data;
+    int size;
+    int capacity;
+    int front,rear;
+}queue;
+
+//建立栈的基本结构
+typedef struct Stack
+{
+    int *data;
+    int top;
+    int capacity;
+}stack;
+
+//创建队列
+queue *createQueue(int n)
+{
+    queue *queue1 = (queue*)malloc(sizeof(queue));
+    if(!queue1)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+
+    queue1-&gt;capacity = n;
+    queue1-&gt;data = (int*)malloc(sizeof(int)*queue1-&gt;capacity);
+    queue1-&gt;front=queue1-&gt;rear=-1;
+    queue1-&gt;size=0;
+
+    return queue1;
+}
+
+//创建栈
+stack *createStack(int n)
+{
+    stack *stack1 = (stack*)malloc(sizeof(stack));
+    if(!stack1)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    stack1-&gt;capacity = n;
+    stack1-&gt;data = (int*)malloc(sizeof(stack1-&gt;capacity));
+    stack1-&gt;top=-1;
+
+    return stack1;
+}
+
+//判断栈空
+bool emptyStack(stack *stack1)
+{
+    return stack1-&gt;top==-1;
+}
+
+//判断队空
+bool emptyQueue(queue *queue1)
+{
+    return queue1-&gt;size==0;
+}
+
+//入栈
+void push(stack *stack1,int elem)
+{
+    stack1-&gt;top++;
+    stack1-&gt;data[stack1-&gt;top]=elem;
+}
+
+//出栈
+void pop(stack *stack1)
+{
+    if(!emptyStack(stack1))
+    {
+        printf(&quot;%d &quot;,stack1-&gt;data[stack1-&gt;top]);
+        stack1-&gt;top--;
+    }
+    else
+    {
+        return;
+    }
+}
+
+//入队
+void enQueue(queue *queue1,int elem)
+{
+    queue1-&gt;front++;
+    queue1-&gt;data[queue1-&gt;front]=elem;
+    queue1-&gt;size++;
+    if(queue1-&gt;rear==-1)
+    {
+        queue1-&gt;rear=0;
+    }
+}
+
+//出队
+int deQueue(queue *queue1) {
+    if(!emptyQueue(queue1))
+    {
+        queue1-&gt;size--;
+        return queue1-&gt;data[queue1-&gt;rear++];
+    }
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    queue *queue1 = createQueue(n);
+    stack *stack1 = createStack(n);
+
+    int a[n];
+    for(int i=0;i&lt;n;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;a[i]);
+    }
+    for(int i=0;i&lt;n;i++)
+    {
+        enQueue(queue1,a[i]);
+    }
+    for(int i=0;i&lt;n;i++)
+    {
+        push(stack1,deQueue(queue1));
+    }
+    for(int i=0;i&lt;n;i++)
+    {
+        pop(stack1);
+    }
+
+    return 0;
+}
+</code></pre>
+<p><strong>3.括号匹配</strong>：</p>
+<ul>
+<li>【问题描述】 假设一算术表达式中包括三种括号：圆括号“（”和“）”，方括号“[”和“]”，花括号“{”和“}”，且三种括号可按意次序嵌套使用，试编写程序判定输入的表达式所含的括号是否正确配对出现。若匹配，则返回1，否则返回0。</li>
+<li>【输入形式】 含括号的算数表达式</li>
+<li>【输出形式】 若表达式中的括号正确配对，则输出1。否则，输出0。</li>
+<li>【样例输入】 3+(44*[5-{6*[7*(45-10)]}])</li>
+<li>【样例输出】 1</li>
+<li>【样例说明】 判断括号是否匹配涉及两方面的问题，一是对左右括号的出现次数的判定，二是对不同括号的出现次序的判定。</li>
+</ul>
+<pre><code class="language-c">//@括号匹配
+// Created by abel on 2019/10/23.
+//
+
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+
+typedef struct Stack
+{
+    char *data;
+    int capacity;
+    int top;
+}stack;
+
+stack *createStack()
+{
+    stack *stack1 = (stack*)malloc(sizeof(stack));
+    if(!stack1)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+
+    stack1-&gt;top=-1;
+    stack1-&gt;capacity = 10;
+    stack1-&gt;data = (char*)malloc(sizeof(char)*stack1-&gt;capacity);
+    if(!stack1-&gt;data)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+
+    return stack1;
+}
+
+bool isFull(stack *stack1)
+{
+    return stack1-&gt;top==stack1-&gt;capacity-1;
+}
+
+bool isEmpty(stack *stack1)
+{
+    return stack1-&gt;top==-1;
+}
+
+void push(stack *stack1,char elem)
+{
+    if(!isFull(stack1))
+    {
+        stack1-&gt;top++;
+        stack1-&gt;data[stack1-&gt;top]=elem;
+    }
+    else
+    {
+        stack1-&gt;capacity = stack1-&gt;capacity*2;
+        stack1-&gt;data = realloc(stack1-&gt;data, sizeof(stack1-&gt;capacity));
+        stack1-&gt;top++;
+        stack1-&gt;data[stack1-&gt;top]=elem;
+    }
+}
+
+char pop(stack *stack1)
+{
+    if(!isEmpty(stack1))
+    {
+        return stack1-&gt;data[stack1-&gt;top--];
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int start()
+{
+    stack *stack1 = createStack();
+    char ch;
+    int flag = 0;
+    while((ch=getchar())!='\n'&amp;&amp;ch!=EOF)
+    {
+        if((ch=='(')||(ch=='[')||(ch=='{'))
+        {
+            push(stack1,ch);
+
+        }
+        else if((ch==')')||(ch==']')||(ch=='}'))
+        {
+            char temp;
+            switch (ch)
+            {
+                case ')':
+                {
+                    temp=pop(stack1);
+                    if(temp=='(')
+                    {
+                        flag=1;
+                        continue;
+                    }
+                    flag=0;
+                    break;
+                }
+                case ']':
+                {
+                    temp = pop(stack1);
+                    if(temp=='[')
+                    {
+                        flag=1;
+                        continue;
+                    }
+                    flag=0;
+                    break;
+                }
+                case '}':
+                {
+                    temp=pop(stack1);
+                    if(temp=='{')
+                    {
+                        flag=1;
+                        continue;
+                    }
+                    flag=0;
+                    break;
+                }
+            }
+        }
+        else{flag=1;}
+    }
+    if (!isEmpty(stack1))
+    {
+        flag=0;
+    }
+    return flag;
+}
+
+int main()
+{
+    int a=0;
+    a=start();
+    printf(&quot;%d\n&quot;,a);
+
+    return 0;
+}
+</code></pre>
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2019-10-25</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://abelcorn.cn/tag/datastruct" title="数据结构">数据结构 </a>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/dataexp-2,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/queue" title=" 数据结构--循环队列">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '36f0665e9b58519e6cf9',
+    clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+    repo: 'Abelcorn.github.io',
+    owner: 'Abelcorn',
+    admin: ['Abelcorn'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+          
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://abelcorn.cn/media/scripts/jquery.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
