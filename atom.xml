@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-10-25T01:56:34.992Z</updated>
+    <updated>2019-11-03T03:27:31.322Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[停更]]></title>
+        <id>https://abelcorn.cn/post/ting-geng</id>
+        <link href="https://abelcorn.cn/post/ting-geng">
+        </link>
+        <updated>2019-11-03T03:26:03.000Z</updated>
+        <content type="html"><![CDATA[<p>由于有部分科目将迎来结课考试，故暂停更新</p>
+<!--more-->]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数据结构实验--在线测试提交]]></title>
         <id>https://abelcorn.cn/post/dataexp-2</id>
@@ -2747,162 +2756,6 @@ public class Table {
 </li>
 </ul>
 <p><em><strong>接着会更新矩阵运算的相关内容</strong></em></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Matlab学习笔记（一）]]></title>
-        <id>https://abelcorn.cn/post/matlab-1</id>
-        <link href="https://abelcorn.cn/post/matlab-1">
-        </link>
-        <updated>2019-09-18T15:18:08.000Z</updated>
-        <summary type="html"><![CDATA[<p><em><strong>基础知识</strong></em><br>
-C++考试终于结束了，可以开始matlab的学习了，本部分内容仅为自己做笔记用，不属于对外教程。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em><strong>基础知识</strong></em><br>
-C++考试终于结束了，可以开始matlab的学习了，本部分内容仅为自己做笔记用，不属于对外教程。</p>
-<!--more-->
-<h3 id="常用指令">常用指令</h3>
-<ul>
-<li><code>cd</code>：显示或改变工作目录</li>
-<li><code>clc</code>：清除命令行窗口</li>
-<li><code>clf</code>：清除图形窗口</li>
-<li><code>hold</code>：保持图形窗口</li>
-<li><code>diary</code>：生成日志文件</li>
-<li><code>load</code>：加载指定文件的变量</li>
-<li><code>dir</code>：显示当前目录下的文件</li>
-<li><code>pack</code>：整理内存碎片</li>
-<li><code>disp</code>：显示变量或文字内容</li>
-<li><code>path</code>：显示搜索目录</li>
-<li><code>echo</code>：命令行窗口信息显示开关</li>
-<li><code>quit</code>：退出 Matlab</li>
-<li><code>save</code>：保存内存变量指定文件</li>
-<li><code>type</code>：显示文件内容</li>
-</ul>
-<h3 id="变量与常量">变量与常量</h3>
-<p><strong>变量：</strong></p>
-<ul>
-<li>变量名必须以字母开头，之后可以是任意的字母、数字或下划线</li>
-<li>大小写敏感</li>
-<li>不超过31个字符，第31个及之后的会被忽略</li>
-<li>未加说明的前提下，一切变量视为局部变量，可用global声明为全局</li>
-</ul>
-<p><strong>常量</strong>：</p>
-<ul>
-<li><code>ans</code>：默认变量，一般用在显示答案</li>
-<li><code>pi</code>：圆周率</li>
-<li><code>eps</code>：浮点运算相对精度</li>
-<li><code>inf</code>：无穷大 如1/0</li>
-<li><code>NaN</code>：不定值，如0/0</li>
-<li><code>i j</code>：虚数单位</li>
-<li><code>realmin</code>：最小正浮点数</li>
-<li><code>realmax</code>：最大正浮点数</li>
-</ul>
-<h3 id="数值">数值</h3>
-<p><strong>整型</strong>：</p>
-<ul>
-<li><code>char</code>:字符型，占用1字节</li>
-<li><code>short</code>:短整型，占用2字节</li>
-<li><code>int</code>:整型，4字节</li>
-<li><code>long</code>:长整型，8字节</li>
-<li>以上均有对应的无符号类型:<code>unsigned xxx</code></li>
-</ul>
-<p><strong>浮点型</strong>：</p>
-<ul>
-<li>十进制类型，如：1.2 4.44</li>
-<li>指数形式，如: 2.1E5  3.7e-2</li>
-<li>指数标志e前必须有数字，后面必须有阶码</li>
-<li><code>float</code>：单精度，4字节</li>
-<li><code>double</code>：双精度，8字节</li>
-</ul>
-<p><strong>复数类型</strong>：</p>
-<ul>
-<li>实部：Rez=a</li>
-<li>虚部：Imz=b</li>
-<li>当虚部为0，可视为实数；当实部为0而虚部不为0，叫做纯虚数</li>
-<li>加法法则：<code>(a+bi)+(c+di) = (a+c)+(b+d)i</code></li>
-<li>减法法则：<code>(a+bi)-(c+di) = (a-c)+(b-c)i</code></li>
-<li>乘法法则：<code>(a+bi)*(c+di) = (ac-bd)+(bc+ad)i</code></li>
-<li>除法法则：<code>(a+bi)/(c+di) = [(ac+bd)/(c^2+d^2)]+[(bc-ad)/(c^2+d^2)]i</code></li>
-</ul>
-<p><strong>数字显示格式</strong>：</p>
-<ul>
-<li>
-<p><code>format short</code>：5位定点表示（默认）</p>
-</li>
-<li>
-<p><code>format long</code>：15位定点表示</p>
-</li>
-<li>
-<p><code>format short e</code>：5位浮点表示</p>
-</li>
-<li>
-<p><code>format short g</code>：自动选择定点还是浮点表示</p>
-</li>
-<li>
-<p><code>format hex</code>：十六进制显示</p>
-</li>
-<li>
-<p><code>format +</code>：在矩阵中，用+、-和空格表示正、负和零</p>
-</li>
-<li>
-<p><code>format bank</code>：用美元和美分定点表示</p>
-</li>
-<li>
-<p><code>format rat</code>：以有理数形式输出结果</p>
-</li>
-<li>
-<p><code>format compact</code>：变量间无空格</p>
-</li>
-<li>
-<p><code>format loose</code>：变量间有空行</p>
-</li>
-<li>
-<p>以上输出方式:</p>
-<pre><code class="language-matlab">format long,pi
-</code></pre>
-</li>
-</ul>
-<h3 id="运算符">运算符</h3>
-<p>除简单的四则运算外，还有点乘<code>.*</code>，等，后期运算会遇到</p>
-<p><strong>关系运算符</strong>：</p>
-<ul>
-<li><code>==</code>：等于</li>
-<li><code>~=</code>：不等于</li>
-<li><code>&gt;``&gt;=``&lt;``&lt;=</code>：比较</li>
-<li>以上返回值为0或1</li>
-</ul>
-<p><strong>逻辑运算法</strong>：</p>
-<ul>
-<li><code>-</code>：逻辑与</li>
-<li><code>|</code>：逻辑或</li>
-<li><code>~</code>：逻辑非</li>
-<li><code>xor</code>：逻辑异或</li>
-<li><code>any</code>：有非零元素则为真</li>
-<li><code>all</code>：所有元素均非零才为真</li>
-</ul>
-<h3 id="函数运算">函数运算</h3>
-<p><strong>复数运算</strong>：</p>
-<ul>
-<li><code>abs</code>:模</li>
-<li><code>angle</code>：复数相角</li>
-<li><code>complex</code>：用实部和虚部构造一个复数</li>
-<li><code>conj</code>：复数的共轭</li>
-<li><code>imag</code>：虚部</li>
-<li><code>real</code>：实部</li>
-<li><code>unwrap</code>：调整矩阵元素的相位</li>
-<li><code>isreal</code>：判断是否为实数矩阵</li>
-<li><code>cplxpair</code>：把复数矩阵排列成复共轭对</li>
-</ul>
-<p><strong>三角函数运算</strong>：</p>
-<ul>
-<li><code>sin()</code>：</li>
-<li><code>cos()</code></li>
-<li><code>tan()</code></li>
-<li><code>cot()</code></li>
-<li><code>sec()</code>：正割</li>
-<li><code>csc()</code>：余割<br>
-<em><strong>后期将更新向量与多项式的内容</strong></em></li>
-</ul>
 ]]></content>
     </entry>
 </feed>
