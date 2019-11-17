@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>类UNIX内核的Shell编程（前言） | 小石石石</title>
+  <title>数据结构--图(邻接表） | 小石石石</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -77,184 +77,113 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>类UNIX内核的Shell编程（前言）</a></h3>
+        <h3><a>数据结构--图(邻接表）</a></h3>
        </div>
        <div class="post-content">
-        <h1 id="前言">前言</h1>
-<p><strong>在过去的几十年中所出现的UNIX和类UNIX操作系统家族已经成为如今最为流行、使用最为广泛的操作系统之一了。</strong></p>
-<ul>
-<li>UNIX为程序开发提供了既优雅而又高效的环境，所以我们要学习这个标签——shell</li>
-<li>我用的Mac OS X和Linux就属于类UNIX，而像Ubuntu这些都属于类Linux</li>
-<li>像Solaris这种才是正宗的UNIX，但是我没用过</li>
-<li>好像有点绕晕了？没关系，不用深入了解上边的，毕竟我们的重点是shell编程</li>
-</ul>
+        <p>单身好啊，好就好在没人打扰我写代码</p>
 <!--more-->
-<h2 id="提示">提示</h2>
-<ul>
-<li>如果各位用的是苹果电脑，直接打开<em>Terminal</em>就可以用了，但是如果你是<em>Windows</em>的话，你需要<em>Win+R</em>,然后输入<em>Powershell</em>，进入一个新窗口后就可以用了，但是很多命令它都不支持，所以建议装一个Linux。</li>
-<li>本标签的文章的组织模式是这样的：</li>
-<li>
-<blockquote>
-<blockquote>
-<ol>
-<li>基础命令</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="2">
-<li>shell入门</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="3">
-<li><s>常备优卡丹</s>  常备工具</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="4">
-<li>脚本与变量</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="5">
-<li>引用</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="6">
-<li>参数传递</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="7">
-<li>条件语句</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="8">
-<li>循环</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="9">
-<li>数据的读取和打印</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="10">
-<li>环境  &lt;<u> 悄悄的说，这些名字也太抽象了</u>&gt;</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="11">
-<li>参数的高级传递</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="12">
-<li>扩展命令</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="13">
-<li>rolo进阶</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="14">
-<li>交互式与非标准shell的特性</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="15">
-<li>shell总结</li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li>
-<blockquote>
-<blockquote>
-<ol start="16">
-<li>附录 <del>我觉得可能写不到这里，假装叹个气～～</del></li>
-</ol>
-</blockquote>
-</blockquote>
-</li>
-<li><em>以后会涉及到目录的操作，所以请自行分辨Mac和Win的目录分割符</em>,分别为user/Desktop/ 或者user\Desktop\</li>
-</ul>
-<blockquote>
-<p>那么，下一篇就会开始进入第一节的内容了～</p>
-</blockquote>
-<ul>
-<li>对了，以后出现的命令不要乱用，电脑文件没了是小事，但是乱用这些代码，🉑️能搞坏你的硬件</li>
-</ul>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define maxVer 30//最大顶点数
+#define maxEdges 900//最大边数
+#define maxWeight 100//最大权值
+
+//边结点，存储每一个结点的边链表
+typedef struct ENode
+{
+    int dest;
+    int weight;
+    struct ENode* link;
+}edgeNode;
+
+//点结点，是每一行的第一个结点
+typedef struct VNode
+{
+    char data;
+    struct ENode* adj;   
+}verNode;
+
+//图的基本结构
+typedef struct 
+{
+    int numVer,numEdge;//点数和边数
+    verNode verList[maxVer];//顶点信息集合
+}graph;
+
+//获取点总数
+int numofVer(graph *g);
+//获取边总数
+int numofEdge(graph *g);
+//获取点的位置
+int getVerPos(graph *g, char v);
+//获取第pos的位置顶点顺序
+char getInfo(graph *g, int pos);
+//获取两个结点的权值信息
+int getWeight(graph *g,char v1,char v2);
+
+//获取点总数
+int numofVer(graph *g)
+{
+    return g-&gt;numVer;
+}
+
+//获取边总数
+int numofEdge(graph *g)
+{
+    return g-&gt;numEdge;
+}
+
+//获取点的位置
+int getVerPos(graph *g, char v)
+{
+    int i=0;
+    while(i&lt;g-&gt;numVer &amp;&amp; g-&gt;verList[i].data != v){i++;}//当没有找到匹配v的就持续循环
+    if(i&lt;g-&gt;numVer)return i;//如果最后找到了就返回位置信息
+    else return -1;//不然就返回-1
+}
+
+//获取第pos的位置顶点顺序
+char getInfo(graph *g, int pos)
+{
+    if(pos!=-1)//位置信息没问题
+    {
+        return g-&gt;verList[pos].data;//返回该位置的结点信息
+    }
+    else
+    {
+        return '#';//否则就返回#表示有问题
+    }
+}
+
+//获取两个结点的权值信息
+int getWeight(graph *g,char v1,char v2)
+{
+    int i=-1,j=-1;
+    i = getVerPos(g,v1);
+    j = getVerPos(g,v2);
+    //获取两个结点的位置
+    edgeNode *p = g-&gt;verList[i].adj;
+    //将该结点位置的邻接链表赋给p
+    while(p!=NULL &amp;&amp;p-&gt;dest != j)//当p的边不等于j的位置
+    {
+        p=p-&gt;link;//将p后移
+    }
+    if(p!=NULL)return p-&gt;weight;//返回权值
+    else return -1;//返回-1
+}
+</code></pre>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2019-05-27</span>
+          <span class="date">2019-11-11</span>
           <i class="fa fa-tag"></i>
           
-          <a class="tag" href="https://abelcorn.cn/tag/Wq8ZRRiBS" title="Shell">Shell </a>
+          <a class="tag" href="https://abelcorn.cn/tag/datastruct" title="数据结构">数据结构 </a>
           
          </div>
         </div>
@@ -268,16 +197,16 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/shell-0,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/datastruct_graph2,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/shell-1" title="类UNIX内核的Shell编程（一）">上一篇</a></li>
+        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/datastruct_search1" title="数据结构--二分查找">上一篇</a></li>
          
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/hello-visitor" title=" Hello Visitor">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/datastruct_graph1" title=" 数据结构--图(邻接矩阵)">下一篇</a></li>
         
        </ul>
       </div>

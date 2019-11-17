@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2019-11-03T03:27:31.322Z</updated>
+    <updated>2019-11-17T13:34:45.839Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -11,13 +11,502 @@
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, 小石石石</rights>
     <entry>
-        <title type="html"><![CDATA[停更]]></title>
-        <id>https://abelcorn.cn/post/ting-geng</id>
-        <link href="https://abelcorn.cn/post/ting-geng">
+        <title type="html"><![CDATA[数据结构--二分查找]]></title>
+        <id>https://abelcorn.cn/post/datastruct_search1</id>
+        <link href="https://abelcorn.cn/post/datastruct_search1">
         </link>
-        <updated>2019-11-03T03:26:03.000Z</updated>
-        <content type="html"><![CDATA[<p>由于有部分科目将迎来结课考试，故暂停更新</p>
-<!--more-->]]></content>
+        <updated>2019-11-12T13:32:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>单身使人快乐。<br>
+<br><br>
+我真🌶️🐔</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>单身使人快乐。<br>
+<br><br>
+我真🌶️🐔</p>
+<!--more-->
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+//创建一个顺序表结构
+typedef struct Table
+{
+    int *data;//存数据
+    int length;//表长度
+}table;
+
+//冒泡排序
+void Bubble_Sort(int a[],int n)
+{
+    int temp;
+    int i,j;
+    printf(&quot;Original: &quot;);
+    for(i=0;i&lt;n;i++)
+    {
+        printf(&quot;%d &quot;,a[i]);
+    }
+    printf(&quot;\n&quot;);
+    //先将原始数据打印出来
+    //排序
+    for(i=0;i&lt;n;i++)
+    {
+        for(j=0;j&lt;n-i-1;j++)
+        {
+            if(a[j]&gt;a[j+1])
+            {
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+}
+
+//创建顺序表
+table *createTable()
+{
+    table *t = (table*)malloc(sizeof(table));
+    if(!t)//判断空间开辟情况
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    //输入存入的数据数量
+    printf(&quot;How many numbers you want to enter?\n&quot;);
+    scanf(&quot;%d&quot;,&amp;t-&gt;length);
+    t-&gt;data = (int*)malloc(sizeof(int)*t-&gt;length);
+    if(!t-&gt;data)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    //判断空间开辟情况
+    printf(&quot;Enter them:\n&quot;);
+    //输入数据
+    for(int i=0;i&lt;t-&gt;length;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;t-&gt;data[i]);
+    }
+    //调用排序算法
+    Bubble_Sort(t-&gt;data,t-&gt;length);
+    printf(&quot;Now:    &quot;);
+    for(int i=0;i&lt;t-&gt;length;i++)
+    {
+        printf(&quot;%d &quot;,t-&gt;data[i]);
+    }
+    printf(&quot;\n&quot;);
+    //展示现在的顺序
+    return t;
+}
+
+//二分查找
+int Binary_Search(const int a[],int x,int n)
+{
+    int low=0,high=n,mid;
+    while(low&lt;=high)//当低位不高于高位时
+    {
+        mid = (high+low)/2;//求出中间位
+        if(x == a[mid])//判断是否是此数
+        {
+            return mid;//是则返回
+        }
+        else//不是
+        {
+            if(x&gt;a[mid])low = mid+1;
+            //若要找的数大于中间数，则缩小空间至原来的[mid,high]
+            else high = mid-1;
+            //若要找的数小于中间数，则缩小空间至原来的[low,mid]
+        }
+    }
+    return -1;//找不到
+}
+
+int main()
+{
+    table *t = createTable();//创建此顺序表
+    int x;
+    printf(&quot;Enter the number which you wanna find: &quot;);
+    scanf(&quot;%d&quot;,&amp;x);//输入你要找的数据
+    int flag = Binary_Search(t-&gt;data,x,t-&gt;length);//存下数据做处理
+    if(flag!=-1)//找到了则
+    {
+        printf(&quot;Successful!\n%d 's position is %dth\n&quot;,x,flag+1);
+    }
+    else//没找到
+    {
+        printf(&quot;Failed!\n&quot;);
+    }
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据结构--图(邻接表）]]></title>
+        <id>https://abelcorn.cn/post/datastruct_graph2</id>
+        <link href="https://abelcorn.cn/post/datastruct_graph2">
+        </link>
+        <updated>2019-11-11T13:31:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>单身好啊，好就好在没人打扰我写代码</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>单身好啊，好就好在没人打扰我写代码</p>
+<!--more-->
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define maxVer 30//最大顶点数
+#define maxEdges 900//最大边数
+#define maxWeight 100//最大权值
+
+//边结点，存储每一个结点的边链表
+typedef struct ENode
+{
+    int dest;
+    int weight;
+    struct ENode* link;
+}edgeNode;
+
+//点结点，是每一行的第一个结点
+typedef struct VNode
+{
+    char data;
+    struct ENode* adj;   
+}verNode;
+
+//图的基本结构
+typedef struct 
+{
+    int numVer,numEdge;//点数和边数
+    verNode verList[maxVer];//顶点信息集合
+}graph;
+
+//获取点总数
+int numofVer(graph *g);
+//获取边总数
+int numofEdge(graph *g);
+//获取点的位置
+int getVerPos(graph *g, char v);
+//获取第pos的位置顶点顺序
+char getInfo(graph *g, int pos);
+//获取两个结点的权值信息
+int getWeight(graph *g,char v1,char v2);
+
+//获取点总数
+int numofVer(graph *g)
+{
+    return g-&gt;numVer;
+}
+
+//获取边总数
+int numofEdge(graph *g)
+{
+    return g-&gt;numEdge;
+}
+
+//获取点的位置
+int getVerPos(graph *g, char v)
+{
+    int i=0;
+    while(i&lt;g-&gt;numVer &amp;&amp; g-&gt;verList[i].data != v){i++;}//当没有找到匹配v的就持续循环
+    if(i&lt;g-&gt;numVer)return i;//如果最后找到了就返回位置信息
+    else return -1;//不然就返回-1
+}
+
+//获取第pos的位置顶点顺序
+char getInfo(graph *g, int pos)
+{
+    if(pos!=-1)//位置信息没问题
+    {
+        return g-&gt;verList[pos].data;//返回该位置的结点信息
+    }
+    else
+    {
+        return '#';//否则就返回#表示有问题
+    }
+}
+
+//获取两个结点的权值信息
+int getWeight(graph *g,char v1,char v2)
+{
+    int i=-1,j=-1;
+    i = getVerPos(g,v1);
+    j = getVerPos(g,v2);
+    //获取两个结点的位置
+    edgeNode *p = g-&gt;verList[i].adj;
+    //将该结点位置的邻接链表赋给p
+    while(p!=NULL &amp;&amp;p-&gt;dest != j)//当p的边不等于j的位置
+    {
+        p=p-&gt;link;//将p后移
+    }
+    if(p!=NULL)return p-&gt;weight;//返回权值
+    else return -1;//返回-1
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据结构--图(邻接矩阵)]]></title>
+        <id>https://abelcorn.cn/post/datastruct_graph1</id>
+        <link href="https://abelcorn.cn/post/datastruct_graph1">
+        </link>
+        <updated>2019-11-11T13:29:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>单身狗的日常。自己看</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>单身狗的日常。自己看</p>
+<!--more-->
+<pre><code class="language-c">//
+// Created by abel on 2019/11/11.
+//
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define maxVer 30//最大顶点数
+#define maxEdges 900//最大边数
+#define maxWeight 100//最大权值
+
+//图的结构
+typedef struct Graph
+{
+    int numVer,numEdge;//点数和边数
+    int  verList[maxVer];//顶点数据集合
+    int edgeList[maxVer][maxVer];//邻接矩阵
+}graph;
+
+//建立图*
+void createGraph(graph *g);
+//打印图数据*
+void printGraph(graph *g);
+//初始化图*
+void initGraph(graph *g);
+//得到顶点v在顶点数据集合中的位置*
+int getVerPos(graph *g,int v);
+//获取整个图的顶点数*
+int numofVer(graph *g);
+//获取整个图的边数*
+int numofEdge(graph *g);
+//得到两个点之间边的权值*
+int getWeight(graph *g,int v1, int v2);
+//得到顶点v的第一个邻接点*
+int firstNeighbor(graph *g,int v);
+//插入新顶点*
+bool insertVer(graph *g);
+//插入新边*
+bool insertEdge(graph *g);
+
+//建立图
+void createGraph(graph *g)
+{
+    int ver,edge;
+    printf(&quot;Number of Ver: &quot;);
+    scanf(&quot;%d&quot;,&amp;ver);
+    printf(&quot;Number of Edge: &quot;);
+    scanf(&quot;%d&quot;,&amp;edge);
+    //输入点数和边数
+    g-&gt;numVer = ver;
+    g-&gt;numEdge = edge;
+    //将输入的点数和边数给图赋值
+    printf(&quot;Please enter the data of the vers: \n&quot;);
+    int value,j;
+    //输入各顶点并将顶点数据存入顶集合中
+    for(int i=0;i&lt;ver;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;value);
+        g-&gt;verList[i]=value;
+        for(j=0;j&lt;ver;j++)//输入时初始化邻接矩阵
+        {
+            //如果将对角线元素全部变为0,其他的都变成maxWeight，及相当于初始化为无穷大
+            g-&gt;edgeList[i][j]=(i==j)?0:maxWeight;
+        }
+    }
+    //在输入完所有顶点信息后，开始存入邻接矩阵
+    printf(&quot;Enter the two Ver and their weight every time:\n&quot;);
+    int v1,v2,cost;
+    for(int i=0;i&lt;edge;i++)
+    {
+        scanf(&quot;%d %d %d&quot;,&amp;v1,&amp;v2,&amp;cost);//输入两个点及其权值
+        value = getVerPos(g,v1);//得到点1的位置
+        j = getVerPos(g,v2);//得到点2的位置
+        if(value != -1 &amp;&amp; j != -1)//判断位置是否有效
+        {
+            g-&gt;edgeList[value][j]=cost;//将权值存入邻接矩阵
+            g-&gt;edgeList[j][value]=cost;//无向图对称存入
+        }
+        else
+        {
+            printf(&quot;Error Info!\n&quot;);
+            abort();
+        }
+    }
+}
+
+//得到顶点v在顶点数据集合中的位置
+int getVerPos(graph *g,int v)
+{
+    bool flag = false;//设置一个开关判断是否找到该顶点
+    int i=-1;
+    for(i=0;i&lt;g-&gt;numVer;i++)
+    {
+        if(v==g-&gt;verList[i])//如果找到了
+        {
+            flag = true;
+            break;//跳出循环
+        }
+    }
+    if(flag)//如果找到了
+    {
+        return i;//将位置返回
+    }
+    else
+    {
+        return -1;//否则返回-1
+    }
+}
+
+//打印图数据
+void printGraph(graph *g)
+{
+    printf(&quot;The verList: \n&quot;);//将图的顶点集合打印出来
+    for(int i=0;i&lt;g-&gt;numVer;i++)
+    {
+        printf(&quot;%d &quot;,g-&gt;verList[i]);
+    }
+    printf(&quot;\n&quot;);
+    printf(&quot;The Matrix Of the List:\n&quot;);//将邻接权值矩阵打印出来
+    for(int i=0;i&lt;g-&gt;numVer;i++)
+    {
+        for(int j=0;j&lt;g-&gt;numVer;j++)
+        {
+            if(g-&gt;edgeList[i][j]==maxWeight)//如果权值等于最大值
+            {
+                printf(&quot;∞ &quot;);//以无穷大符号显示
+                continue;
+            }
+            else
+            {
+                printf(&quot;%d &quot;,g-&gt;edgeList[i][j]);//否则打印权值
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+//初始化图
+void initGraph(graph *g)
+{
+    for(int i=0;i&lt;g-&gt;numVer;i++)
+    {
+        for(int j=0;j&lt;g-&gt;numVer;j++)//将邻接矩阵变为全零矩阵
+        {
+            g-&gt;edgeList[i][j]=0;
+        }
+    }
+}
+
+//获取整个图的顶点数
+int numofVer(graph *g)
+{
+    return g-&gt;numVer;
+}
+
+//获取整个图的边数
+int numofEdge(graph *g)
+{
+    return g-&gt;numEdge;
+}
+
+//得到两个点之间边的权值
+int getWeight(graph *g,int v1, int v2)
+{
+    int va,vb;
+    int i,j;
+    printf(&quot;Enter two vers: \n&quot;);
+    scanf(&quot;%d %d&quot;,&amp;va,&amp;vb);
+    i = getVerPos(g,va);
+    j = getVerPos(g,vb);
+    //查找两个顶点的位置
+    if(i!=-1&amp;&amp;j!=-1)
+    {
+        return g-&gt;edgeList[i][j];
+        //在邻接权值矩阵中找到这条路径的权值
+    }
+    else
+    {
+        return -1;//否则返回-1
+    }
+}
+
+//得到顶点v的第一个邻接点
+int firstNeighbor(graph *g,int v)
+{
+    int pos=-1;//一个固定的位置记录符
+    if(v!=-1)//如果给的点是正确的
+    {
+        for(int j=0;j&lt;g-&gt;numVer;j++)
+        {
+            if(g-&gt;edgeList[v][j]&gt;0&amp;&amp;g-&gt;edgeList[v][j]&lt;maxWeight)//查看点v有没有权值为非0或者非无穷大的边
+            {
+                pos = j;//若有则记录此位置
+                break;
+            }
+        }
+    }
+    if(pos!=-1)
+    {
+        return g-&gt;verList[pos];//将该位置的顶点数据返回
+    }
+    return -1;
+}
+
+//插入新顶点
+bool insertVer(graph *g)
+{
+    printf(&quot;Please enter the ver data: \n&quot;);
+    int value;
+    scanf(&quot;%d&quot;,&amp;value);
+    g-&gt;verList[g-&gt;numVer+1]=value;//将新顶点的数据存入顶点集合
+    printf(&quot;Enter the dest ver info and their weight:\n&quot;);
+    int ver,cost;
+    scanf(&quot;%d %d&quot;,&amp;ver,&amp;cost);//输入与新结点链接的点及其权值输入
+    int i = getVerPos(g,ver);///得到已存在的该点的位置
+    int j = g-&gt;numVer+1;
+    if(i!=-1)
+    {
+        g-&gt;numVer++;
+        g-&gt;numEdge++;//图的基本信息更新
+        for(int k = 0;k&lt;g-&gt;numVer+1;k++)
+        {
+         g-&gt;edgeList[k][j]=maxWeight;//重新布置邻接矩阵
+         g-&gt;edgeList[j][k]=maxWeight;
+        }
+        g-&gt;edgeList[j][j]=0;
+        g-&gt;edgeList[i][j]=g-&gt;edgeList[j][i]=cost;//将权值写入矩阵中
+        return true;
+    }
+    return false;
+}
+
+//插入新边
+bool insertEdge(graph *g)
+{
+    printf(&quot;Enter two ver:\n&quot;);
+    int v1,v2;
+    scanf(&quot;%d %d&quot;,&amp;v1,&amp;v2);
+    int i = getVerPos(g,v1);
+    int j = getVerPos(g,v2);//找到输入的两个点的位置信息
+    if(i!=-1 &amp;&amp; j!=-1)
+    {
+        int weight;
+        printf(&quot;Enter the weight between them:\n&quot;);
+        scanf(&quot;%d&quot;,&amp;weight);//输入两点的权值信息　
+        g-&gt;edgeList[i][j]=g-&gt;edgeList[j][i]=weight;//赋值
+        return true;
+    }
+    return false;
+}
+</code></pre>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[数据结构实验--在线测试提交]]></title>
@@ -2487,275 +2976,6 @@ public class Table {
 <li>奇怪啊，为何阴沉的天空与迷离的大海如此的沉重，却在那轮红日的映衬下显得如此完美。为何我总想着那天的和风与暖日，却不愿品味每一个季节。他们都是亲切的，只是不知道用哪种方式接近我，不至于只贪恋往日，每个让我感到心安的日子，都是那么美好。</li>
 <li>我想，心里也应该感激，纵使这海风并不温柔。</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Matlab学习笔记（三）]]></title>
-        <id>https://abelcorn.cn/post/matlab-3</id>
-        <link href="https://abelcorn.cn/post/matlab-3">
-        </link>
-        <updated>2019-09-22T11:27:48.000Z</updated>
-        <summary type="html"><![CDATA[<p><em><strong>矩阵</strong></em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em><strong>矩阵</strong></em></p>
-<!--more-->
-<h3 id="矩阵">矩阵</h3>
-<p><strong>矩阵定义</strong>：</p>
-<ul>
-<li>如3x3的矩阵<code>A=[1 2 3;4 5 6; 7 8 9]</code></li>
-<li>3维矩阵：<code>[[1 2 3];[2 4 6];[7 8 9]]</code></li>
-<li>复数矩阵：<code>[[1 1+i 2];[2 3+2i 1]]</code></li>
-<li>矩阵生成：</li>
-<li>
-<ul>
-<li>利用M文件写入</li>
-<li>利用文本创建：</li>
-<li>建立<code>goods.txt</code>，里面写入相关矩阵信息，接着<code>load goods.txt</code></li>
-</ul>
-</li>
-<li>创建特殊矩阵：</li>
-<li>
-<ul>
-<li><code>eye(n)</code>：创建nxn的单位矩阵</li>
-<li><code>eye(m,n)</code>：创建mxn的单位矩阵</li>
-<li><code>eye(size(A))</code>：创建与A同维的单位矩阵</li>
-<li><code>ones(n)</code>：创建nxn的全1矩阵</li>
-<li><code>ones(m,n)</code>、 <code>ones(size(A))</code></li>
-<li><code>zeros(n)</code>、 <code>zeros(m,n)</code>、 <code>zeros(size(A))</code></li>
-<li><code>rand(n)</code>：在<code>[0,1]</code>区间内创建一个nxn的均匀随机矩阵</li>
-<li><code>rand(m,n)</code>、<code>rand(size(A))</code></li>
-<li><code>compan(P)</code>：创建系数向量是P的多项式伴随矩阵</li>
-<li><code>diag(v)</code>：创建一向量v中的元素为对角的对角矩阵</li>
-<li><code>hilb(n)</code>：创建nxn的Hilbert矩阵</li>
-<li><code>magic(n)</code>：生成n阶魔方矩阵</li>
-<li><code>sparse(A)</code>：将A转化为稀疏矩阵，即由A的非0元素和下标构成的稀疏矩阵S。若A本身为稀疏矩阵，则返回A本身(即仍然为稀疏矩阵A)</li>
-</ul>
-</li>
-</ul>
-<p><strong>矩阵元素的运算</strong>：</p>
-<ol>
-<li>元素修改：
-<ul>
-<li><code>D=[A;B C]</code>：A为原矩阵，B、C中包含要扩充的元素，D为扩充后的矩阵</li>
-<li><code>A(m,:)=[]</code>：删除A的第m行</li>
-<li><code>A(:,n)=[]</code>：删除A的第n列</li>
-<li><code>A(m,n) =a</code>：对A的第m行n列元素赋值</li>
-<li><code>A(m,:)=[a,b,c....]</code>：对A的第m行赋值</li>
-<li><code>A(:,n)=[a,b,c,...]</code></li>
-</ul>
-</li>
-<li>维度修改:</li>
-</ol>
-<ul>
-<li>矩阵的变维可以用符号“：”和reshape函数变换
-<ul>
-<li><code>A=1:12</code> <code>B=reshape(A,2,6)</code></li>
-<li>用冒号法时，要注意需先设定修改后的矩阵形状</li>
-<li><code>C=zeros(3,4);</code> <code>C(:)=A(:)</code></li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>矩阵的变向：
-<ul>
-<li><code>Rot(90)</code>：将A逆时针旋转90度</li>
-<li><code>Rot(90,k)</code>：将A旋转<code>k*90</code>度，其中k为正负整数</li>
-<li><code>Fliplr(X)</code>:将X左右翻转</li>
-<li><code>flipud(X)</code>：将X上下翻转</li>
-<li><code>flipdim(X,dim)</code>：dim=1时对行翻转，dim=2时对列翻转</li>
-</ul>
-</li>
-<li>矩阵的抽取:</li>
-</ol>
-<ul>
-<li>主要指对角线元素和上下三角矩阵的抽取
-<ul>
-<li><code>diag(X,k)</code>：抽取矩阵的第k条对角线上的元素向量。k=0表示主对角线，k为正整数时抽取上方第k条。。。。。。。</li>
-<li><code>diag(X)</code>：抽取主对角线</li>
-<li><code>diag(v,k)</code>：使得v为所得矩阵第k条对角线上的元素向量</li>
-<li><code>diag(v)</code>：使得v为所得矩阵主对角线上的元素向量</li>
-<li><code>tril(X)</code>：提取矩阵X的主下三角部分</li>
-<li><code>tril(X,k)</code>：提取第k条对角线下面的部分（包括第k条）</li>
-<li><code>triu(X)</code>：提取上三角</li>
-<li><code>triu(X,k)</code>：........上三角（包括第k条）</li>
-</ul>
-</li>
-</ul>
-<h3 id="矩阵的数学运算">矩阵的数学运算</h3>
-<ul>
-<li>待续</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Matlab学习笔记（二）]]></title>
-        <id>https://abelcorn.cn/post/matlab-2</id>
-        <link href="https://abelcorn.cn/post/matlab-2">
-        </link>
-        <updated>2019-09-20T13:22:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>本节内容将说明一般的向量运算，为后面的矩阵运算做好基础。向量大部分为中学知识，不再说明计算方法与用处。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>本节内容将说明一般的向量运算，为后面的矩阵运算做好基础。向量大部分为中学知识，不再说明计算方法与用处。</p>
-<!--more-->
-<p><em><strong>向量与多项式</strong></em></p>
-<h3 id="向量">向量</h3>
-<p><strong>向量的生成</strong>：</p>
-<ol>
-<li>直接输入：行向量：<code>x=[1,2,3]</code>，列向量：<code>x=[1;2;3]</code></li>
-<li>冒号输入：<code>x=0:2:10</code>，表示从0一直到10，步长为2，隔一个输出，即结果是<code>x=[0,2,4,6,8,10]</code> 如果<code>x=0:10</code>，则默认步长为1</li>
-<li>linspace函数法：<code>linspace(first_value,last_value,number)</code>，从第一到最后的数据范围，其中包括number个数</li>
-<li>logspace函数法：<code>logspace(first_value,last_value,number)</code>,输出number个，从10<sup>first_value到10</sup>last_value，如：<code>logspace(1,3,3)</code>可得10 100 1000</li>
-</ol>
-<p><strong>向量元素的引用</strong>：</p>
-<ul>
-<li>如<code>x=[1,2,3,4,5]</code>，则<code>x(1:3)</code>表示抽出第一到第三个元素，即1 2 3</li>
-</ul>
-<p><strong>向量运算</strong>：</p>
-<ul>
-<li>
-<p>定义向量</p>
-</li>
-<li>
-<p>加法+</p>
-</li>
-<li>
-<p>减法-</p>
-</li>
-<li>
-<p>乘法*</p>
-</li>
-<li>
-<p>除法/</p>
-</li>
-<li>
-<p>混合运算 （以上均中学知识不再赘述）</p>
-</li>
-<li>
-<p>点积：点积可用<code>.*</code>或者<code>dot(a,b)</code>,<code>dot(a,b,dim)</code>，其中，a和b必须同维，dim是a和b在dim维度的点积</p>
-</li>
-<li>
-<p>叉积：<code>cross(a,b)</code>,<code>cross(a,b,dim)</code></p>
-</li>
-<li>
-<p>卷积：我们称</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>f</mi><mo>∗</mo><mi>g</mi><mo>)</mo><mo>(</mo><mi>n</mi><mo>)</mo><mi mathvariant="normal">为</mi><mi>f</mi><mo separator="true">,</mo><mi>g</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">卷</mi><mi mathvariant="normal">积</mi><mi mathvariant="normal">。</mi><mi mathvariant="normal">其</mi><mi mathvariant="normal">计</mi><mi mathvariant="normal">算</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">式</mi><mi mathvariant="normal">为</mi><mi mathvariant="normal">：</mi><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>τ</mi><mo>)</mo><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mi>d</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">(f*g)(n)为f,g的卷积。 其计算方式为： \int_{-\infty}^{+\infty}f(\tau)g(n)d\tau
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.491512em;vertical-align:-0.970281em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mord cjk_fallback">为</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">卷</span><span class="mord cjk_fallback">积</span><span class="mord cjk_fallback">。</span><span class="mord cjk_fallback">其</span><span class="mord cjk_fallback">计</span><span class="mord cjk_fallback">算</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">式</span><span class="mord cjk_fallback">为</span><span class="mord cjk_fallback">：</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5212310000000002em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">∞</span></span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.970281em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span></span></p>
-</li>
-<li>
-<p>去卷积</p>
-</li>
-</ul>
-<h3 id="多项式">多项式</h3>
-<p><strong>多项式的创建</strong>：</p>
-<ul>
-<li>多项式创建时只需要写出系数，没有的项必须用0代替</li>
-<li>如：<code>p=[3,2,1]</code>，之后输入<code>poly2sym(p)</code>，就得到了：<code>3*x^3+2*x^2+x</code></li>
-</ul>
-<p><strong>多项式的四则运算</strong>：</p>
-<ul>
-<li>
-<p>卷积：我们称$$(f*g)(n)为f,g的卷积。 其计算方式为： \int_{-\infty}^{+\infty}f(\tau)g(n)d\tau$$</p>
-</li>
-<li>
-<p>计算方式为<code>conv(p1,p2)</code></p>
-</li>
-<li>
-<p>去卷积：<code>[k,r]=deconv(p,q)</code>等价于<code>p=conv(q,k)+r</code></p>
-</li>
-<li>
-<p>k返回的是多项式p除以q的商，r是余式</p>
-</li>
-<li>
-<p>根构造：通过写出多项式的解，让系统自己构造一个符合根的多项式</p>
-</li>
-<li>
-<p>如：<code>root=[-5,3+2i,3-2i]</code> 则，<code>p=poly(root)</code>就构造了对应的系数表，接着<code>poly2sym(p)</code>可以生成多项式</p>
-</li>
-</ul>
-<p><strong>多项式的导数运算</strong>：</p>
-<ul>
-<li>通过<code>polyder(p)</code>就可以得到求导后的系数表，接着<code>poly2sym()</code>可生成求导后的多项式</li>
-<li>更高阶的导数类似反复调用就行</li>
-</ul>
-<h3 id="特殊变量">特殊变量</h3>
-<p><strong>单元型变量</strong>：</p>
-<ul>
-<li>
-<p>创建：</p>
-</li>
-<li>
-<ul>
-<li>如：<code>A[1,2,3,4];B=3+2i;C='hhh'</code>，则生成方式为<code>E={A,B,C}</code></li>
-<li><code>cell(n)</code>：生成n*n阶的空单元数组</li>
-<li><code>cell(m,n)</code></li>
-<li><code>cell(m,n,p,....)</code></li>
-<li><code>cell(size(A))</code>：生成与A同形式的单元型空矩阵</li>
-<li><code>E=cell(1,3)</code></li>
-<li><code>E{1,1}=[1:4]</code></li>
-<li><code>E{1,2}=B</code></li>
-</ul>
-</li>
-<li>
-<p>引用：</p>
-</li>
-<li>
-<ul>
-<li><code>E{1}</code></li>
-<li><code>E(1)</code></li>
-</ul>
-</li>
-<li>
-<p>其他函数：</p>
-</li>
-<li>
-<ul>
-<li><code>cellfun</code>：对单元型变量中的元素作用的函数</li>
-<li><code>celldisp</code>：显示变量内容</li>
-<li><code>cellplot</code>：图形显示</li>
-<li><code>num2cell</code>：将数值转换成单元型变量</li>
-<li><code>deal</code>：输入输出</li>
-<li><code>cell2struct</code>：单元型变成结构型</li>
-<li><code>struct2cell</code>：将结构型变成单元型</li>
-<li><code>iscell</code>：判断是否为单元型</li>
-<li><code>reshape</code>：改变单元数组的结构</li>
-</ul>
-</li>
-</ul>
-<p><strong>结构型变量</strong>：</p>
-<ul>
-<li>
-<p>创建：</p>
-</li>
-<li>
-<ul>
-<li><code>struct('field',value1,'filed2',value2,.....)</code>：表示建立一个具有属性名及对应数据的结构型数组</li>
-<li>如：<code>p=struct('color',{'red','green'},'num',{1,2,3})</code></li>
-</ul>
-</li>
-<li>
-<p>引用：</p>
-</li>
-<li>
-<ul>
-<li><code>p</code>、<code>p(1)</code> 、<code>p(1).color</code></li>
-</ul>
-</li>
-<li>
-<p>函数：</p>
-</li>
-<li>
-<ul>
-<li><code>struct</code>：创建结构型变量</li>
-<li><code>fieldnames</code>：得到结构型变量的属性名</li>
-<li><code>getfield</code>：得到属性值</li>
-<li><code>setfield</code>：设定属性值</li>
-<li><code>rmfield</code>：删除属性</li>
-<li><code>isfield</code>：判断是否为结构型的属性</li>
-<li><code>isstruct</code>：判断是否为结构型变量</li>
-</ul>
-</li>
-</ul>
-<p><em><strong>接着会更新矩阵运算的相关内容</strong></em></p>
 ]]></content>
     </entry>
 </feed>

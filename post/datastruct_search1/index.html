@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>停更 | 小石石石</title>
+  <title>数据结构--二分查找 | 小石石石</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -13,7 +13,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://abelcorn.cn/images/avatar.png?v=1572751647023" style="width:127px;" />
+     <img src="https://abelcorn.cn/images/avatar.png?v=1573997681362" style="width:127px;" />
 
      <div class="description">
       <p>Always do your best.</p>
@@ -77,18 +77,137 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>停更</a></h3>
+        <h3><a>数据结构--二分查找</a></h3>
        </div>
        <div class="post-content">
-        <p>由于有部分科目将迎来结课考试，故暂停更新</p>
+        <p>单身使人快乐。<br>
+<br><br>
+我真🌶️🐔</p>
 <!--more-->
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+//创建一个顺序表结构
+typedef struct Table
+{
+    int *data;//存数据
+    int length;//表长度
+}table;
+
+//冒泡排序
+void Bubble_Sort(int a[],int n)
+{
+    int temp;
+    int i,j;
+    printf(&quot;Original: &quot;);
+    for(i=0;i&lt;n;i++)
+    {
+        printf(&quot;%d &quot;,a[i]);
+    }
+    printf(&quot;\n&quot;);
+    //先将原始数据打印出来
+    //排序
+    for(i=0;i&lt;n;i++)
+    {
+        for(j=0;j&lt;n-i-1;j++)
+        {
+            if(a[j]&gt;a[j+1])
+            {
+                temp = a[j];
+                a[j] = a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+}
+
+//创建顺序表
+table *createTable()
+{
+    table *t = (table*)malloc(sizeof(table));
+    if(!t)//判断空间开辟情况
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    //输入存入的数据数量
+    printf(&quot;How many numbers you want to enter?\n&quot;);
+    scanf(&quot;%d&quot;,&amp;t-&gt;length);
+    t-&gt;data = (int*)malloc(sizeof(int)*t-&gt;length);
+    if(!t-&gt;data)
+    {
+        printf(&quot;Memory Error!\n&quot;);
+        return NULL;
+    }
+    //判断空间开辟情况
+    printf(&quot;Enter them:\n&quot;);
+    //输入数据
+    for(int i=0;i&lt;t-&gt;length;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;t-&gt;data[i]);
+    }
+    //调用排序算法
+    Bubble_Sort(t-&gt;data,t-&gt;length);
+    printf(&quot;Now:    &quot;);
+    for(int i=0;i&lt;t-&gt;length;i++)
+    {
+        printf(&quot;%d &quot;,t-&gt;data[i]);
+    }
+    printf(&quot;\n&quot;);
+    //展示现在的顺序
+    return t;
+}
+
+//二分查找
+int Binary_Search(const int a[],int x,int n)
+{
+    int low=0,high=n,mid;
+    while(low&lt;=high)//当低位不高于高位时
+    {
+        mid = (high+low)/2;//求出中间位
+        if(x == a[mid])//判断是否是此数
+        {
+            return mid;//是则返回
+        }
+        else//不是
+        {
+            if(x&gt;a[mid])low = mid+1;
+            //若要找的数大于中间数，则缩小空间至原来的[mid,high]
+            else high = mid-1;
+            //若要找的数小于中间数，则缩小空间至原来的[low,mid]
+        }
+    }
+    return -1;//找不到
+}
+
+int main()
+{
+    table *t = createTable();//创建此顺序表
+    int x;
+    printf(&quot;Enter the number which you wanna find: &quot;);
+    scanf(&quot;%d&quot;,&amp;x);//输入你要找的数据
+    int flag = Binary_Search(t-&gt;data,x,t-&gt;length);//存下数据做处理
+    if(flag!=-1)//找到了则
+    {
+        printf(&quot;Successful!\n%d 's position is %dth\n&quot;,x,flag+1);
+    }
+    else//没找到
+    {
+        printf(&quot;Failed!\n&quot;);
+    }
+    return 0;
+}
+</code></pre>
+
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2019-11-03</span>
+          <span class="date">2019-11-12</span>
           <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://abelcorn.cn/tag/datastruct" title="数据结构">数据结构 </a>
           
          </div>
         </div>
@@ -102,14 +221,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/ting-geng,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/datastruct_search1,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
         
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/dataexp-2" title=" 数据结构实验--在线测试提交">下一篇</a></li>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/datastruct_graph2" title=" 数据结构--图(邻接表）">下一篇</a></li>
         
        </ul>
       </div>
