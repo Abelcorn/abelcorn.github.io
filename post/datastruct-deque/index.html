@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>数据结构--双端队列 | 小石石石</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://abelcorn.cn/images/avatar.png?v=1574574067512" style="width:127px;" />
+
+     <div class="description">
+      <p>Always do your best.</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   Powered by <a href="https://github.com/Abelcorn">abel</a>
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>数据结构--双端队列</a></h3>
+       </div>
+       <div class="post-content">
+        <p>实验五要求实现简单的STL中的deque功能，故在此通过循环数组的方式实现之。</p>
+<!--more-->
+<pre><code class="language-c">//@实验五 实现类STL的双端队列deque（循环数组版）
+// Created by abel on 2019/11/23.
+//
+
+#ifndef DEQUE_H
+#define DEQUE_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+#define maxSize 10//默认最大长度
+
+typedef int ElemType;//抽象基本数据
+typedef struct {//双端队列基本结构
+    ElemType *data;//数据存储的数组
+    int capacity;//最大容量
+    int front,rear;//头、尾指针
+    int size;//保存当前存的数据
+}deque;
+
+deque *createDeque();//创建一个队列
+deque *createADeque(int size);//创建一个以size为容量的双端队列
+bool isEmpty(deque *q);//判断队列是否为空队列
+bool isFull(deque *q);//判断一个队列是否为满队列
+bool Push_front(deque *q, ElemType x);//将元素压入队头
+bool Push_back(deque *q,ElemType x);//将元素压入队尾
+ElemType Pop_front(deque *q);//弹出队头元素
+ElemType getFront(deque *q);//得到队头元素
+ElemType Pop_back(deque *q);//弹出队尾元素
+ElemType getBack(deque *q);//得到队尾元素
+void Display(deque *q);//从头到尾显示数据
+int getSize(deque *q);//得到队列当前得到的元素个数
+int getCapacity(deque *q);//得到当前队列的最大容量
+
+//初始创建双端队列
+deque *createDeque()
+{
+    //创建一个初始的存储地址，开辟空间
+    deque *q = (deque *) malloc(sizeof(deque));
+    if(!q)//判断空间开辟是否成功
+    {
+        printf(&quot;Memory Error--&gt;deque!\n&quot;);
+        return NULL;
+    }
+    q-&gt;capacity = maxSize;//初始化最大容量
+    q-&gt;size=0;
+    q-&gt;front = q-&gt;rear=0;//初始化头、尾指针位置
+    q-&gt;data = (ElemType*)malloc(sizeof(ElemType)*q-&gt;capacity);//开辟基本存储数组的存储空间
+    if(!q-&gt;data)//判断空间开辟情况
+    {
+        printf(&quot;Memory Error--&gt;deque.data[size]!\n&quot;);
+        return NULL;
+    }
+    return q;//将该队列返回
+}
+//创建一个以size为容量的双端队列
+deque *createADeque(int size)
+{
+    deque *q = (deque*)malloc(sizeof(deque));
+    if(!q)//判断空间开辟是否成功
+    {
+        printf(&quot;Memory Error--&gt;deque!\n&quot;);
+        return NULL;
+    }
+    //初始化各项参数
+    q-&gt;capacity = size;
+    q-&gt;size = 0;
+    q-&gt;rear = q-&gt;front = 0;
+    q-&gt;data = (ElemType *)malloc(sizeof(ElemType)*q-&gt;capacity);
+    if(!q-&gt;data)//为数据存储数组开辟空间
+    {
+        printf(&quot;Memory Error--&gt;deque.data[size]!\n&quot;);
+        return NULL;
+    }
+    return q;
+}
+
+//判断队列是否为空
+bool isEmpty(deque *q)
+{
+    return (q-&gt;front==q-&gt;rear);
+}
+//判断队列是否为满
+bool isFull(deque *q)
+{
+    return ((q-&gt;rear+1)%maxSize==q-&gt;front);
+}
+//以上可用size代替
+//从头入队
+bool Push_front(deque *q, ElemType x)
+{
+    //如果队满则不插入并返回
+    if(isFull(q))
+    {
+        return false;
+    }
+    else//否则
+    {
+        q-&gt;front = (q-&gt;front-1+maxSize)%maxSize;//先将队头指针逆时针移一位
+        q-&gt;data[q-&gt;front]=x;//赋值
+        q-&gt;size++;
+        return true;
+    }
+}
+
+//从尾部入队
+bool Push_back(deque *q,ElemType x)
+{
+    if(isFull(q)) //如果队满则不插入并返回
+    {
+        return false;
+    }
+    else//否则
+    {
+        q-&gt;data[q-&gt;rear]=x;//将数据写入该尾部位置
+        q-&gt;rear=(q-&gt;rear+1)%maxSize;//将尾指针后移
+        q-&gt;size++;
+        return true;
+    }
+}
+
+//头部出队
+ElemType Pop_front(deque *q)
+{
+    //判断是否为空
+   if(isEmpty(q))
+   {
+       return -999;
+   }
+   else//如果不为空
+   {
+       ElemType  x= q-&gt;data[q-&gt;front];//将头指针指向的位置的值赋给x
+       q-&gt;front = (q-&gt;front+1)%maxSize;//头指针顺时针后移
+       return x;
+   }
+}
+//得到头部元素
+ElemType getFront(deque *q)
+{
+    if(isEmpty(q))return -999;//如果为空则返回-999
+    else return q-&gt;data[q-&gt;front];//否则返回当前头指针的值
+}
+
+//尾部出队
+ElemType Pop_back(deque *q)
+{
+    if(isEmpty(q))//判断队列是否为空
+    {
+        return -999;
+    }
+    else//否则
+    {
+        q-&gt;rear = (q-&gt;rear+maxSize-1)%maxSize;//将尾部逆时针移动一位
+        ElemType  x = q-&gt;data[q-&gt;rear];//将尾部的值给x
+        return x;
+    }
+}
+//得到尾数据
+ElemType getBack(deque *q)
+{
+    if(isEmpty(q))return -999;//判断是否为空
+    else return q-&gt;data[q-&gt;rear];//返回尾部数据
+}
+
+//打印全部元素
+void Display(deque *q)
+{
+    for(int i=0;i&lt;q-&gt;size;i++)
+    {
+        printf(&quot;%d &quot;,q-&gt;data[(q-&gt;front+i)%maxSize]);
+    }
+    printf(&quot;\n&quot;);
+}
+//得到当前元素数量
+int getSize(deque *q)
+{
+    return q-&gt;size;
+}
+//得到当前队列的最大容量
+int getCapacity(deque *q)
+{
+    return q-&gt;capacity;
+}
+
+
+#endif //DEQUE_H
+</code></pre>
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2019-11-23</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://abelcorn.cn/tag/datastruct" title="数据结构">数据结构 </a>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/datastruct-deque,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/datastruct_search1" title=" 数据结构--二分查找">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '36f0665e9b58519e6cf9',
+    clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+    repo: 'Abelcorn.github.io',
+    owner: 'Abelcorn',
+    admin: ['Abelcorn'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+          
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://abelcorn.cn/media/scripts/jquery.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://abelcorn.cn/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
