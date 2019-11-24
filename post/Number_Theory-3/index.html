@@ -1,86 +1,186 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-     <meta charset="utf-8" />
-  <title>一次同余及其解法 | 小石石石</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-     <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://abelcorn.cn/images/avatar.png?v=1574574067512" style="width:127px;" />
 
-     <div class="description">
-      <p>Always do your best.</p>
-     </div>
+<html>
+  <head lang="zh">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <meta name="renderer" content="webkit">
+    <title>一次同余及其解法 | 小石石石</title>
+<link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="https://abelcorn.cn/media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://abelcorn.cn/media/scripts/basic.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  </head>
+
+  <body>
+     <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img src="https://abelcorn.cn/images/avatar.png?v=1574593102577"/>
+
+          <h1 title="小石石石" class="weaklink"><a href="/">小石石石</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+ 
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+
     </div>
-   </div>
-   <ul class="social-links">
 
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   Powered by <a href="https://github.com/Abelcorn">abel</a>
-    </div>
-    
-
-    </div>
-   </div>
   </div>
-  <div class="main">
-     <div class="page-top animated fadeInDown">
-    <div class="nav">
-    
-     <li><a  href="/">首页</a></li>
 
-     <li><a  href="/archives">归档</a></li>
 
-     <li><a  href="/tags">标签</a></li>
 
-     <li><a  href="/post/about">关于</a></li>
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+
+            <div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+		  
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
 
     </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
-     </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
     </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-     <div class="post-page">
-      <div class="post animated fadeInDown">
-       <div class="post-title">
-        <h3><a>一次同余及其解法</a></h3>
-       </div>
-       <div class="post-content">
-        <p>在日常生活中，我们所要注意的常常不是某些整数，而是用整数去除固定正整数所得的余数。例如我们问现在几点、火车运行多少小时后到站是什么时候，明年的今天星期几等，于是便产生了同余的概念。</p>
+
+
+    <div class="main">
+      <div class="main-inner">
+
+
+<div class="content">
+
+
+
+
+
+
+  <div class="post_page" >
+
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>一次同余及其解法</a>
+
+
+
+    </h2>
+  </div>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
+<span class="date_info">2019-07-30</span>
+<i class="fa fa-eye"></i>
+
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+
+
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://abelcorn.cn/tag/XGKf5uz6I" class="tag">初等数论</a>
+
+
+</span>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="post_content markdown"><p class="md_block">
+    <span class="md_line md_line_start md_line_end"><p>在日常生活中，我们所要注意的常常不是某些整数，而是用整数去除固定正整数所得的余数。例如我们问现在几点、火车运行多少小时后到站是什么时候，明年的今天星期几等，于是便产生了同余的概念。</p>
 <!--more-->
 <h2 id="同余的基本概念">同余的基本概念：</h2>
 <h3 id="定义1">定义1:</h3>
@@ -174,43 +274,21 @@
 <ul>
 <li>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k\ge2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span>,并且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>m</mi><mn>2</mn></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>m</mi><mi>k</mi></msub><mi mathvariant="normal">是</mi><mi mathvariant="normal">两</mi><mi mathvariant="normal">两</mi><mi mathvariant="normal">互</mi><mi mathvariant="normal">素</mi><mi mathvariant="normal">的</mi><mi>k</mi><mi mathvariant="normal">个</mi><mi mathvariant="normal">正</mi><mi mathvariant="normal">整</mi><mi mathvariant="normal">数</mi></mrow><annotation encoding="application/x-tex">m_{1},m_{2},...,m_{k}是两两互素的k个正整数</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">是</span><span class="mord cjk_fallback">两</span><span class="mord cjk_fallback">两</span><span class="mord cjk_fallback">互</span><span class="mord cjk_fallback">素</span><span class="mord cjk_fallback">的</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord cjk_fallback">个</span><span class="mord cjk_fallback">正</span><span class="mord cjk_fallback">整</span><span class="mord cjk_fallback">数</span></span></span></span>，也就是说，在这k个正整数中任意取出两个正整数来，则这两个正整数是互素的。</li>
 </ul>
+</p>
 
-       </div>
-       <div class="post-footer">
-        <div class="meta">
-         <div class="info">
-          <i class="fa fa-sun-o"></i>
-          <span class="date">2019-07-30</span>
-          <i class="fa fa-tag"></i>
-          
-          <a class="tag" href="https://abelcorn.cn/tag/XGKf5uz6I" title="初等数论">初等数论 </a>
-          
-         </div>
-        </div>
-       </div>
-      </div>
-      <div class="share">
-       <div class="evernote">
-        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
-       </div>
-       <div class="weibo">
-        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
-       </div>
-       <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://abelcorn.cn/post/Number_Theory-3,;"></a>
-       </div>
-      </div>
-      <div class="pagination">
-       <ul class="clearfix">
+     <p class="md_block">
+    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://abelcorn.cn/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://abelcorn.cn/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
+</p> 
+</div>
 
-        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/text-1" title="Giving Life Meaning">上一篇</a></li>
-         
-        
-        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://abelcorn.cn/post/Number_Theory-2" title=" 一部分不定方程">下一篇</a></li>
-        
-       </ul>
-      </div>
-        
+</div>
+
+
+
+<link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/>
+
+<div class="doc_comments">
+
           
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -234,16 +312,117 @@
 </script>
 
           
+			  
           
         
-     </div>
-    </div>
-   </div>
+</div>
+
+
+
   </div>
-  <script src="https://abelcorn.cn/media/scripts/jquery.js"></script>
-  <script src="https://abelcorn.cn/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://abelcorn.cn/media/scripts/jquery.appear.js"></script>
+</div>
 
 
- </body>
+
+      </div>
+
+
+
+
+    </div>
+
+   <div class="footer">
+<link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/><div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div><link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/>
+
+      </div>
+
+      <div class="copyright">Powered by <a href="https://github.com/Abelcorn">abel</a>
+      </div>
+
+</div></div>
+
+    </div>
+
+
+<style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span>△</span>
+</a>
+<script type="text/javascript" src="https://abelcorn.cn/media/scripts/jquery.js"></script>
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
+</script>
+
+</body>
+
 </html>
