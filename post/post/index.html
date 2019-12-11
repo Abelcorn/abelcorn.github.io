@@ -1,12 +1,12 @@
 
 <html>
-<head lang="zh">
+  <head lang="zh">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
         <meta content="yes" name="apple-mobile-web-app-capable"/>
         <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
         <meta content="telephone=no" name="format-detection"/>
         <meta name="renderer" content="webkit">
-    <title>小石石石</title>
+    <title>通知 | 小石石石</title>
 <link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/>
 <script type="text/javascript" src="https://abelcorn.cn/media/scripts/jquery.js"></script>
 <script type="text/javascript" src="https://abelcorn.cn/media/scripts/basic.js"></script>
@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <div class="header">
+     <div class="header">
       <div class="logo_title">
 		  
         <div class="title animated fadeInDown"><img src="https://abelcorn.cn/images/avatar.png?v=1576050681300"/>
@@ -135,6 +135,7 @@
     <div class="main">
       <div class="main-inner">
 
+
 <div class="content">
 
 
@@ -142,82 +143,90 @@
 
 
 
-  <div class="post_list" >
+  <div class="post_page" >
 
-	
 <div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://abelcorn.cn/post/latex" >LaTex表示方法</a>
+  <div class="post_title sm_margin">
+    <h2><a>通知</a>
+
+
+
     </h2>
   </div>
-  <div class="post_content markdown"><div class="p_part"><p><h3 id="注意">注意</h3>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
+<span class="date_info">2019-12-11</span>
+<i class="fa fa-eye"></i>
+
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+
+
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://abelcorn.cn/tag/HbWenjv65" class="tag">日程与计划</a>
+
+
+</span>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="post_content markdown"><p class="md_block">
+    <span class="md_line md_line_start md_line_end"><p><strong>临近期末，备考不易</strong></p>
 <ul>
-<li>由于语法较多，这里将官方图搬移至此，感兴趣请配合前面MarkDown语法入门教程使用。</li>
+<li>我爱学习，我爱xxx</li>
+<li>过个好年，2019再见</li>
+<li>欢庆2020</li>
 </ul>
-</p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2019-09-02</span>
+</p>
 
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://abelcorn.cn/tag/CG3J3bFD5" class="tag">Markdown语法</a>
-
-
-
-</span>
-
-
-    </div>
-
-  </div>
+     <p class="md_block">
+    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://abelcorn.cn/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://abelcorn.cn/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
+</p> 
+</div>
 
 </div>
-	
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://abelcorn.cn/post/markdown-1" >Markdown语法学习</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p><p>markdown语法作为一种高效的标记写作语法，已经在各种网站博客中体现出来，正如我的这些博客，也都是使用markdown语法写成。这种语法通过在你的文字前后添加规定的符号，使得文字显示出你所想要的形式，就如Word中的文字处理一般，但是更为简洁和高效。为了使大家都能轻松使用，现将其基本使用方式写下。</p>
-</p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2019-09-01</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://abelcorn.cn/tag/CG3J3bFD5" class="tag">Markdown语法</a>
 
 
 
-</span>
+<link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/>
 
+<div class="doc_comments">
 
-    </div>
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-  </div>
+<div id="gitalk-container"></div>
 
-</div>
-	
-	
+<script>
 
-<div class="paginator pager pagination" >
-	
+  var gitalk = new Gitalk({
+    clientID: '36f0665e9b58519e6cf9',
+    clientSecret: '2d8217c311b98feab18668e26962b7ce17353d06',
+    repo: 'Abelcorn.github.io',
+    owner: 'Abelcorn',
+    admin: ['Abelcorn'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
 
+  gitalk.render('gitalk-container')
 
+</script>
 
-    <div style="clear:both;height:0;"></div>
-
-
-  </div>
-
+          
+			  
+          
+        
 </div>
 
 
@@ -229,9 +238,12 @@
 
       </div>
 
+
+
+
     </div>
 
-    <div class="footer">
+   <div class="footer">
 <link href="https://abelcorn.cn/styles/main.css" type="text/css" rel="stylesheet"/><div class="site_footer_wrap"><div class="site_footer">
 
       <div class="mysocials"><div class="my_socials">
