@@ -3,9 +3,9 @@
 
 <head>
     
-                <meta charset="utf-8" />
+        <meta charset="utf-8" />
 <title>
-    Posts | 小石石石
+    文章 | 小石石石
 </title>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -22,6 +22,9 @@
 <link rel="stylesheet" href="https://abelcorn.cn/styles/main.css" />-->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+    
         <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic@latest/assets/media/script/tocbot.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic@latest/assets/media/script/script.min.js"></script>
@@ -34,8 +37,22 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
         
+            <script>
+                (function() {
+                    var bp = document.createElement('script');
+                    var curProtocol = window.location.protocol.split(':')[0];
+                    if (curProtocol === 'https') {
+                        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                    } else {
+                        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(bp, s);
+                })();
+            </script>
+            
                 
-                    
+            
 </head>
 
 <body>
@@ -70,7 +87,7 @@
                         <input id="switch_default" type="checkbox" class="switch_default">
                         <label for="switch_default" class="toggleBtn"></label>
             </div>
-            <form id="gridea-search-form" data-update="1579251896790" action="/search/index.html">
+            <form id="gridea-search-form" data-update="1579252186739" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
             </form>
         </div>
@@ -89,7 +106,7 @@
                         <!--zh-->
                         <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;\u6697\u9ED1</a>
                     </div>
-                    <form id="gridea-search-form" data-update="1579251896790" action="/search/index.html">
+                    <form id="gridea-search-form" data-update="1579252186739" action="/search/index.html">
                         <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
                     </form>
                     <!--en-->
@@ -803,6 +820,8 @@ C++考试终于结束了，可以开始matlab的学习了，本部分内容仅�
             </div>
     </div>
     
+    <div id="player"></div>
+    
         <footer id="footer" class="footer">
 
             <div class="copyright">
@@ -829,9 +848,13 @@ C++考试终于结束了，可以开始matlab的学习了，本部分内容仅�
                         | Powered by <a href="https://coding.net" target="_blank">Coding.net</a>
             </div>
             <div id="update" style="display:none;">
-                
+                on
             </div>
             
+                <div id="version" style="display:none;">
+                    1.6.1
+                </div>
+                
                     <script>
                         var pat = '';
                         
@@ -840,13 +863,38 @@ C++考试终于结束了，可以开始matlab的学习了，本部分内容仅�
 
         </footer>
         
+            <script src='https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js'></script>
+            
                 <script>
                     
+
+                    function LoadPlayer() {
+                        var audio_name = '';
+                        var audio_artist = '';
+                        var audio_url = '';
+                        var audio_cover = '';
+                        const ap = new APlayer({
+                            container: document.getElementById('player'),
+                            fixed: true,
+                            audio: [{
+                                name: audio_name,
+                                artist: audio_artist,
+                                url: audio_url,
+                                cover: audio_cover,
+                            }]
+                        });
+                    }
+                    LoadPlayer();
+                    
+                    
+                    loadlive2d();
                     
                     hitokoto();
                     getStar();
                     hljs.initHighlighting();
                     console.clear();
+                    
+                    CheckVersion();
                     
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
