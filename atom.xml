@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2020-01-23T06:26:41.143Z</updated>
+    <updated>2020-01-24T11:56:33.732Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,40 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[新年祝福：愿我们认识这两种力量]]></title>
+        <id>https://abelcorn.cn/post/text2</id>
+        <link href="https://abelcorn.cn/post/text2">
+        </link>
+        <updated>2020-01-24T11:08:26.000Z</updated>
+        <summary type="html"><![CDATA[<p>本文转自公众号： AppSo</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文转自公众号： AppSo</p>
+<!-- more -->
+<p>🏷两种力量在此起彼伏地左右人类的命运。</p>
+<p>🏷春风得意的时候，我们总觉得人类已经在天上了。不是吗？我们发明了比自己厉害得多的机器，下围棋能把人类最好的棋手柯洁下哭，打德州扑克能把专业竞技选手干趴下。有时候感觉，一觉醒来全世界都机器学习了、都量子霸权了、都 CRISPR/Cas9 了、都收拾行李准备殖民火星了。这时候我们就是在被天上的力量主导，是一种被技术神附体的状态，自信，或者自大。</p>
+<p>🏷而澳洲山火和华南海鲜市场所代表的另一种力量，则会用沉痛的一击告诉神神叨叨的我们，大家依旧生活在地上，和土壤、树木、野生动物们在一起。我们和它们的关系，不仅仅是吃与被吃的关系。只有明白这一种力量，敬畏这一种力量，我们才称得上是全乎人儿。</p>
+<p>🏷如果踌躇满志、勇往无前是进化，那么在未知力量痛击之下缩回手叫一声「哎哟」简直就是文明。</p>
+<p><strong>文明就是吃痛。</strong></p>
+<p>🏷今时今日，曾经让尼安德特人和丹尼索瓦人从地球上消失的物种，现在也会惊慌地问人工智能会不会奴役自己，这没准还算有药可救。到底会不会，其实一直都是你说了算。如果你已经把自己的生活全盘托付给了算法，成为数据洪流里细细的一支，在奔涌的时代里悄无声息地千人千面，那这个问题已经没啥意义了。因为你是养料、是问题、是客体，唯独不是你自己。</p>
+<ul>
+<li>
+<p>保留一些没道理的行为、无法被合理化的行为，为世界增加一些异质化的成分，让它不能完全被算法整合。</p>
+</li>
+<li>
+<p>刻意阻断智能推荐，用主动浏览来增加意外和不可控。包括听一些「不合口味」的音乐，挑一本看起来陌生而富有挑战的书，从好友名单底部打捞出一些很久没联系的人。等等。</p>
+</li>
+<li>
+<p>在一些不特别的日子里，拒绝「+1」，拒绝和语音助手对话。</p>
+</li>
+<li>
+<p>重新思考我们为什么要过年。</p>
+</li>
+</ul>
+<p>🏷这样，即便真有一天，我们围坐在火星的氧化铁土地上，静静地看着马斯克纪念碑从地底伸出、直指一片陌生的天空，我们沉思之中也还会想起旧地之上，还留有我们的任性，我们的过错、遗憾和懊悔。<br>
+那时候，一切才完好如初。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[武汉新型冠状病毒要点分析(订正)]]></title>
         <id>https://abelcorn.cn/post/2019-nCov</id>
@@ -1032,26 +1066,6 @@ C++考试终于结束了，可以开始matlab的学习了，本部分内容仅�
 <li>希望各位自行练习和查找相关基本语法知识，活学活用</li>
 <li>以后我将介绍<strong>表格</strong>、<strong>流程图</strong>和<strong>LaTex公式</strong>，这样的markdown才是真正优秀的语法。</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Giving Life Meaning]]></title>
-        <id>https://abelcorn.cn/post/text-1</id>
-        <link href="https://abelcorn.cn/post/text-1">
-        </link>
-        <updated>2019-08-09T11:05:44.000Z</updated>
-        <summary type="html"><![CDATA[<p><em>Have you thought about what you want people to say about you after you’re gone?</em></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><em>Have you thought about what you want people to say about you after you’re gone?</em></p>
-<!--more-->
-<p><em>Can you hear the voice saying, “He was a great man.” Or “She really will be missed.” What else do they say?</em></p>
-<p><em>One of the strangest phenomena of life is to engage in a work that will last long after death. Isn’t that a lot like investing all your money so that future generations can bare interest on it? Perhaps, yet if you look deep in your own heart, you’ll find something drives you to make this kind of contribution---something drives every human being to find a purpose that lives on after death.</em></p>
-<p><em>Do you hope to memorialize your name? Have a name that is whispered with reverent awe? Do you hope to have your face carved upon 50 ft of granite rock? Is the answer really that simple? Is the purpose of lifetime contribution an ego-driven desire for a mortal being to have an immortal name or is it something more?</em></p>
-<p><em>A child alive today will die tomorrow. A baby that had the potential to be the next Einstein will die from complication is at birth. The circumstances of life are not set in stone. We are not all meant to live life through to old age. We’ve grown to perceive life3 as a full cycle with a certain number of years in between. If all of those years aren’t lived out, it’s a tragedy. A tragedy because a human’s potential was never realized. A tragedy because a spark was snuffed out before it ever became a flame.</em></p>
-<p><em>By virtue of inhabiting a body we accept these risks. We expose our mortal flesh to the laws of the physical environment around us. The trade off isn’t so bad when you think about it. The problem comes when we construct mortal fantasies of what life should be like. When life doesn’t conform to our fantasy we grow upset, frustrated, or depressed.</em></p>
-<p><em>We are alive; let us live. We have the ability to experience; let us experience. We have the ability to learn; let us learn. The meaning of life can be grasped in a moment. A moment so brief it often evades our perception.</em></p>
-<p><em>What meaning stands behind the dramatic unfolding of life? What single truth can we grasp and hang onto for dear life when all other truths around us seem to fade with time?</em></p>
-<p><em>These moments are strung together in a series we call events. These events are strung together in a series we call life. When we seize the moment and bend it according to our will, a will driven by the spirit deep inside us, then we have discovered the meaning of life, a meaning for us that shall go on long after we depart this Earth.</em></p>
 ]]></content>
     </entry>
 </feed>
