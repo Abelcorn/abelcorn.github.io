@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2020-02-04T09:59:30.303Z</updated>
+    <updated>2020-02-04T13:56:42.301Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -10,6 +10,288 @@
     <logo>https://abelcorn.cn/images/avatar.png</logo>
     <icon>https://abelcorn.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, 小石石石</rights>
+    <entry>
+        <title type="html"><![CDATA[Swift入门]]></title>
+        <id>https://abelcorn.cn/post/code_swift_1</id>
+        <link href="https://abelcorn.cn/post/code_swift_1">
+        </link>
+        <updated>2020-02-04T10:02:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>本次除了正常的更新外，还将大部分以前分内容做了隐藏，我要重新做人。</p>
+<p>这此的更新纯属闲的，奈何不学习点东西心里愧疚，故借由Apple Developer发布的英文文档进行了学习与记录。</p>
+<p>Swfit是苹果公司与2014年推出的旨在代替OC的编程语言，这里做一个简单的入门学习，首先你需要下载相关的IDE，如果你是Mac，Xcode中的Playground就可以直接编写，如果你是Win或者Linux，那么请你自行查找一下有没有相关的IDE，毕竟这个只是我的个人兴趣，而非和大家一起学习的东西。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本次除了正常的更新外，还将大部分以前分内容做了隐藏，我要重新做人。</p>
+<p>这此的更新纯属闲的，奈何不学习点东西心里愧疚，故借由Apple Developer发布的英文文档进行了学习与记录。</p>
+<p>Swfit是苹果公司与2014年推出的旨在代替OC的编程语言，这里做一个简单的入门学习，首先你需要下载相关的IDE，如果你是Mac，Xcode中的Playground就可以直接编写，如果你是Win或者Linux，那么请你自行查找一下有没有相关的IDE，毕竟这个只是我的个人兴趣，而非和大家一起学习的东西。</p>
+<!-- more -->
+<p><em>由于本网站不支持swift的语法高亮，故下面的代码都是不能正常的由不同颜色表现，请轻喷</em><br>
+<br></p>
+<h2 id="swift初识">Swift初识</h2>
+<p>作为程序员，学习语言免不了学习&quot;Hello World!&quot;，而Swift的这个和Python一样简单，只要一句：</p>
+<pre><code class="language-swift">print(&quot;Hello World!&quot;)
+</code></pre>
+<p>print是自带换行的。</p>
+<h3 id="简单值">简单值</h3>
+<p><strong>变量的声明：</strong></p>
+<ul>
+<li>为了使用常量，我们使用let来进行声明，类似的，变量使用var来声明：</li>
+</ul>
+<pre><code class="language-swift">let myConstant = 42
+// 常量无法再次被赋值改变了
+var myVariable = 42
+myVariable = 45 // 而变量可以随意改变
+</code></pre>
+<ul>
+<li>该语言是类型自推断的，如果你习惯于C/C++语言的书写，那么你也可以指定类型:</li>
+</ul>
+<pre><code class="language-swift">let aConstant: Double = 70.0  //在名字后面冒号再加类型
+</code></pre>
+<ul>
+<li>但是需要注意的是，一个值不会被隐式的转换为其他类型，也就是需要你强制转换，如：</li>
+</ul>
+<pre><code class="language-swift">let label = &quot;The width is &quot;
+let width = 96
+let widthLabel = label + String(width) //如果你尝试不加String()进行转换，那么将会报错
+print(widthLabel)
+</code></pre>
+<ul>
+<li>这里有一种更有效的字符串转换方法</li>
+</ul>
+<pre><code class="language-swift">let apples = 5
+let oranges = 4
+let appleSum = &quot;I have \(apples) apples&quot;  //通过\()的方式在字符串中插入信息
+let fruitSum = &quot;I have \(apples+oranges) pieces of fruit.&quot;
+print(appleSum)
+print(fruitSum)
+</code></pre>
+<p><strong>值使用的扩展：</strong></p>
+<ul>
+<li>使用方括号来创建和使用数组、字典，并下标访问：</li>
+</ul>
+<pre><code class="language-swift">//数组
+var shoppingList = [&quot;catfish&quot;,&quot;water&quot;,&quot;tulips&quot;,&quot;blue paint&quot;]
+shoppingList[1] = &quot;bottle of water&quot;
+for i in shoppingList{
+    print(i)
+}
+//字典
+var occupations = [
+    &quot;Malcolm&quot;:&quot;Captain&quot;,
+    &quot;Kaylee&quot;:&quot;Mechanic&quot;,] //注意结尾还要加逗号
+occupations[&quot;Jayne&quot;] = &quot;public Relations&quot;
+</code></pre>
+<h3 id="控制流">控制流</h3>
+<ul>
+<li>使用if和switch来进行条件的操作，使用for、for in、while和repeat while来进行循环</li>
+</ul>
+<pre><code class="language-swift">//一般判断
+var optionalString: String?=&quot;Hello&quot; //?=表示可选项，即该变量默认为此
+if(optionalString != nil)
+{
+    print(optionalString!)//加！表示输出可选项,否则会输出Optional(&quot;Hello&quot;)
+}
+
+var optionalName: String?=&quot;John Appleseed&quot;
+var greeting = &quot;Hello!&quot;
+if let name = optionalName
+{
+    greeting = &quot;Hello,\(name)&quot;
+}
+print(greeting)
+//分支判断
+let scores = [75,43,103,87,12]
+var tempSocre = 0
+for score in scores
+{
+    if score&gt;50
+    {
+        tempSocre += 3
+    }else
+    {
+        tempSocre += 1
+    }
+}
+print(tempSocre)
+//多分支
+var vegetable = &quot;red pepper&quot;
+//vegetable = &quot;celery&quot;
+//vegetable = &quot;red xx&quot;
+switch vegetable {
+case &quot;celery&quot;:
+    print(&quot;Add some raising and make ants on a log.&quot;)
+case &quot;cucumber&quot;,&quot;watercress&quot;:
+    print(&quot;That would make a good tea sandwitch.&quot;)
+case let x where x.hasSuffix(&quot;pepper&quot;):
+    print(&quot;Is it a spicy \(x)?&quot;)
+case let x where x.hasPrefix(&quot;red&quot;):
+    print(&quot;Is it a spicy \(x)?&quot;)
+default:
+    print(&quot;Everything tastes good in soup.&quot;)
+}//值得注意的是，这里不需要像C语言那样加break,它一旦匹配了就会退出switch检查
+
+//循环
+let Numbers = [
+    &quot;Prime&quot;:[2,3,5,7,11,13],
+    &quot;Fibonacci&quot;:[1,1,2,3,5,8],
+    &quot;Square&quot;:[1,4,9,16,25],
+]
+var largest = 0
+for (_,numbers) in Numbers //由于这里对key没有用到，故用_来代替
+{
+    for number in numbers
+    {
+        if number&gt;largest
+        {
+            largest = number
+        }
+    }
+}
+print(largest)
+</code></pre>
+<ul>
+<li>使用while循环</li>
+</ul>
+<pre><code class="language-swift">var n = 2
+while n&lt;100 {
+    n = n*2
+}
+print(n)
+
+n = 2
+repeat
+{
+    n = n*2
+}while n&lt;100
+//就和do while类似
+print(n)
+
+var firstForLoop = 0
+for i in 0..&lt;4 //这个表示范围从0到4，但是不包含4，如果需要包含，需要三个点...
+{
+    firstForLoop += i
+}
+print(firstForLoop)
+firstForLoop = 0
+for i in 0...4
+{
+    firstForLoop += i
+}
+print(firstForLoop)
+</code></pre>
+<h3 id="函数和闭包">函数和闭包</h3>
+<ul>
+<li>使用func来声明函数，使用-&gt;来指定返回值的类型</li>
+</ul>
+<pre><code class="language-swift">func greet(name: String,day: String)-&gt;String //表示函数类型为String
+{
+    return &quot;Hello \(name),today is \(day).&quot;
+}
+print(greet(name: &quot;Bob&quot;, day: &quot;Tuesday&quot;))
+
+//多个返回值
+func calculateStatistics(scores:[Int])-&gt;(min:Int,max:Int,sum:Int)
+{
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
+    for score in scores
+    {
+        if score&gt;max{
+            max = score
+        }else if (score&lt;min){
+            min = score
+        }
+        sum += score
+    }
+    return (min,max,sum)
+}
+
+let numbers = calculateStatistics(scores: [5,3,100,3,9])
+print(numbers.sum)//可以显式调用此数据
+print(numbers.0)//或者用下标调用，等价于number.min
+
+//多个参数
+func sumOf(numbers:Int...)-&gt;Int//可变个数参数
+{
+    var sum = 0
+    for number in numbers
+    {
+        sum += number
+    }
+    return sum
+}
+print(sumOf()) //输出为0
+print(sumOf(numbers:42,597,12)) //输出为651
+</code></pre>
+<ul>
+<li>函数还可以嵌套</li>
+</ul>
+<pre><code class="language-swift">func returnFifteen()-&gt;Int
+{
+    var y = 10
+    func add()
+    {
+        y += 5
+    }
+    add()
+    return y
+}
+print(returnFifteen())
+
+func returnFifteen()-&gt;Int
+{
+    var y = 10
+    func add()
+    {
+        y += 5
+    }
+    add()
+    return y
+}
+print(returnFifteen())
+//函数是第一等类型，即一个函数可以作为另一个函数的返回值
+//也可以作为其他函数的参数
+
+func hasAnyMatch(list:[Int],condition:(Int)-&gt;Bool)-&gt;Bool
+{//条件参数就可以接受返回值为Bool类型的函数
+    for item in list
+    {
+        if condition(item)
+        {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number:Int)-&gt;Bool
+{
+    return number&lt;10
+}
+var num = [20,19,7,12]
+print(hasAnyMatch(list: num, condition: lessThanTen(number:)))
+
+//至于闭包，我没看懂，以后再说
+</code></pre>
+<h3 id="对象和类">对象和类</h3>
+<ul>
+<li>使用class关键字来描述类</li>
+</ul>
+<pre><code class="language-swift">//简单的类示例
+class Shape{
+    var numberOfSides = 0
+    func simpleDescription()-&gt;String
+    {
+        return &quot;A shape with \(numberOfSides) sides.&quot;
+    }
+}
+var shape = Shape()
+shape.numberOfSides = 7
+var sD = shape.simpleDescription()
+print(sD)
+</code></pre>
+<p>待更......</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[新年祝福：愿我们认识这两种力量]]></title>
         <id>https://abelcorn.cn/post/text2</id>
