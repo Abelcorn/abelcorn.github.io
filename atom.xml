@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2020-02-04T13:59:01.224Z</updated>
+    <updated>2020-02-05T03:16:26.110Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -26,13 +26,13 @@
 <!-- more -->
 <p><em>由于本网站不支持swift的语法高亮，故下面的代码都是不能正常的由不同颜色表现，请轻喷</em><br>
 <br></p>
-<h2 id="swift初识">Swift初识</h2>
+<h1 id="swift初识">Swift初识</h1>
 <p>作为程序员，学习语言免不了学习&quot;Hello World!&quot;，而Swift的这个和Python一样简单，只要一句：</p>
 <pre><code class="language-swift">print(&quot;Hello World!&quot;)
 </code></pre>
 <p>print是自带换行的。</p>
-<h3 id="简单值">简单值</h3>
-<p><strong>变量的声明：</strong></p>
+<h2 id="简单值">简单值</h2>
+<h3 id="变量的声明">变量的声明:</h3>
 <ul>
 <li>为了使用常量，我们使用let来进行声明，类似的，变量使用var来声明：</li>
 </ul>
@@ -64,7 +64,7 @@ let fruitSum = &quot;I have \(apples+oranges) pieces of fruit.&quot;
 print(appleSum)
 print(fruitSum)
 </code></pre>
-<p><strong>值使用的扩展：</strong></p>
+<h3 id="值使用的扩展">值使用的扩展：</h3>
 <ul>
 <li>使用方括号来创建和使用数组、字典，并下标访问：</li>
 </ul>
@@ -80,7 +80,7 @@ var occupations = [
     &quot;Kaylee&quot;:&quot;Mechanic&quot;,] //注意结尾还要加逗号
 occupations[&quot;Jayne&quot;] = &quot;public Relations&quot;
 </code></pre>
-<h3 id="控制流">控制流</h3>
+<h2 id="控制流">控制流</h2>
 <ul>
 <li>使用if和switch来进行条件的操作，使用for、for in、while和repeat while来进行循环</li>
 </ul>
@@ -178,7 +178,7 @@ for i in 0...4
 }
 print(firstForLoop)
 </code></pre>
-<h3 id="函数和闭包">函数和闭包</h3>
+<h2 id="函数和闭包">函数和闭包</h2>
 <ul>
 <li>使用func来声明函数，使用-&gt;来指定返回值的类型</li>
 </ul>
@@ -272,7 +272,7 @@ print(hasAnyMatch(list: num, condition: lessThanTen(number:)))
 
 //至于闭包，我没看懂，以后再说
 </code></pre>
-<h3 id="对象和类">对象和类</h3>
+<h2 id="对象和类">对象和类</h2>
 <ul>
 <li>使用class关键字来描述类</li>
 </ul>
@@ -289,7 +289,181 @@ shape.numberOfSides = 7
 var sD = shape.simpleDescription()
 print(sD)
 </code></pre>
-<p>待更......</p>
+<ul>
+<li>类的继承</li>
+</ul>
+<pre><code class="language-swift">//这是父类
+class NamedShape
+{
+    var numberOfSides:Int = 0
+    var name: String
+    
+    init(name:String)//构造函数，使用init()函数
+    {
+        self.name = name; //self就类似于this指针
+    }
+    func desc() -&gt; String
+    {
+        return &quot;A shape with \(numberOfSides) sides.&quot;
+    }
+    deinit { //析构函数
+        self.numberOfSides = 0
+    }
+}
+//继承
+class Square: NamedShape//通过冒号继承
+{
+    var sideLength: Double
+    
+    init(sideLength: Double, name: String)
+    {
+        self.sideLength = sideLength
+        super.init(name: name)
+        numberOfSides = 4
+    }
+    func area() -&gt; Double
+    {
+        return sideLength * sideLength
+    }
+    override func desc() -&gt; String //如果需要改写父类的方法，需要添加override关键字，否则会报错
+    {
+        return &quot;A square with sides of length \(sideLength).&quot;
+    }
+}
+let test = Square(sideLength: 5.2, name: &quot;My test square&quot;)
+print(Int(test.area()))
+print(test.desc())
+//使用构造器
+class EquilaterTriangle:NamedShape
+{
+    var sideLength: Double = 0.0
+    init(sideLength:Double, name: String) {
+        //self.name = name //这里会报错
+        super.init(name: name)//调用超类
+        self.sideLength = sideLength
+        numberOfSides = 3
+    }
+    var perimeter: Double
+    {
+        get{
+            return 3.0 * sideLength//如果你直接使用该参数，则用get里面的数据
+        }
+        set{ //表示如果给perimeter赋值就调用set方法，newValueb就是你赋值的那个数
+            sideLength = newValue / 3.0
+        }
+    }
+    override func desc() -&gt; String {
+        return &quot;An equilaterTriangle with side of length \(sideLength).&quot;
+    }
+}
+var tranigle = EquilaterTriangle(sideLength: 3.1, name: &quot;a triangle&quot;)
+print(tranigle.perimeter)//使用默认的get函数里的数据
+tranigle.perimeter = 9.9//使用set
+print(tranigle.sideLength)
+</code></pre>
+<h2 id="枚举和结构体">枚举和结构体</h2>
+<h3 id="枚举类型-enum">枚举类型 enum</h3>
+<ul>
+<li>枚举类型可以定义方法</li>
+</ul>
+<pre><code class="language-swift">enum Rank: Int
+{
+    case Ace = 1 //第一个出现的case就是rawValue
+    case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+    case Jack, Queen, King
+    func Desc()-&gt;String
+    {
+        switch self {
+        case .Ace:
+            return &quot;ace&quot;
+        case .Jack:
+            return &quot;jack&quot;
+        case .Queen:
+            return &quot;queen&quot;
+        case .King:
+            return &quot;king&quot;
+        default:
+            return String(self.rawValue)
+        }
+    }
+}
+let ace = Rank.Ace
+let aceRawValue = ace.rawValue
+print(ace)
+print(aceRawValue)
+</code></pre>
+<p><strong>结构体在下面中展示</strong></p>
+<h2 id="协议和扩展">协议和扩展</h2>
+<h3 id="使用protocol来声明一个协议">使用protocol来声明一个协议</h3>
+<pre><code class="language-swift">protocol ExampleProtocol{
+    var simple: String{get}
+    mutating func adjust()
+}
+//类、枚举都可以实现协议
+class SimpleClass: ExampleProtocol
+{
+    var simple: String = &quot;A very simple class&quot;
+    var anotherProperty: Int = 69105
+    func adjust() {
+        simple += &quot; Now 100% adjusted.&quot;
+    }
+}
+var a = SimpleClass()
+a.adjust()
+let aDesc = a.simple
+
+struct SimpleStructure: ExampleProtocol{
+    var simple: String = &quot;A simple structure&quot;
+    mutating func adjust() {
+        simple += &quot; (adjusted)&quot;
+    }
+}
+
+var b = SimpleStructure()
+b.adjust()
+let bDesc = b.simple
+</code></pre>
+<h3 id="使用扩展">使用扩展</h3>
+<pre><code class="language-swift">extension Int: ExampleProtocol{
+    var simple: String{
+        return &quot;The number \(self)&quot;
+    }
+    mutating func adjust() {
+        self += 42
+    }
+}
+print(7.simple)
+</code></pre>
+<h2 id="泛型">泛型</h2>
+<p><strong>在尖括号中创建泛型</strong></p>
+<pre><code class="language-swift">//尖括号表示类型的代替名
+func repeatItem&lt;Item&gt;(item:Item, numberOfTimes: Int) -&gt; [Item]{//方括号表示返回值是泛型类型
+    var result = [Item]()
+    for _ in 0..&lt;numberOfTimes{
+        result.append(item)
+    }
+    return result
+}
+repeatItem(item: &quot;Knock&quot;, numberOfTimes: 4)
+</code></pre>
+<h3 id="泛型扩展">泛型扩展</h3>
+<pre><code class="language-c">//枚举类型的泛型
+enum OptionalValue&lt;W&gt;{
+    case None
+    case Some(W)
+}
+var possibleInterget: OptionalValue&lt;Int&gt; = .None
+possibleInterget = .Some(100)
+</code></pre>
+<p>其他的请自己去搜索<br>
+此外还有很对内容：</p>
+<h1 id="从oc到swift">从OC到Swift</h1>
+<h1 id="swift内存管理">Swift内存管理</h1>
+<h1 id="使用swift搭建ins">使用Swift搭建Ins</h1>
+<h1 id="ios分层框架设计">iOS分层框架设计</h1>
+<p>*但是我还不打算更新这些，我没空啊~~~~~*</p>
+<hr>
+再会！
 ]]></content>
     </entry>
     <entry>
