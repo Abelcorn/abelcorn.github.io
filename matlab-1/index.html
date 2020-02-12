@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -62,38 +62,10 @@
                             })();
                         </script>
                         
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-    <style>
-            .main_ {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 90vh;
-            }
-            
-            .result-box {
-                margin-top: 50px;
-                display: flex;
-                border-radius: 5px;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
 </head>
 
 <body>
-    <style>
-        .searched-keyword {
-            background-color: green;
-        }
-    </style>
-    <div class="main_">
+    <div class="wrapper">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -224,15 +196,286 @@
 
     }
 </script>
-            <div class="result-box">
-                <div id="gridea-search-result">
-                    <p class="searching">搜索中......</p>
-                    <p class="no-result" style="display:none">未搜索到相关文章</p>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                Matlab学习笔记（一）
+                            </h1>
+                            
+                                <!--en-->
+                                <div class="post-meta en">
+                                    Author:
+                                    <a itemprop="author" rel="author" href="/">
+                                        小石石石
+                                    </a>
+                                    <span class="post-time">
+                                Date: <a href="#">2019-09-18</a>
+                            </span>
+                                    <span class="post-readtime">Reading Time:<a
+                                    href="#">3.2
+                                    mins</a></span>
+                                    <span class="post-words">words:<a href="#">818</a></span>
+                                    
+                                        <span class="post-category">
+                                Category:
+                                
+                                <a href="https://abelcorn.cn/DtLqsYkkD">Matlab</a>
+                                
+                            </span>
+                                        
+                                            Views:
+                                            <span data-hk-page="current"> - </span>
+                                            
+                                </div>
+                                
+                        </header>
+                        <div class="post-content">
+                            <p><em><strong>基础知识</strong></em><br>
+C++考试终于结束了，可以开始matlab的学习了，本部分内容仅为自己做笔记用，不属于对外教程。</p>
+<!--more-->
+<h3 id="常用指令">常用指令</h3>
+<ul>
+<li><code>cd</code>：显示或改变工作目录</li>
+<li><code>clc</code>：清除命令行窗口</li>
+<li><code>clf</code>：清除图形窗口</li>
+<li><code>hold</code>：保持图形窗口</li>
+<li><code>diary</code>：生成日志文件</li>
+<li><code>load</code>：加载指定文件的变量</li>
+<li><code>dir</code>：显示当前目录下的文件</li>
+<li><code>pack</code>：整理内存碎片</li>
+<li><code>disp</code>：显示变量或文字内容</li>
+<li><code>path</code>：显示搜索目录</li>
+<li><code>echo</code>：命令行窗口信息显示开关</li>
+<li><code>quit</code>：退出 Matlab</li>
+<li><code>save</code>：保存内存变量指定文件</li>
+<li><code>type</code>：显示文件内容</li>
+</ul>
+<h3 id="变量与常量">变量与常量</h3>
+<p><strong>变量：</strong></p>
+<ul>
+<li>变量名必须以字母开头，之后可以是任意的字母、数字或下划线</li>
+<li>大小写敏感</li>
+<li>不超过31个字符，第31个及之后的会被忽略</li>
+<li>未加说明的前提下，一切变量视为局部变量，可用global声明为全局</li>
+</ul>
+<p><strong>常量</strong>：</p>
+<ul>
+<li><code>ans</code>：默认变量，一般用在显示答案</li>
+<li><code>pi</code>：圆周率</li>
+<li><code>eps</code>：浮点运算相对精度</li>
+<li><code>inf</code>：无穷大 如1/0</li>
+<li><code>NaN</code>：不定值，如0/0</li>
+<li><code>i j</code>：虚数单位</li>
+<li><code>realmin</code>：最小正浮点数</li>
+<li><code>realmax</code>：最大正浮点数</li>
+</ul>
+<h3 id="数值">数值</h3>
+<p><strong>整型</strong>：</p>
+<ul>
+<li><code>char</code>:字符型，占用1字节</li>
+<li><code>short</code>:短整型，占用2字节</li>
+<li><code>int</code>:整型，4字节</li>
+<li><code>long</code>:长整型，8字节</li>
+<li>以上均有对应的无符号类型:<code>unsigned xxx</code></li>
+</ul>
+<p><strong>浮点型</strong>：</p>
+<ul>
+<li>十进制类型，如：1.2 4.44</li>
+<li>指数形式，如: 2.1E5  3.7e-2</li>
+<li>指数标志e前必须有数字，后面必须有阶码</li>
+<li><code>float</code>：单精度，4字节</li>
+<li><code>double</code>：双精度，8字节</li>
+</ul>
+<p><strong>复数类型</strong>：</p>
+<ul>
+<li>实部：Rez=a</li>
+<li>虚部：Imz=b</li>
+<li>当虚部为0，可视为实数；当实部为0而虚部不为0，叫做纯虚数</li>
+<li>加法法则：<code>(a+bi)+(c+di) = (a+c)+(b+d)i</code></li>
+<li>减法法则：<code>(a+bi)-(c+di) = (a-c)+(b-c)i</code></li>
+<li>乘法法则：<code>(a+bi)*(c+di) = (ac-bd)+(bc+ad)i</code></li>
+<li>除法法则：<code>(a+bi)/(c+di) = [(ac+bd)/(c^2+d^2)]+[(bc-ad)/(c^2+d^2)]i</code></li>
+</ul>
+<p><strong>数字显示格式</strong>：</p>
+<ul>
+<li>
+<p><code>format short</code>：5位定点表示（默认）</p>
+</li>
+<li>
+<p><code>format long</code>：15位定点表示</p>
+</li>
+<li>
+<p><code>format short e</code>：5位浮点表示</p>
+</li>
+<li>
+<p><code>format short g</code>：自动选择定点还是浮点表示</p>
+</li>
+<li>
+<p><code>format hex</code>：十六进制显示</p>
+</li>
+<li>
+<p><code>format +</code>：在矩阵中，用+、-和空格表示正、负和零</p>
+</li>
+<li>
+<p><code>format bank</code>：用美元和美分定点表示</p>
+</li>
+<li>
+<p><code>format rat</code>：以有理数形式输出结果</p>
+</li>
+<li>
+<p><code>format compact</code>：变量间无空格</p>
+</li>
+<li>
+<p><code>format loose</code>：变量间有空行</p>
+</li>
+<li>
+<p>以上输出方式:</p>
+<pre><code class="language-matlab">format long,pi
+</code></pre>
+</li>
+</ul>
+<h3 id="运算符">运算符</h3>
+<p>除简单的四则运算外，还有点乘<code>.*</code>，等，后期运算会遇到</p>
+<p><strong>关系运算符</strong>：</p>
+<ul>
+<li><code>==</code>：等于</li>
+<li><code>~=</code>：不等于</li>
+<li><code>&gt;``&gt;=``&lt;``&lt;=</code>：比较</li>
+<li>以上返回值为0或1</li>
+</ul>
+<p><strong>逻辑运算法</strong>：</p>
+<ul>
+<li><code>-</code>：逻辑与</li>
+<li><code>|</code>：逻辑或</li>
+<li><code>~</code>：逻辑非</li>
+<li><code>xor</code>：逻辑异或</li>
+<li><code>any</code>：有非零元素则为真</li>
+<li><code>all</code>：所有元素均非零才为真</li>
+</ul>
+<h3 id="函数运算">函数运算</h3>
+<p><strong>复数运算</strong>：</p>
+<ul>
+<li><code>abs</code>:模</li>
+<li><code>angle</code>：复数相角</li>
+<li><code>complex</code>：用实部和虚部构造一个复数</li>
+<li><code>conj</code>：复数的共轭</li>
+<li><code>imag</code>：虚部</li>
+<li><code>real</code>：实部</li>
+<li><code>unwrap</code>：调整矩阵元素的相位</li>
+<li><code>isreal</code>：判断是否为实数矩阵</li>
+<li><code>cplxpair</code>：把复数矩阵排列成复共轭对</li>
+</ul>
+<p><strong>三角函数运算</strong>：</p>
+<ul>
+<li><code>sin()</code>：</li>
+<li><code>cos()</code></li>
+<li><code>tan()</code></li>
+<li><code>cot()</code></li>
+<li><code>sec()</code>：正割</li>
+<li><code>csc()</code>：余割<br>
+<em><strong>后期将更新向量与多项式的内容</strong></em></li>
+</ul>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">常用指令</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F">变量与常量</a></li>
+<li><a href="#%E6%95%B0%E5%80%BC">数值</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6">运算符</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97">函数运算</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                            </div>
+                            
+                                
+                                    
+                                        <!--en-->
+                                        <section class="post-copyright en">
+                                            <p class="copyright-item">
+                                                <span>Author:</span>
+                                                <span>小石石石</span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>Permalink:</span>
+                                                <span><a href="https://abelcorn.cn/matlab-1">https://abelcorn.cn/matlab-1</a></span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>License:</span>
+                                                <span>MIT License</span>
+                                            </p>
+                                        </section>
+                                        
+                                                
+                                                    
+                                                        <!-- Share-->
+                                                        <span style="margin-right:15px">
+                                                    <i class="post-share"></i>
+                                                    <span>Share:</span>
+                                                        <a title="QR Code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://abelcorn.cn/matlab-1"><i class="fa fa-qrcode"></i></a>
+                                                        <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://abelcorn.cn/matlab-1&sharesource=qzone&title=Matlab学习笔记（一）&pics=https://blog.blinkstar.cn/images/avatar.png&summary=&lt;p&gt;&lt;em&gt;&lt;strong&gt;基础知识&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+C++考试终于结束了，可以开始matlab的学习了，本部分内容仅为自己做笔记用，不属于对外教程。&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+                                                        <a title="Weibo" target="_blank" href="https://service.weibo.com/share/share.php?url=https://abelcorn.cn/matlab-1&sharesource=weibo&title=Matlab学习笔记（一） + " - " + &lt;p&gt;&lt;em&gt;&lt;strong&gt;基础知识&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+C++考试终于结束了，可以开始matlab的学习了，本部分内容仅为自己做笔记用，不属于对外教程。&lt;/p&gt;
+&pic="https://blog.blinkstar.cn/images/avatar.png "><i class="fa fa-weibo "></i></a>
+                                                
+                                                    <div class="reward ">
+                                                        <div class="reward-button ">&yen;
+                                                            <span class="reward-code "> 
+                                                                <span class="alipay-code "> <img class="alipay-img " alt = "support " src="/Users/abel/Documents/Gridea/static/alipay.jpg"><b>Alipay</b> </span>
+                                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="abelcorn.cn/wechat.jpg"><b>Wechat</b> </span> </span>
                 </div>
             </div>
-    </div>
-</body>
-
+            
+                </span>
+                <!--en-->
+                <section class="post-tags en ">
+                    <div>
+                        <span>Tag(s):</span>
+                        <span class="tag ">
+                        
+                        
+                        <a href="https://abelcorn.cn/DtLqsYkkD">#
+                                                Matlab
+                                                    </a>
+                                                    
+                                                        
+                                                            </span>
+                    </div>
+                    <div>
+                        <a href="javascript:window.history.back();">back</a>
+                        <span>&dot;</span>
+                        <a href="#">home</a>
+                    </div>
+                </section>
+                
+            <!---->
+            <section class="post-nav">
+                
+                        
+            </section>
+            </article>
+            </div>
+            
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -374,5 +617,10 @@
                         tpwidget("show");
                     </script>
                     
+                                                </div>
+</body>
+<script>
+    scroll();
+</script>
 
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -62,38 +62,10 @@
                             })();
                         </script>
                         
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-    <style>
-            .main_ {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 90vh;
-            }
-            
-            .result-box {
-                margin-top: 50px;
-                display: flex;
-                border-radius: 5px;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
 </head>
 
 <body>
-    <style>
-        .searched-keyword {
-            background-color: green;
-        }
-    </style>
-    <div class="main_">
+    <div class="wrapper">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -224,15 +196,202 @@
 
     }
 </script>
-            <div class="result-box">
-                <div id="gridea-search-result">
-                    <p class="searching">搜索中......</p>
-                    <p class="no-result" style="display:none">未搜索到相关文章</p>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                Markdown语法学习
+                            </h1>
+                            
+                                <!--en-->
+                                <div class="post-meta en">
+                                    Author:
+                                    <a itemprop="author" rel="author" href="/">
+                                        小石石石
+                                    </a>
+                                    <span class="post-time">
+                                Date: <a href="#">2019-09-01</a>
+                            </span>
+                                    <span class="post-readtime">Reading Time:<a
+                                    href="#">2.4
+                                    mins</a></span>
+                                    <span class="post-words">words:<a href="#">686</a></span>
+                                    
+                                        <span class="post-category">
+                                Category:
+                                
+                                <a href="https://abelcorn.cn/CG3J3bFD5">Markdown语法</a>
+                                
+                            </span>
+                                        
+                                            Views:
+                                            <span data-hk-page="current"> - </span>
+                                            
+                                </div>
+                                
+                        </header>
+                        <div class="post-content">
+                            <p>markdown语法作为一种高效的标记写作语法，已经在各种网站博客中体现出来，正如我的这些博客，也都是使用markdown语法写成。<!-- more-->种语法通过在你的文字前后添加规定的符号，使得文字显示出你所想要的形式，就如Word中的文字处理一般，但是更为简洁和高效。为了使大家都能轻松使用，现将其基本使用方式写下。</p>
+<h2 id="分级标题">分级标题 :</h2>
+<ul>
+<li><code>#一级标题</code></li>
+<li><code>##二级标题</code></li>
+<li>依次类推，总共支持六级标题</li>
+</ul>
+<h2 id="斜体-粗体">斜体、粗体：</h2>
+<ul>
+<li><code>*斜体*，或者 _斜体_</code>,如<em>这是斜体</em></li>
+<li><code>**粗体**</code>，如：<strong>这是粗体</strong></li>
+<li><code>***加粗斜体***</code> ,如：<em><strong>这是加粗斜体</strong></em></li>
+<li><code>~~ 删除线~~</code>,如：<s>这是删除线</s></li>
+</ul>
+<h2 id="超链接">超链接：</h2>
+<ul>
+<li>通过<code>[]()</code>的使用，可以达到仅显示文字，但文字下面包含超链接的功能</li>
+<li><code>[东北大学](http://neu.edu.cn)</code>:<a href="http://neu.edu.cn">东北大学</a></li>
+<li>接着你点击东北大学文字，就可以转到所隐藏的网页中了</li>
+<li>以上所诉皆为行内方式，下面介绍其他方式：</li>
+<li>参考式：如果某一个链接在文章中多处使用，那么建议使用参考式：</li>
+<li><code>[链接标题][链接标记]</code>，一般链接标记用顺序的数字来代替，接着在文本的任意位置再写：<code>[链接标记]:链接地址&quot;链接标题&quot;</code>.</li>
+<li>自动链接，即让网址既当标题也当超链接：<code>&lt;http://neu.edu.cn&gt;</code>: <a href="http://neu.edu.cn">http://neu.edu.cn</a></li>
+</ul>
+<h2 id="列表">列表：</h2>
+<ul>
+<li>使用<code>* + -</code>表示的是无序的列表，正如我目前写的所有标题下的文字都是无序标题</li>
+<li>有序标题和我们平时写一样，<code>1.xxx</code>在数字后写英文的句号，如：</li>
+</ul>
+<ol>
+<li>一号列表</li>
+<li>二号</li>
+<li>三号</li>
+</ol>
+<ul>
+<li>定义型列表：由名词和解释组成，一行写上定义，接着一行冒号加上Tab缩进和解释，如：<br>
+定义型列表<br>
+：由名词定义和解释组成的列表</li>
+<li>如果要在列表中放入引用，则用<code>&gt;</code>缩进。如：</li>
+<li>包含引用的列表</li>
+<li>
+<blockquote>
+<p>引用1</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>引用2</p>
+</blockquote>
+</li>
+<li>多层引用则根据你的<code>&gt;</code>的数量了，一般来说不超过3个</li>
+<li>插入代码，则用Tab键上面的类似与单引号的符号前后包围就行</li>
+<li>插入图像：<code>![图片](url &quot;图片题目&quot;)</code></li>
+<li>注脚：<code>[^注脚名]:注脚内容</code></li>
+</ul>
+<h2 id="其他">其他：</h2>
+<ul>
+<li>以上都是最基本的markdown语法，要想自己练习，推荐下载Typora编辑器，可以实时体验语法的魅力</li>
+<li>希望各位自行练习和查找相关基本语法知识，活学活用</li>
+<li>以后我将介绍<strong>表格</strong>、<strong>流程图</strong>和<strong>LaTex公式</strong>，这样的markdown才是真正优秀的语法。</li>
+</ul>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%88%86%E7%BA%A7%E6%A0%87%E9%A2%98">分级标题 :</a></li>
+<li><a href="#%E6%96%9C%E4%BD%93-%E7%B2%97%E4%BD%93">斜体、粗体：</a></li>
+<li><a href="#%E8%B6%85%E9%93%BE%E6%8E%A5">超链接：</a></li>
+<li><a href="#%E5%88%97%E8%A1%A8">列表：</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他：</a></li>
+</ul>
+</li>
+</ul>
+
+                            </div>
+                            
+                                
+                                    
+                                        <!--en-->
+                                        <section class="post-copyright en">
+                                            <p class="copyright-item">
+                                                <span>Author:</span>
+                                                <span>小石石石</span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>Permalink:</span>
+                                                <span><a href="https://abelcorn.cn/markdown-1">https://abelcorn.cn/markdown-1</a></span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>License:</span>
+                                                <span>MIT License</span>
+                                            </p>
+                                        </section>
+                                        
+                                                
+                                                    
+                                                        <!-- Share-->
+                                                        <span style="margin-right:15px">
+                                                    <i class="post-share"></i>
+                                                    <span>Share:</span>
+                                                        <a title="QR Code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://abelcorn.cn/markdown-1"><i class="fa fa-qrcode"></i></a>
+                                                        <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://abelcorn.cn/markdown-1&sharesource=qzone&title=Markdown语法学习&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+                                                        <a title="Weibo" target="_blank" href="https://service.weibo.com/share/share.php?url=https://abelcorn.cn/markdown-1&sharesource=weibo&title=Markdown语法学习 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png "><i class="fa fa-weibo "></i></a>
+                                                
+                                                    <div class="reward ">
+                                                        <div class="reward-button ">&yen;
+                                                            <span class="reward-code "> 
+                                                                <span class="alipay-code "> <img class="alipay-img " alt = "support " src="/Users/abel/Documents/Gridea/static/alipay.jpg"><b>Alipay</b> </span>
+                                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="abelcorn.cn/wechat.jpg"><b>Wechat</b> </span> </span>
                 </div>
             </div>
-    </div>
-</body>
-
+            
+                </span>
+                <!--en-->
+                <section class="post-tags en ">
+                    <div>
+                        <span>Tag(s):</span>
+                        <span class="tag ">
+                        
+                        
+                        <a href="https://abelcorn.cn/CG3J3bFD5">#
+                                                Markdown语法
+                                                    </a>
+                                                    
+                                                        
+                                                            </span>
+                    </div>
+                    <div>
+                        <a href="javascript:window.history.back();">back</a>
+                        <span>&dot;</span>
+                        <a href="#">home</a>
+                    </div>
+                </section>
+                
+            <!---->
+            <section class="post-nav">
+                
+                    <a class="prev" rel="prev" href="https://abelcorn.cn/latex">
+                        LaTex表示方法
+                    </a>
+                    
+                        
+                            <a class="next" rel="next" href="https://abelcorn.cn/hello-visitor">
+                                Hello Visitor
+                            </a>
+                            
+            </section>
+            </article>
+            </div>
+            
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -374,5 +533,10 @@
                         tpwidget("show");
                     </script>
                     
+                                                </div>
+</body>
+<script>
+    scroll();
+</script>
 
 </html>

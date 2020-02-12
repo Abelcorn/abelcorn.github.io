@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -62,38 +62,10 @@
                             })();
                         </script>
                         
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-    <style>
-            .main_ {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 90vh;
-            }
-            
-            .result-box {
-                margin-top: 50px;
-                display: flex;
-                border-radius: 5px;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
 </head>
 
 <body>
-    <style>
-        .searched-keyword {
-            background-color: green;
-        }
-    </style>
-    <div class="main_">
+    <div class="wrapper">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -224,15 +196,140 @@
 
     }
 </script>
-            <div class="result-box">
-                <div id="gridea-search-result">
-                    <p class="searching">搜索中......</p>
-                    <p class="no-result" style="display:none">未搜索到相关文章</p>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                正则表达式(Shell编程)
+                            </h1>
+                            
+                                <!--en-->
+                                <div class="post-meta en">
+                                    Author:
+                                    <a itemprop="author" rel="author" href="/">
+                                        小石石石
+                                    </a>
+                                    <span class="post-time">
+                                Date: <a href="#">2019-07-29</a>
+                            </span>
+                                    <span class="post-readtime">Reading Time:<a
+                                    href="#">0.3
+                                    mins</a></span>
+                                    <span class="post-words">words:<a href="#">94</a></span>
+                                    
+                                        <span class="post-category">
+                                Category:
+                                
+                                <a href="https://abelcorn.cn/Wq8ZRRiBS">Shell</a>
+                                
+                            </span>
+                                        
+                                            Views:
+                                            <span data-hk-page="current"> - </span>
+                                            
+                                </div>
+                                
+                        </header>
+                        <div class="post-content">
+                            <h3 id="本章主要介绍正则表达式正则表达式是学习更加高效的脚本的基础">本章主要介绍正则表达式，正则表达式是学习更加高效的脚本的基础</h3>
+<h1 id="正则表达式">正则表达式</h1>
+<ul>
+<li>任意匹配字符<code>.</code>：</li>
+<li>点号可以匹配任意单个字符，无论这些字符具体是什么，如<code>r.</code>表示匹配r以及任意单个字符，<code>.x.</code>表示匹配由任意连个字符包围的x</li>
+</ul>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E6%9C%AC%E7%AB%A0%E4%B8%BB%E8%A6%81%E4%BB%8B%E7%BB%8D%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%98%AF%E5%AD%A6%E4%B9%A0%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%E7%9A%84%E8%84%9A%E6%9C%AC%E7%9A%84%E5%9F%BA%E7%A1%80">本章主要介绍正则表达式，正则表达式是学习更加高效的脚本的基础</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">正则表达式</a></li>
+</ul>
+
+                            </div>
+                            
+                                
+                                    
+                                        <!--en-->
+                                        <section class="post-copyright en">
+                                            <p class="copyright-item">
+                                                <span>Author:</span>
+                                                <span>小石石石</span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>Permalink:</span>
+                                                <span><a href="https://abelcorn.cn/shell-3">https://abelcorn.cn/shell-3</a></span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>License:</span>
+                                                <span>MIT License</span>
+                                            </p>
+                                        </section>
+                                        
+                                                
+                                                    
+                                                        <!-- Share-->
+                                                        <span style="margin-right:15px">
+                                                    <i class="post-share"></i>
+                                                    <span>Share:</span>
+                                                        <a title="QR Code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://abelcorn.cn/shell-3"><i class="fa fa-qrcode"></i></a>
+                                                        <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://abelcorn.cn/shell-3&sharesource=qzone&title=正则表达式(Shell编程)&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+                                                        <a title="Weibo" target="_blank" href="https://service.weibo.com/share/share.php?url=https://abelcorn.cn/shell-3&sharesource=weibo&title=正则表达式(Shell编程) + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png "><i class="fa fa-weibo "></i></a>
+                                                
+                                                    <div class="reward ">
+                                                        <div class="reward-button ">&yen;
+                                                            <span class="reward-code "> 
+                                                                <span class="alipay-code "> <img class="alipay-img " alt = "support " src="/Users/abel/Documents/Gridea/static/alipay.jpg"><b>Alipay</b> </span>
+                                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="abelcorn.cn/wechat.jpg"><b>Wechat</b> </span> </span>
                 </div>
             </div>
-    </div>
-</body>
-
+            
+                </span>
+                <!--en-->
+                <section class="post-tags en ">
+                    <div>
+                        <span>Tag(s):</span>
+                        <span class="tag ">
+                        
+                        
+                        <a href="https://abelcorn.cn/Wq8ZRRiBS">#
+                                                Shell
+                                                    </a>
+                                                    
+                                                        
+                                                            </span>
+                    </div>
+                    <div>
+                        <a href="javascript:window.history.back();">back</a>
+                        <span>&dot;</span>
+                        <a href="#">home</a>
+                    </div>
+                </section>
+                
+            <!---->
+            <section class="post-nav">
+                
+                        
+            </section>
+            </article>
+            </div>
+            
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -374,5 +471,10 @@
                         tpwidget("show");
                     </script>
                     
+                                                </div>
+</body>
+<script>
+    scroll();
+</script>
 
 </html>

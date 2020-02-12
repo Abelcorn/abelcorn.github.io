@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -62,38 +62,10 @@
                             })();
                         </script>
                         
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-    <style>
-            .main_ {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 90vh;
-            }
-            
-            .result-box {
-                margin-top: 50px;
-                display: flex;
-                border-radius: 5px;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
 </head>
 
 <body>
-    <style>
-        .searched-keyword {
-            background-color: green;
-        }
-    </style>
-    <div class="main_">
+    <div class="wrapper">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -224,15 +196,468 @@
 
     }
 </script>
-            <div class="result-box">
-                <div id="gridea-search-result">
-                    <p class="searching">搜索中......</p>
-                    <p class="no-result" style="display:none">未搜索到相关文章</p>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                线性表--顺序表
+                            </h1>
+                            
+                                <!--en-->
+                                <div class="post-meta en">
+                                    Author:
+                                    <a itemprop="author" rel="author" href="/">
+                                        小石石石
+                                    </a>
+                                    <span class="post-time">
+                                Date: <a href="#">2020-01-15</a>
+                            </span>
+                                    <span class="post-readtime">Reading Time:<a
+                                    href="#">6.8
+                                    mins</a></span>
+                                    <span class="post-words">words:<a href="#">1285</a></span>
+                                    
+                                        <span class="post-category">
+                                Category:
+                                
+                                <a href="https://abelcorn.cn/datastruct">数据结构</a>
+                                
+                            </span>
+                                        
+                                            Views:
+                                            <span data-hk-page="current"> - </span>
+                                            
+                                </div>
+                                
+                        </header>
+                        <div class="post-content">
+                            <p>期末数据结构考的真🐔不咋的，所以这个寒假准备安心的重新学习一次，并对每一次的代码做全面的测试，然后发布于此。<br>
+以前的与数据结构相关的将被删除。</p>
+<!--more-->
+<p>线性表是最简单的数据结构，其在内存中的存储模式又分为顺序存储和链式存储，本节将展示顺序存储的代码。</p>
+<pre><code class="language-c">//
+// Created by abel on 2020/1/15.
+//
+#ifndef LINERLIST_H
+#define LINERLIST_H
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+#define MAXSIZE 10
+typedef int ElemType;
+//线性表结点结构
+typedef struct Liner_List{
+    ElemType *data;//数据存储数组
+    int capacity;//容纳能力
+    int size;//当前所存数量
+}List;
+
+//初始化线性表
+void InitList(List *list)
+{
+    list-&gt;capacity = MAXSIZE;//初始化最大容纳能力
+    list-&gt;size=0;//初始为0个元素被存入
+    list-&gt;data = (ElemType*)malloc(sizeof(ElemType)*list-&gt;capacity);
+    if(!list-&gt;data)//开辟空间
+    {
+        printf(&quot;Memory Error!\n&quot;);
+    }
+}
+//清空线性表里存储的信息
+void ClearList(List *list)
+{
+    for(int i=0;i&lt;list-&gt;size;i++)
+    {
+        list-&gt;data[i]=0;
+    }
+    list-&gt;size=0;
+}
+//删除所有线性表
+void DestroyList(List *list)
+{
+    free(list-&gt;data);
+    free(list);
+}
+
+//判断线性表是否为空
+bool ListEmpty(List *list)
+{
+    return (list-&gt;size==0);
+}
+//判断线性表是否为满
+bool ListFull(List *list)
+{
+    return (list-&gt;size==list-&gt;capacity);
+}
+
+/*
+ * 插入时需要将待插位置的元素及其后面的所有元素依次后移
+ * 因此在插入时先将最后一个元素后移，接着往前，依次进行
+ * 直到到了待插入位置，再将待插入位置的元素后移
+ * 最后将新元素赋值给position，在计算机中就是[position-1]处
+ */
+
+//在position处插入元素
+void InsertElem(List *list,int position,ElemType elem)
+{
+    if(position&lt;1||position&gt;list-&gt;size+1)//检查插入的位置
+    {
+        printf(&quot;Position Error!\n&quot;);
+        return;
+    }//检查是否已经满了
+    if(ListFull(list))
+    {
+        printf(&quot;List is Full!\n&quot;);
+        return;
+    }
+    //从最后一个元素开始到插入位置(通过减1转换为计算机存储的索引)
+    for(int i=list-&gt;size;i&gt;=position-1;i--)
+    {
+        list-&gt;data[i+1]=list-&gt;data[i];//以此后移
+    }
+    list-&gt;data[position-1] = elem;//插入数据
+    list-&gt;size++;//存储的个数加一
+}
+
+/*
+ * 删除和插入类似
+ * 只不过需要前移
+ */
+//删除元素
+ElemType DeleteElem(List *list,int position)
+{
+    if(position&lt;1||position&gt;list-&gt;size+1)
+    {
+        printf(&quot;Position Error!\n&quot;);
+        return -1;
+    }
+    if(ListEmpty(list))
+    {
+        printf(&quot;Empty List!\n&quot;);
+        return -1;
+    }
+    ElemType temp = list-&gt;data[position-1];
+    for(int i=position-1;i&lt;=list-&gt;size;i++)
+    {
+        list-&gt;data[i]=list-&gt;data[i+1];
+    }
+    list-&gt;size--;
+    return temp;
+}
+
+//计算某元素出现了多少次
+int CountElem(List *list,ElemType elem)
+{
+    int j=0;
+    for(int i=0;i&lt;list-&gt;size;i++)
+    {
+        if(elem==list-&gt;data[i])
+        {
+            j++;
+        }
+    }
+    return (j==0?-1:j);
+}
+
+//找到某个元素并定位
+int FindPosition(List *list, ElemType elem)
+{
+    for(int i=0;i&lt;list-&gt;size;i++)
+    {
+        if(elem==list-&gt;data[i])return i+1;
+    }
+    return -1;
+}
+
+//显示所有元素
+void DisplayList(List *list)
+{
+    if(ListEmpty(list))
+    {
+        printf(&quot;Empty Liner List!\n&quot;);
+        return;
+    }
+    printf(&quot;Element:\n&quot;);
+    for(int i=0;i&lt;list-&gt;size;i++)
+    {
+        printf(&quot;%d &quot;,list-&gt;data[i]);
+    }
+    printf(&quot;\n&quot;);
+}
+
+#endif LINERLIST_H
+
+/*
+对于以上的代码，可以复制下面的在main.c里面测试
+#include &quot;LinerList.h&quot;
+
+int main()
+{
+    List *list = (List*)malloc(sizeof(List));
+    InitList(list);
+    InsertElem(list,1,5);
+    InsertElem(list,1,4);
+    InsertElem(list,1,3);
+    InsertElem(list,1,2);
+    InsertElem(list,1,1);
+    InsertElem(list,1,0);
+    DisplayList(list);
+    DeleteElem(list,1);
+    DisplayList(list);
+
+    InsertElem(list,3,1);
+    DisplayList(list);
+    printf(&quot;%d&quot;,CountElem(list,1));
+    printf(&quot;%d&quot;,FindPosition(list,1));
+    ClearList(list);
+    DisplayList(list);
+    DestroyList(list);
+    return 0;
+}
+*/
+</code></pre>
+<p>相应的增加C++版本，觉得要简单一点</p>
+<pre><code class="language-c++">//
+//  LinerList.h
+//  LinerStructure
+//
+//  Created by abel on 2020/1/16.
+//  Copyright © 2020 abel. All rights reserved.
+//
+
+#ifndef LinerList_h
+#define LinerList_h
+
+#include &lt;iostream&gt;
+using namespace std;
+
+const int MAXSIZE = 10;
+
+template &lt;typename T&gt;
+class LinerList
+{
+private:
+    T *data;
+    int capacity;
+    int size;
+public:
+    LinerList()
+    {
+        this-&gt;data = new T[MAXSIZE];
+        this-&gt;capacity = MAXSIZE;
+        this-&gt;size = 0;
+    }
+    LinerList(int newSize)
+    {
+        this-&gt;capacity = newSize;
+        this-&gt;data = new T[this-&gt;capacity];
+        this-&gt;size = 0;
+    }
+    ~LinerList()
+    {
+        delete []data;
+    }
+    
+    bool isEmpty();
+    bool isFull();
+    void InsertElem(int position, T elem);
+    T DeleteElem(int position);
+    int FindElemPosition(T elem);
+    int CountElem(T elem);
+    void DisplayList();
+};
+
+
+template &lt;typename T&gt;
+bool LinerList&lt;T&gt;::isEmpty()
+{
+    return this-&gt;size==0;
+}
+template &lt;typename T&gt;
+bool LinerList&lt;T&gt;::isFull()
+{
+    return this-&gt;size==this-&gt;capacity;
+}
+
+template &lt;typename T&gt;
+void LinerList&lt;T&gt;::InsertElem(int position, T elem)
+{
+    if(position&lt;1||position&gt;size+1)
+    {
+        cout&lt;&lt;&quot;Postion Error!\n&quot;;
+        return;
+    }
+    if(isFull())
+    {
+        cout&lt;&lt;&quot;List is Full!\n&quot;;
+        return;
+    }
+    for(int i=size;i&gt;=position-1;i--)
+    {
+        data[i+1] = data[i];
+    }
+    data[position-1] = elem;
+    size++;
+}
+
+template &lt;typename T&gt;
+T LinerList&lt;T&gt;::DeleteElem(int position)
+{
+    if(position&lt;1||position&gt;size+1)
+    {
+        cout&lt;&lt;&quot;Position Error!\n&quot;;
+        return -1;
+    }
+    if(isEmpty())
+    {
+        cout&lt;&lt;&quot;List is Empty!\n&quot;;
+        return -1;
+    }
+    for(int i=position-1;i&lt;size;i++)
+    {
+        data[i]=data[i+1];
+    }
+    size--;
+}
+template &lt;typename T&gt;
+int LinerList&lt;T&gt;::FindElemPosition(T elem)
+{
+    if(isEmpty())
+    {
+        cout&lt;&lt;&quot;Empty List!\n&quot;;
+        return -1;
+    }
+    for(int i=0;i&lt;size;i++)
+    {
+        if(data[i]==elem)return (i+1);
+    }
+    cout&lt;&lt;&quot;No The elem\n&quot;;
+    return -1;
+}
+
+template &lt;typename T&gt;
+int LinerList&lt;T&gt;::CountElem(T elem)
+{
+    if(isEmpty())
+    {
+        cout&lt;&lt;&quot;Empty List!\n&quot;;
+        return -1;
+    }
+    int j = 0;
+    for(int i=0;i&lt;size;i++)
+    {
+        if(data[i] == elem)j++;
+    }
+    if(j==0)
+    {
+        cout&lt;&lt;&quot;No element!\n&quot;;
+        return -1;
+    }
+    return j;
+}
+
+template &lt;typename T&gt;
+void LinerList&lt;T&gt;::DisplayList()
+{
+    if(!isEmpty())
+    {
+        for(int i=0;i&lt;size;i++)
+        {
+            cout&lt;&lt;data[i]&lt;&lt;&quot; &quot;;
+        }
+        cout&lt;&lt;endl;
+        return;
+    }
+    cout&lt;&lt;&quot;Empty List!\n&quot;;
+}
+#endif /* LinerList_h */
+</code></pre>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                
+                            </div>
+                            
+                                
+                                    
+                                        <!--en-->
+                                        <section class="post-copyright en">
+                                            <p class="copyright-item">
+                                                <span>Author:</span>
+                                                <span>小石石石</span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>Permalink:</span>
+                                                <span><a href="https://abelcorn.cn/DS_1">https://abelcorn.cn/DS_1</a></span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>License:</span>
+                                                <span>MIT License</span>
+                                            </p>
+                                        </section>
+                                        
+                                                
+                                                    
+                                                        <!-- Share-->
+                                                        <span style="margin-right:15px">
+                                                    <i class="post-share"></i>
+                                                    <span>Share:</span>
+                                                        <a title="QR Code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://abelcorn.cn/DS_1"><i class="fa fa-qrcode"></i></a>
+                                                        <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://abelcorn.cn/DS_1&sharesource=qzone&title=线性表--顺序表&pics=https://blog.blinkstar.cn/images/avatar.png&summary=&lt;p&gt;期末数据结构考的真🐔不咋的，所以这个寒假准备安心的重新学习一次，并对每一次的代码做全面的测试，然后发布于此。&lt;br&gt;
+以前的与数据结构相关的将被删除。&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+                                                        <a title="Weibo" target="_blank" href="https://service.weibo.com/share/share.php?url=https://abelcorn.cn/DS_1&sharesource=weibo&title=线性表--顺序表 + " - " + &lt;p&gt;期末数据结构考的真🐔不咋的，所以这个寒假准备安心的重新学习一次，并对每一次的代码做全面的测试，然后发布于此。&lt;br&gt;
+以前的与数据结构相关的将被删除。&lt;/p&gt;
+&pic="https://blog.blinkstar.cn/images/avatar.png "><i class="fa fa-weibo "></i></a>
+                                                
+                                                    <div class="reward ">
+                                                        <div class="reward-button ">&yen;
+                                                            <span class="reward-code "> 
+                                                                <span class="alipay-code "> <img class="alipay-img " alt = "support " src="/Users/abel/Documents/Gridea/static/alipay.jpg"><b>Alipay</b> </span>
+                                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="abelcorn.cn/wechat.jpg"><b>Wechat</b> </span> </span>
                 </div>
             </div>
-    </div>
-</body>
-
+            
+                </span>
+                <!--en-->
+                <section class="post-tags en ">
+                    <div>
+                        <span>Tag(s):</span>
+                        <span class="tag ">
+                        
+                        
+                        <a href="https://abelcorn.cn/datastruct">#
+                                                数据结构
+                                                    </a>
+                                                    
+                                                        
+                                                            </span>
+                    </div>
+                    <div>
+                        <a href="javascript:window.history.back();">back</a>
+                        <span>&dot;</span>
+                        <a href="#">home</a>
+                    </div>
+                </section>
+                
+            <!---->
+            <section class="post-nav">
+                
+                        
+            </section>
+            </article>
+            </div>
+            
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -374,5 +799,10 @@
                         tpwidget("show");
                     </script>
                     
+                                                </div>
+</body>
+<script>
+    scroll();
+</script>
 
 </html>
