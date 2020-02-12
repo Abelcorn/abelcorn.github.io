@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2020-02-05T03:16:26.110Z</updated>
+    <updated>2020-02-12T09:31:53.078Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -27,8 +27,8 @@
 <p><em>由于本网站不支持swift的语法高亮，故下面的代码都是不能正常的由不同颜色表现，请轻喷</em><br>
 <br></p>
 <h1 id="swift初识">Swift初识</h1>
-<p>作为程序员，学习语言免不了学习&quot;Hello World!&quot;，而Swift的这个和Python一样简单，只要一句：</p>
-<pre><code class="language-swift">print(&quot;Hello World!&quot;)
+<p>作为程序员，学习语言免不了学习&quot;Hello World!&quot;，而swift的这个和Python一样简单，只要一句：</p>
+<pre><code class="language-javascript">print(&quot;Hello World!&quot;)
 </code></pre>
 <p>print是自带换行的。</p>
 <h2 id="简单值">简单值</h2>
@@ -36,7 +36,7 @@
 <ul>
 <li>为了使用常量，我们使用let来进行声明，类似的，变量使用var来声明：</li>
 </ul>
-<pre><code class="language-swift">let myConstant = 42
+<pre><code class="language-javascript">let myConstant = 42
 // 常量无法再次被赋值改变了
 var myVariable = 42
 myVariable = 45 // 而变量可以随意改变
@@ -44,12 +44,12 @@ myVariable = 45 // 而变量可以随意改变
 <ul>
 <li>该语言是类型自推断的，如果你习惯于C/C++语言的书写，那么你也可以指定类型:</li>
 </ul>
-<pre><code class="language-swift">let aConstant: Double = 70.0  //在名字后面冒号再加类型
+<pre><code class="language-javascript">let aConstant: Double = 70.0  //在名字后面冒号再加类型
 </code></pre>
 <ul>
 <li>但是需要注意的是，一个值不会被隐式的转换为其他类型，也就是需要你强制转换，如：</li>
 </ul>
-<pre><code class="language-swift">let label = &quot;The width is &quot;
+<pre><code class="language-javascript">let label = &quot;The width is &quot;
 let width = 96
 let widthLabel = label + String(width) //如果你尝试不加String()进行转换，那么将会报错
 print(widthLabel)
@@ -57,7 +57,7 @@ print(widthLabel)
 <ul>
 <li>这里有一种更有效的字符串转换方法</li>
 </ul>
-<pre><code class="language-swift">let apples = 5
+<pre><code class="language-javascript">let apples = 5
 let oranges = 4
 let appleSum = &quot;I have \(apples) apples&quot;  //通过\()的方式在字符串中插入信息
 let fruitSum = &quot;I have \(apples+oranges) pieces of fruit.&quot;
@@ -68,7 +68,7 @@ print(fruitSum)
 <ul>
 <li>使用方括号来创建和使用数组、字典，并下标访问：</li>
 </ul>
-<pre><code class="language-swift">//数组
+<pre><code class="language-javascript">//数组
 var shoppingList = [&quot;catfish&quot;,&quot;water&quot;,&quot;tulips&quot;,&quot;blue paint&quot;]
 shoppingList[1] = &quot;bottle of water&quot;
 for i in shoppingList{
@@ -84,7 +84,7 @@ occupations[&quot;Jayne&quot;] = &quot;public Relations&quot;
 <ul>
 <li>使用if和switch来进行条件的操作，使用for、for in、while和repeat while来进行循环</li>
 </ul>
-<pre><code class="language-swift">//一般判断
+<pre><code class="language-javascript">//一般判断
 var optionalString: String?=&quot;Hello&quot; //?=表示可选项，即该变量默认为此
 if(optionalString != nil)
 {
@@ -151,7 +151,7 @@ print(largest)
 <ul>
 <li>使用while循环</li>
 </ul>
-<pre><code class="language-swift">var n = 2
+<pre><code class="language-javascript">var n = 2
 while n&lt;100 {
     n = n*2
 }
@@ -182,7 +182,7 @@ print(firstForLoop)
 <ul>
 <li>使用func来声明函数，使用-&gt;来指定返回值的类型</li>
 </ul>
-<pre><code class="language-swift">func greet(name: String,day: String)-&gt;String //表示函数类型为String
+<pre><code class="language-javascript">func greet(name: String,day: String)-&gt;String //表示函数类型为String
 {
     return &quot;Hello \(name),today is \(day).&quot;
 }
@@ -226,7 +226,7 @@ print(sumOf(numbers:42,597,12)) //输出为651
 <ul>
 <li>函数还可以嵌套</li>
 </ul>
-<pre><code class="language-swift">func returnFifteen()-&gt;Int
+<pre><code class="language-javascript">func returnFifteen()-&gt;Int
 {
     var y = 10
     func add()
@@ -276,7 +276,7 @@ print(hasAnyMatch(list: num, condition: lessThanTen(number:)))
 <ul>
 <li>使用class关键字来描述类</li>
 </ul>
-<pre><code class="language-swift">//简单的类示例
+<pre><code class="language-javascript">//简单的类示例
 class Shape{
     var numberOfSides = 0
     func simpleDescription()-&gt;String
@@ -292,7 +292,7 @@ print(sD)
 <ul>
 <li>类的继承</li>
 </ul>
-<pre><code class="language-swift">//这是父类
+<pre><code class="language-javascript">//这是父类
 class NamedShape
 {
     var numberOfSides:Int = 0
@@ -366,7 +366,7 @@ print(tranigle.sideLength)
 <ul>
 <li>枚举类型可以定义方法</li>
 </ul>
-<pre><code class="language-swift">enum Rank: Int
+<pre><code class="language-javascript">enum Rank: Int
 {
     case Ace = 1 //第一个出现的case就是rawValue
     case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
@@ -395,7 +395,7 @@ print(aceRawValue)
 <p><strong>结构体在下面中展示</strong></p>
 <h2 id="协议和扩展">协议和扩展</h2>
 <h3 id="使用protocol来声明一个协议">使用protocol来声明一个协议</h3>
-<pre><code class="language-swift">protocol ExampleProtocol{
+<pre><code class="language-javascript">protocol ExampleProtocol{
     var simple: String{get}
     mutating func adjust()
 }
@@ -424,7 +424,7 @@ b.adjust()
 let bDesc = b.simple
 </code></pre>
 <h3 id="使用扩展">使用扩展</h3>
-<pre><code class="language-swift">extension Int: ExampleProtocol{
+<pre><code class="language-javascript">extension Int: ExampleProtocol{
     var simple: String{
         return &quot;The number \(self)&quot;
     }
@@ -436,7 +436,7 @@ print(7.simple)
 </code></pre>
 <h2 id="泛型">泛型</h2>
 <p><strong>在尖括号中创建泛型</strong></p>
-<pre><code class="language-swift">//尖括号表示类型的代替名
+<pre><code class="language-javascript">//尖括号表示类型的代替名
 func repeatItem&lt;Item&gt;(item:Item, numberOfTimes: Int) -&gt; [Item]{//方括号表示返回值是泛型类型
     var result = [Item]()
     for _ in 0..&lt;numberOfTimes{
