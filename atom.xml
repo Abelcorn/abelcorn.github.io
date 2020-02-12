@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2020-02-12T12:02:22.875Z</updated>
+    <updated>2020-02-12T12:11:48.582Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -38,16 +38,6 @@
         <link href="https://abelcorn.cn/2019-nCov">
         </link>
         <updated>2020-01-23T03:07:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>本版进行内容调整，将预防内容调到前面，将论文分析内容放在后面。目前病毒传染已经出现多起无武汉旅行感染病例，请各位一定注意预防。<br>
-且随着生物医学研究的跟进，相关信息会改变，请各位以此为参考，并时刻关注最新的官方消息，勿信谣传谣！</p>
-<h2 id="主要内容">主要内容：</h2>
-<p>本文分析信息来源于1月21日由南开大学发表的《武汉2019冠状病毒基因组的生物信息学分析》，通过对该论文的阅读分析，结合近期相关专家、新闻发布会和相关报道，将要点总结如下：</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>本版进行内容调整，将预防内容调到前面，将论文分析内容放在后面。目前病毒传染已经出现多起无武汉旅行感染病例，请各位一定注意预防。<br>
-且随着生物医学研究的跟进，相关信息会改变，请各位以此为参考，并时刻关注最新的官方消息，勿信谣传谣！</p>
-<h2 id="主要内容">主要内容：</h2>
-<p>本文分析信息来源于1月21日由南开大学发表的《武汉2019冠状病毒基因组的生物信息学分析》，通过对该论文的阅读分析，结合近期相关专家、新闻发布会和相关报道，将要点总结如下：</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Decir algo]]></title>
