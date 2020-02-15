@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -64,38 +64,10 @@
                             })();
                         </script>
                         
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/fuse.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/ejs.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/lib/gridea-search.min.js"></script>
-    <script src="//cdn.jsdelivr.net/gh/tangkaichuan/gridea-search/example/assets/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-    <style>
-            .main_ {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                height: 90vh;
-            }
-            
-            .result-box {
-                margin-top: 50px;
-                display: flex;
-                border-radius: 5px;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
 </head>
 
 <body>
-    <style>
-        .searched-keyword {
-            background-color: green;
-        }
-    </style>
-    <div class="main_">
+    <div class="wrapper">
         <header>
     <nav class="navbar">
         <div class="container">
@@ -218,15 +190,179 @@
 
     }
 </script>
-            <div class="result-box">
-                <div id="gridea-search-result">
-                    <p class="searching">搜索中......</p>
-                    <p class="no-result" style="display:none">未搜索到相关文章</p>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                关于
+                            </h1>
+                            
+                                <!--en-->
+                                <div class="post-meta en">
+                                    Author:
+                                    <a itemprop="author" rel="author" href="/">
+                                        小石石石
+                                    </a>
+                                    <span class="post-time">
+                                Date: <a href="#">2019-01-25</a>
+                            </span>
+                                    <span class="post-readtime">Reading Time:<a
+                                    href="#">1.4
+                                    mins</a></span>
+                                    <span class="post-words">words:<a href="#">416</a></span>
+                                    
+                                        <span class="post-category">
+                                Category:
+                                
+                                <a href="https://abelcorn.cn/server">网站相关</a>
+                                
+                            </span>
+                                        
+                                            Views:
+                                            <span data-hk-page="current"> - </span>
+                                            
+                                </div>
+                                
+                        </header>
+                        <div class="post-content">
+                            <p><strong>你好🎉,欢迎访问我的个人博客!</strong><br>
+为确保隐私安全啊，故下面只有基本的个人简介：</p>
+<!--more-->
+<h3 id="专业简介">专业简介：</h3>
+<ul>
+<li>就读于一所<s>非常普通的</s>985学校</li>
+<li>计算机专业大二，方向为物联网与人工智能</li>
+<li>还没学过网页开发和网站搭建，本网站属于个人摸索创办，希望各位包容和指教</li>
+</ul>
+<h3 id="爱好">爱好：</h3>
+<ul>
+<li>阅读：读历史、时政、经济和历史人文方面的书</li>
+<li>运动：骑行、羽毛球、轮滑和滑冰  <s>奈何以上并不擅长</s></li>
+<li>计算机：常捣鼓一些新奇的东西，总喜欢课外的，喜欢iOS开发</li>
+<li>数学： 都喜欢但并不擅长(真的)</li>
+<li>音乐：许嵩、李健和Justin Bieber</li>
+<li>❤️人：我校另一个学院的，但是我并不知道从何谈起</li>
+</ul>
+<h3 id="理想">理想：</h3>
+<ul>
+<li>从小的理想：希望成为外交官，维护我国的国际形象，促进国际间同我国的文化交流</li>
+<li>有时会想：成为中纪委的官员，调查贪官污吏，严防懒政滥政，保护人民群众</li>
+<li>目前：好好学习，好好学习，好好学习！</li>
+</ul>
+<h3 id="其他">其他：</h3>
+<ul>
+<li>希望大家有空可以看看我写的东西，有问题可以移步Comments反馈</li>
+<li>如果发表的东西有问题也可以直接在文章下面留言</li>
+<li>有想投稿的我也可以帮忙，只是目前没人气，<em>唉～～～～！</em></li>
+<li>每个文章末尾都有打赏按钮，<s>嘿嘿😄，懂我啥意思吧！</s></li>
+<li>文章末尾支持空间、微博或二维码导出分享，转载请注明，谢谢啊🙏！</li>
+</ul>
+<h3 id="联系方式">联系方式：</h3>
+<ul>
+<li>☎️电话：暂不透露</li>
+<li>📮邮箱：abelcode@outlook.com</li>
+<li>🔗QQ：705360633</li>
+</ul>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%B8%93%E4%B8%9A%E7%AE%80%E4%BB%8B">专业简介：</a></li>
+<li><a href="#%E7%88%B1%E5%A5%BD">爱好：</a></li>
+<li><a href="#%E7%90%86%E6%83%B3">理想：</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他：</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F">联系方式：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                            </div>
+                            
+                                
+                                    
+                                        <!--en-->
+                                        <section class="post-copyright en">
+                                            <p class="copyright-item">
+                                                <span>Author:</span>
+                                                <span>小石石石</span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>Permalink:</span>
+                                                <span><a href="https://abelcorn.cn/server_abount_author">https://abelcorn.cn/server_abount_author</a></span>
+                                            </p>
+
+                                            <p class="copyright-item">
+                                                <span>License:</span>
+                                                <span>MIT License</span>
+                                            </p>
+                                        </section>
+                                        
+                                                
+                                                    
+                                                        <!-- Share-->
+                                                        <span style="margin-right:15px">
+                                                    <i class="post-share"></i>
+                                                    <span>Share:</span>
+                                                        <a title="QR Code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://abelcorn.cn/server_abount_author"><i class="fa fa-qrcode"></i></a>
+                                                        <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://abelcorn.cn/server_abount_author&sharesource=qzone&title=关于&pics=https://blog.blinkstar.cn/images/avatar.png&summary=&lt;p&gt;&lt;strong&gt;你好🎉,欢迎访问我的个人博客!&lt;/strong&gt;&lt;br&gt;
+为确保隐私安全啊，故下面只有基本的个人简介：&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+                                                        <a title="Weibo" target="_blank" href="https://service.weibo.com/share/share.php?url=https://abelcorn.cn/server_abount_author&sharesource=weibo&title=关于 + " - " + &lt;p&gt;&lt;strong&gt;你好🎉,欢迎访问我的个人博客!&lt;/strong&gt;&lt;br&gt;
+为确保隐私安全啊，故下面只有基本的个人简介：&lt;/p&gt;
+&pic="https://blog.blinkstar.cn/images/avatar.png "><i class="fa fa-weibo "></i></a>
+                                                
+                                                    <div class="reward ">
+                                                        <div class="reward-button ">&yen;
+                                                            <span class="reward-code "> 
+                                                                <span class="alipay-code "> <img class="alipay-img " alt = "support " src="https://i.loli.net/2020/02/12/3V6KI2yCQbmTPMd.jpg"><b>Alipay</b> </span>
+                                                        <span class="wechat-code "> <img alt ="support " class="wechat-img " src="https://i.loli.net/2020/02/12/3vByKVdpirzblgA.jpg"><b>Wechat</b> </span> </span>
                 </div>
             </div>
-    </div>
-</body>
-
+            
+                </span>
+                <!--en-->
+                <section class="post-tags en ">
+                    <div>
+                        <span>Tag(s):</span>
+                        <span class="tag ">
+                        
+                        
+                        <a href="https://abelcorn.cn/server">#
+                                                网站相关
+                                                    </a>
+                                                    
+                                                        
+                                                            </span>
+                    </div>
+                    <div>
+                        <a href="javascript:window.history.back();">back</a>
+                        <span>&dot;</span>
+                        <a href="#">home</a>
+                    </div>
+                </section>
+                
+            <!---->
+            <section class="post-nav">
+                
+                        
+            </section>
+            </article>
+            </div>
+            
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            
     <div id="player"></div>
     
         <footer id="footer" class="footer">
@@ -368,5 +504,19 @@
                         tpwidget("show");
                     </script>
                     
+                                                </div>
+</body>
+<script>
+    scroll();
+</script>
 
 </html>
+<!--下面为评论区-->
+<div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'yEpyeCJYq66MCMCPuKhKU3ci-gzGzoHsz',
+            appKey: 'EidEbqJTWxBPvImtTKzUhppT'
+        })
+    </script>

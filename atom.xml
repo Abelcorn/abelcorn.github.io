@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://abelcorn.cn</id>
     <title>小石石石</title>
-    <updated>2020-02-12T12:11:48.582Z</updated>
+    <updated>2020-02-15T08:18:24.435Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://abelcorn.cn"/>
     <link rel="self" href="https://abelcorn.cn/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 小石石石</rights>
     <entry>
         <title type="html"><![CDATA[Swift入门]]></title>
-        <id>https://abelcorn.cn/code_swift_1</id>
-        <link href="https://abelcorn.cn/code_swift_1">
+        <id>https://abelcorn.cn/pursuit_lang_swift</id>
+        <link href="https://abelcorn.cn/pursuit_lang_swift">
         </link>
         <updated>2020-02-04T10:02:49.000Z</updated>
         <summary type="html"><![CDATA[<p>本次除了正常的更新外，还将大部分以前分内容做了隐藏，我要重新做人。</p>
@@ -23,10 +23,10 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[新年祝福：愿我们认识这两种力量]]></title>
-        <id>https://abelcorn.cn/text2</id>
-        <link href="https://abelcorn.cn/text2">
+        <id>https://abelcorn.cn/article_transmit_appso</id>
+        <link href="https://abelcorn.cn/article_transmit_appso">
         </link>
-        <updated>2020-01-24T11:08:26.000Z</updated>
+        <updated>2020-01-24T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>本文转自公众号： AppSo</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>本文转自公众号： AppSo</p>
@@ -34,15 +34,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[武汉新型冠状病毒要点分析(订正)]]></title>
-        <id>https://abelcorn.cn/2019-nCov</id>
-        <link href="https://abelcorn.cn/2019-nCov">
+        <id>https://abelcorn.cn/others_news_NCP</id>
+        <link href="https://abelcorn.cn/others_news_NCP">
         </link>
         <updated>2020-01-23T03:07:39.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Decir algo]]></title>
-        <id>https://abelcorn.cn/unexpectedtrip</id>
-        <link href="https://abelcorn.cn/unexpectedtrip">
+        <id>https://abelcorn.cn/article_prose_decir algo</id>
+        <link href="https://abelcorn.cn/article_prose_decir algo">
         </link>
         <updated>2019-10-06T13:00:00.000Z</updated>
         <summary type="html"><![CDATA[<ul>
@@ -56,8 +56,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[LaTex表示方法]]></title>
-        <id>https://abelcorn.cn/latex</id>
-        <link href="https://abelcorn.cn/latex">
+        <id>https://abelcorn.cn/pursuit_outlook_latex</id>
+        <link href="https://abelcorn.cn/pursuit_outlook_latex">
         </link>
         <updated>2019-09-02T10:20:28.000Z</updated>
         <summary type="html"><![CDATA[<h3 id="注意">注意</h3>
@@ -73,15 +73,15 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Markdown语法学习]]></title>
-        <id>https://abelcorn.cn/markdown-1</id>
-        <link href="https://abelcorn.cn/markdown-1">
+        <id>https://abelcorn.cn/pursuit_outlook_markdown</id>
+        <link href="https://abelcorn.cn/pursuit_outlook_markdown">
         </link>
         <updated>2019-09-01T04:01:38.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Visitor]]></title>
-        <id>https://abelcorn.cn/hello-visitor</id>
-        <link href="https://abelcorn.cn/hello-visitor">
+        <id>https://abelcorn.cn/server_about_welcome</id>
+        <link href="https://abelcorn.cn/server_about_welcome">
         </link>
         <updated>2019-05-26T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎访问 <strong>abel's Homepage</strong> ！<br>
